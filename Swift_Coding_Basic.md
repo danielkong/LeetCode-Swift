@@ -21,6 +21,7 @@ Int:
 Array:
 
     arr.sort{ $0.name < $1.name } // sorted array of string 
+    arr.sorted()
 
 For Loop:
 
