@@ -3,16 +3,22 @@ Swift Coding Basic
 String:
 
 	length = str.characters.count
+    str.characters // String.CharacterView
+    str.characters.dropFirst()
+    str.characters.dropFirst(2)
+    str.characters.dropLast()
+    str.characters.popFirst/Last
 	<String Indices>
 	char = str[str.startIndex] // first character
 	char = str[str.index(before: str.endIndex)] // last character
-    s = s.substring(to: str.index(before: str.endIndex)) // string without last character
 	char = str[str.index(after: str.startIndex)] // sec character
 	char = str[str.index(str.startIndex, offsetBy: 3)] // 4th character
-	str.characters.first
-	str.characters.last
-    str.hasPrefix("")
-    str.isEmpty()
+    char = str.characters.first // return first Char. == "A" true
+    char = str.characters.last 
+    arr = Array(str.characters) // Array<Character>
+    s = s.substring(to: str.index(before: str.endIndex)) // string without last character
+    b = str.hasPrefix("")
+    b = str.isEmpty()
 
 Int:
 
