@@ -18,8 +18,24 @@ Int:
 
 Array:
     arr.sort{ $0.name < $1.name } // sorted array of string 
+    arr.insert("add", atIndex: 1)
+    arr.removeFirst()
+    arr.removeLast()
+    arr.remove(at: 2)
+    arr.index(of: "chimps")
+    arr.filter() {$0 != "chimps"}
+    arr.contains(ch) // arr contain char value
 
 For Loop:
     for i in 0...10 { ... } // 0,1,...,10
     for i in 0..<10 { ... } // 0,1,...,9
+
+String -> Array:
+    
+    var arr = Array(s.characters) // char array
+
+Char Set: 
+
+    let vowelSet: Set<Character> = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
+
 
