@@ -1,6 +1,7 @@
 Swift Coding Basic 
 
 String:
+
 	length = str.characters.count
 	<String Indices>
 	char = str[str.startIndex] // first character
@@ -14,10 +15,13 @@ String:
     str.isEmpty()
 
 Int:
+
     Int.max // max_value
 
 Array:
+
     arr.sort{ $0.name < $1.name } // sorted array of string 
+    arr.sorted()
     arr.insert("add", atIndex: 1)
     arr.removeFirst()
     arr.removeLast()
@@ -27,6 +31,7 @@ Array:
     arr.contains(ch) // arr contain char value
 
 For Loop:
+
     for i in 0...10 { ... } // 0,1,...,10
     for i in 0..<10 { ... } // 0,1,...,9
 
