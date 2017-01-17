@@ -19,6 +19,12 @@ String:
     s = s.substring(to: str.index(before: str.endIndex)) // string without last character
     b = str.hasPrefix("")
     b = str.isEmpty()
+    Inserting And Removing:
+        str.insert("i", at: str.startIndex) // insert single char
+        str.insert(contentsOf: "best".characters, at: str.index(before:str.endIndex)) // insert contents of another string
+        str.remove(at: str.index(before: str.endIndex)) // remove last char
+        let range = str.index(str.endIndex, offsetBy: -6)..<str.endIndex
+        str.removeSubrange(range) // remove 6 chars
 
 Int:
 
@@ -40,6 +46,7 @@ For Loop:
 
     for i in 0...10 { ... } // 0,1,...,10
     for i in 0..<10 { ... } // 0,1,...,9
+    for (index, num) in nums.enumerated() { ... }
 
 String -> Array:
     
