@@ -1,10 +1,9 @@
 
 | Number | Title                              | AC Rate | Difficulty |
 | ------ |:----------------------------------:| -------:|:----------:|
-| 283    |    Move Zeroes                     | 47.7%   |    Easy    |   
-| 325    |  Maximum Size Subarray Sum Equals k| 41.6%   |   Medium   |
-     
-301        Remove Invalid Parentheses        34.6%        Hard        
+| 283    | [Move Zeroes](../Move_Zeroes.swift)   | 47.7%   |    Easy    |   
+| 325 (L)|  Maximum Size Subarray Sum Equals k| 41.6%   |   Medium   | 
+| 301    |    Remove Invalid Parentheses      | 34.6%   |    Hard    |    
 311        Sparse Matrix Multiplication         50.5%        Medium        
 314        Binary Tree Vertical Order Traversal         35.3%        Medium        
 67        Add Binary        30.4%        Easy        
