@@ -4,11 +4,11 @@
 | 283    | [Move Zeroes](Move_Zeroes.swift)   | 47.7%   |    Easy    |   
 | 325 (L)|  Maximum Size Subarray Sum Equals k| 41.6%   |   Medium   | 
 | 301    |    Remove Invalid Parentheses      | 34.6%   |    Hard    |    
-| 311 (L)| Sparse Matrix Multiplication       | 50.5%   |   Medium   |  
-|67      |  Add Binary                        | 30.4%   |    Easy    |      
-|278     |        First Bad Version            |  24.3%  |    Easy    |        
-157        Read N Characters Given Read4         29.4%        Easy        
-257        Binary Tree Paths        34.7%        Easy        
+| 311 (L)| Sparse Matrix Multiplication             | 50.5%   |   Medium   |  
+|67      | [Add Binary] (Add_Binary.swift)             | 30.4%   |    Easy    |      
+|278(Un) |[First Bad Version](First_Bad_Version.swift)|  24.3%  |    Easy    | 
+|157(Un) | Read N Characters Given Read4              |  29.4%  |    Easy    |
+|257(Un) |[Binary Tree Paths](Binary_Tree_Paths.swift)|  34.7%  |    Easy    |
 121        Best Time to Buy and Sell Stock        39.1%        Easy        
 1        Two Sum        29.8%        Easy        
 125        Valid Palindrome        25.3%        Easy        
