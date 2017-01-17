@@ -1,7 +1,7 @@
 
 | Number | Title                              | AC Rate | Difficulty |
 | ------ |:----------------------------------:| -------:|:----------:|
-| 283    | [Move Zeroes](../Move_Zeroes.swift)   | 47.7%   |    Easy    |   
+| 283    | [Move Zeroes](Move_Zeroes.swift)   | 47.7%   |    Easy    |   
 | 325 (L)|  Maximum Size Subarray Sum Equals k| 41.6%   |   Medium   | 
 | 301    |    Remove Invalid Parentheses      | 34.6%   |    Hard    |    
 311        Sparse Matrix Multiplication         50.5%        Medium        
