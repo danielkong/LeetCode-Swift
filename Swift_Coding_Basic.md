@@ -15,6 +15,7 @@ String:
 	char = str[str.index(str.startIndex, offsetBy: 3)] // 4th character
     char = str.characters.first // return first Char. == "A" true
     char = str.characters.last 
+    char == "[" // character comparing also could use "=="
     arr = Array(str.characters) // Array<Character>
     s = s.substring(to: str.index(before: str.endIndex)) // string without last character
     b = str.hasPrefix("")
