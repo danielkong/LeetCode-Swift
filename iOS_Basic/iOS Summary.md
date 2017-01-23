@@ -119,4 +119,6 @@ iOS知识点小结
 
 # [Submitting App to Store](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html)
 
+    [raywenderlich link](https://www.raywenderlich.com/127936/submit-an-app-part-1)
+
 
