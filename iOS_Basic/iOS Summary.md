@@ -117,3 +117,6 @@ iOS知识点小结
                     object:nil];
             ```
 
+# [Submitting App to Store](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html)
+
+
