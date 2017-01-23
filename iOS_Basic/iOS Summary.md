@@ -23,7 +23,7 @@ iOS知识点小结
 2. NSDistributedNotificationCenter (multiple threads) _Deliver notifcations on the main thread_
 
     ![alt text][notificationQueue]
-    [notificationQueue]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/notificationQueue.png
+[notificationQueue]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/notificationQueue.png
 
     * Each notification center/thread could have multiple notification queues.
 
