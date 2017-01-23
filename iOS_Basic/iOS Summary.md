@@ -3,7 +3,9 @@ iOS
 iOS知识点小结
 * https://cnbin.github.io/blog/2016/03/23/ioszhi-shi-dian-xiao-jie/
 * NSNotification
+
 ** NSNotificationCenter // single thread
+
 *** sync will block sending methods. If async send, use "notification queue".
 Send Methods:
 ```
@@ -17,6 +19,7 @@ Register Methods:
 - (void)removeObserver:(id)observer;
 - (void)removeObserver:(id)observer name:(NSString *)aName object:(id)anObject;
 ```
+
 ** NSDistributedNotificationCenter // multiple threads
 
 ![alt text][notificationQueue]
