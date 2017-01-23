@@ -9,18 +9,18 @@ iOS知识点小结
 
   * sync will block sending methods. If async send, use "notification queue".
 
-Send Methods:
-```
-- (void)postNotification:(NSNotification *)notification;
-- (void)postNotificationName:(NSString *)aName object:(id)anObject;
-- (void)postNotificationName:(NSString *)aName object:(id)anObject userInfo:(NSDictionary *)aUserInfo;
-```
-Register Methods:
-```
-- (void)addObserver:(id)observer selector:(SEL)aSelector name:(NSString *)aName object:(id)anObject;
-- (void)removeObserver:(id)observer;
-- (void)removeObserver:(id)observer name:(NSString *)aName object:(id)anObject;
-```
+    Send Methods:
+    ```
+    - (void)postNotification:(NSNotification *)notification;
+    - (void)postNotificationName:(NSString *)aName object:(id)anObject;
+    - (void)postNotificationName:(NSString *)aName object:(id)anObject userInfo:(NSDictionary *)aUserInfo;
+    ```
+    Register Methods:
+    ```
+    - (void)addObserver:(id)observer selector:(SEL)aSelector name:(NSString *)aName object:(id)anObject;
+    - (void)removeObserver:(id)observer;
+    - (void)removeObserver:(id)observer name:(NSString *)aName object:(id)anObject;
+    ```
 
 2. NSDistributedNotificationCenter // multiple threads
 
@@ -30,7 +30,7 @@ Register Methods:
   * Each notification center/thread could have multiple notification queues.
 
 ```
- - (void)enqueueNotification:(NSNotification *)notification postingStyle:(NSPostingStyle)postingStyle;
+- (void)enqueueNotification:(NSNotification *)notification postingStyle:(NSPostingStyle)postingStyle;
 - (void)enqueueNotification:(NSNotification *)notification postingStyle:(NSPostingStyle)postingStyle coalesceMask:(NSUInteger)coalesceMask forModes:(NSArray *)modes;
 ```
 
