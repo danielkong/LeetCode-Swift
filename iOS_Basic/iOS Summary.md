@@ -88,6 +88,7 @@ iOS知识点小结
             }
             ```
         - test whether current thread, if wrong, *store it in a queue* and *send a singal to correct thread*, indicating that a notification needs processing.
+
             ```
             - (void)processNotification:(NSNotification *)notification {
                 if ([NSThread currentThread] != notificationThread) {
@@ -106,6 +107,7 @@ iOS知识点小结
             }
             ```
         - *Other thread* reveives the signal, *removes* the notif from the queue and process notification.
+
             ```
             [self setupThreadingSupport];
             [[NSNotificationCenter defaultCenter]
