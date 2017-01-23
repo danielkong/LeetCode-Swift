@@ -5,9 +5,9 @@ iOS知识点小结
 
 # NSNotification
 
-## NSNotificationCenter // single thread
+1. NSNotificationCenter // single thread
 
-### sync will block sending methods. If async send, use "notification queue".
+  * sync will block sending methods. If async send, use "notification queue".
 Send Methods:
 ```
 - (void)postNotification:(NSNotification *)notification;
@@ -21,7 +21,7 @@ Register Methods:
 - (void)removeObserver:(id)observer name:(NSString *)aName object:(id)anObject;
 ```
 
-## NSDistributedNotificationCenter // multiple threads
+2. NSDistributedNotificationCenter // multiple threads
 
 ![alt text][notificationQueue]
 [notificationQueue]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/notificationQueue.png
