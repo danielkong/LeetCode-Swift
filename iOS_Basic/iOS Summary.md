@@ -18,5 +18,8 @@ Register Methods:
 - (void)removeObserver:(id)observer name:(NSString *)aName object:(id)anObject;
 ```
 ** NSDistributedNotificationCenter // multiple threads
+
 ![alt text][notificationQueue]
+[notificationQueue]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/notificationQueue.png
+
 
