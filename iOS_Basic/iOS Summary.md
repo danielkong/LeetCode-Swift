@@ -107,7 +107,7 @@ iOS知识点小结
                 }
             }
             ```
-        - *Other thread* reveives the signal, *removes* the notif from the queue and process notification.
+        - *Other thread* reviews the signal, *removes* the notif from the queue and process notification.
 
             ```
             [self setupThreadingSupport];
@@ -129,10 +129,10 @@ iOS知识点小结
     * Generate **push notification certificates**
 
 2. iTunes Connect
-    * use to submit an app. 
-        -  register a new app
-        -  enter the app’s description and screenshots
-        -  choose the price
-        -  configure game center
-        -  in-app purchases
+    * Use to submit an app.
+        -  Register a new app
+        -  Enter the app’s description and screenshots
+        -  Choose the price
+        -  Configure game center
+        -  In-app purchases
 
