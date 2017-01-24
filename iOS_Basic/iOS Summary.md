@@ -2,6 +2,7 @@ iOS知识点小结
 * https://cnbin.github.io/blog/2016/03/23/ioszhi-shi-dian-xiao-jie/
 
 # [NSNotification with link](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Notifications/Articles/Notifications.html#//apple_ref/doc/uid/20000215-BCICIHGE)
+## [iOS Push notification](http://www.jianshu.com/p/a70b77cbdfd2)
 
 1. NSNotificationCenter (single thread) _Deliver notifications on the thread in which the notification was posted._
 
@@ -121,4 +122,17 @@ iOS知识点小结
 
 [raywenderlich link](https://www.raywenderlich.com/127936/submit-an-app-part-1)
 
+1. Certificates, IDs & Profiles
+    * Generate profiles(called "code signing identites" as well)
+        - Development profiles _(tie to specific devices)_
+        - Distribution profiles _(sign your app before submitting to Apple)_
+    * Generate **push notification certificates**
+
+2. iTunes Connect
+    * use to submit an app. 
+        -  register a new app
+        -  enter the app’s description and screenshots
+        -  choose the price
+        -  configure game center
+        -  in-app purchases
 
