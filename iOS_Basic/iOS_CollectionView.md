@@ -109,3 +109,12 @@ _First intro in iOS 8_
 
 ## UIRefreshControl
 
+1. Consider as CollectionView attribute now, do not in UICollectionViewController any more. 
+```
+    let refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: #selector(refreshControlDidFire(_:)),
+                             for: .valueChanged)
+    collectionView.refreshControl = refreshControl
+```
+
+
