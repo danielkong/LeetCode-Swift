@@ -2,9 +2,9 @@ iOS CollectionView
 
 # What's new in iOS 10 CollectionView?
 
-* Smoothly scrolling
-* self-sizing
-* Interactive re-ordering
+* [Smoothly scrolling](#Life cycle of UICollectionViewCell)
+* [self-sizing](#Self-sizing improvement)
+* [Interactive reordering](#Interactive Reordering)
 
 # Life cycle of UICollectionViewCell
 
@@ -52,7 +52,8 @@ class UICollectionView : UIScrollView {
 3. If user slow scroll, or even reverse scroll/clicking action. call cancelPrefetchingAPI
 4. BTW, also could use in tableView. **UITableViewDataSourcePrefetching** 
 
-# self-sizing improvement. _First intro in iOS 8_
+# Self-sizing improvement
+_First intro in iOS 8_
 
 1. UICollectionViewFlowLayout already support `self-sizing`. Use `estimatedItemSize` to trigger dynamic calculation layout. 
     ```
@@ -64,9 +65,11 @@ class UICollectionView : UIScrollView {
 
 2. In iOS 10, we could use `layout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize`. 
 
-iOS 9 selfsizing: ![alt text][selfsizing_iOS9]
+    iOS 9 selfsizing: 
+    ![alt text][selfsizing_iOS9]
 
-iOS 10 selfsizing: ![alt text][selfsizing_iOS10]
+    iOS 10 selfsizing: 
+    ![alt text][selfsizing_iOS10]
 [selfsizing_iOS9]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/selfsizing_iOS9.gif
 [selfsizing_iOS10]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/selfsizing_iOS10.gif
 
@@ -74,6 +77,7 @@ iOS 10 selfsizing: ![alt text][selfsizing_iOS10]
 
 1. In iOS 9, introducing interactive reordering. In iOS 10, enhanced.
     * iOS 9, we need call following method:
+    
     ```
     class UICollectionView : UIScrollView {
         func beginInteractiveMovementForItem(at indexPath: NSIndexPath) -> Bool
@@ -91,11 +95,17 @@ iOS 10 selfsizing: ![alt text][selfsizing_iOS10]
     }
     ```
 
-iOS 9 selfsizing: 
-![alt text][interactive_reordering]
+    iOS 9 Interactive reordering: 
+    ![alt text][interactive_reordering]
 
-iOS 10 selfsizing: 
-![alt text][collectionView_isPagingEnabledTrue]
+    iOS 10 pageing enable as false:
+    ![alt text][collectionView_isPagingEnableFalse]
+
+    iOS 10 pageing enable as true: 
+    ![alt text][collectionView_isPagingEnabledTrue]
 [interactive_reordering]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/interactive_reordering.gif
 [collectionView_isPagingEnableFalse]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/collectionView_isPagingEnableFalse.gif
 [collectionView_isPagingEnabledTrue]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/collectionView_isPagingEnabledTrue.gif
+
+# UIRefreshControl
+
