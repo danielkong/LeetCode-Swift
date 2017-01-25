@@ -2,7 +2,7 @@ iOS CollectionView
 
 # What's new in iOS 10 CollectionView?
 
-* [Smoothly scrolling](#Life-cycle-of-UICollectionViewCell)
+* [Smoothly scrolling](#life-cycle-of-uicollectionviewcell)
 * [self-sizing](#self-sizing-improvement)
 * [Interactive reordering](# Interactive-Reordering)
 
