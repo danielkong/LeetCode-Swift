@@ -12,6 +12,25 @@ iOS CollectionView
 * cellFOrItemAtIndexPath
 * willDisplayCell
 * didEndDisplayingCell
+iOS 9 life cycle of cell: 
+![alt text][Life_Cycle_CollectionView_Cell_iOS9_p]
+![alt text][Life_Cycle_CollectionView_Cell_iOS9_c]
+![alt text][Life_Cycle_CollectionView_Cell_iOS9_w]
+![alt text][Life_Cycle_CollectionView_Cell_iOS9_e]
+
+iOS 10 life cycle of cell: 
+![alt text][Life_Cycle_CollectionView_Cell_iOS10_p]
+![alt text][Life_Cycle_CollectionView_Cell_iOS10_c]
+![alt text][Life_Cycle_CollectionView_Cell_iOS10_w]
+![alt text][Life_Cycle_CollectionView_Cell_iOS10_e]
+[Life_Cycle_CollectionView_Cell_iOS9_p]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS9_p.png
+[Life_Cycle_CollectionView_Cell_iOS9_c]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS9_c.png
+[Life_Cycle_CollectionView_Cell_iOS9_w]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS9_w.png
+[Life_Cycle_CollectionView_Cell_iOS9_e]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS9_e.png
+[Life_Cycle_CollectionView_Cell_iOS10_p]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS10_p.png
+[Life_Cycle_CollectionView_Cell_iOS10_c]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS10_c.png
+[Life_Cycle_CollectionView_Cell_iOS10_w]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS10_w.png
+[Life_Cycle_CollectionView_Cell_iOS10_e]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS10_e.png
 
 # New datasource -- prefetchDataSource in iOS 10
 ```
@@ -43,8 +62,8 @@ class UICollectionView : UIScrollView {
     * preferredlayoutAttributesFittingAttributes()
 
 2. In iOS 10, we could use `layout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize`. 
-    ![alt text][selfsizing_iOS9]
-    ![alt text][selfsizing_iOS10]
-[selfsizing_iOS9]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/notificationQueue.png
-[selfsizing_iOS10]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/notificationQueue.png
+    iOS 9 selfsizing: ![alt text][selfsizing_iOS9]
+    iOS 10 selfsizing: ![alt text][selfsizing_iOS10]
+[selfsizing_iOS9]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/selfsizing_iOS9.gif
+[selfsizing_iOS10]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/selfsizing_iOS10.gif
 
