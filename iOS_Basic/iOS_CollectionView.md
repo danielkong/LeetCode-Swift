@@ -74,25 +74,28 @@ iOS 10 selfsizing: ![alt text][selfsizing_iOS10]
 
 1. In iOS 9, introducing interactive reordering. In iOS 10, enhanced.
     * iOS 9, we need call following method:
-```
-class UICollectionView : UIScrollView {
-    func beginInteractiveMovementForItem(at indexPath: NSIndexPath) -> Bool
-    func updateInteractiveMovementTargetPosition(_ targetPosition: CGPoint)
-    func endInteractiveMovement()
-    func cancelInteractiveMovement()
-}
-```
+    ```
+    class UICollectionView : UIScrollView {
+        func beginInteractiveMovementForItem(at indexPath: NSIndexPath) -> Bool
+        func updateInteractiveMovementTargetPosition(_ targetPosition: CGPoint)
+        func endInteractiveMovement()
+        func cancelInteractiveMovement()
+    }
+    ```
 
     * iOS 10, we have `installsStandardGestureForInteractiveMovement` and it will call above func automatically. And one more thing is `collectionView.isPagingEnabled = true`.
-```
-class UICollectionViewController : UIViewController {
-    var installsStandardGestureForInteractiveMovement: Bool
-}
-```
+    
+    ```
+    class UICollectionViewController : UIViewController {
+        var installsStandardGestureForInteractiveMovement: Bool
+    }
+    ```
 
-iOS 9 selfsizing: ![alt text][interactive_reordering]
+iOS 9 selfsizing: 
+![alt text][interactive_reordering]
 
-iOS 10 selfsizing: ![alt text][collectionView_isPagingEnabledTrue]
+iOS 10 selfsizing: 
+![alt text][collectionView_isPagingEnabledTrue]
 [interactive_reordering]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/interactive_reordering.gif
 [collectionView_isPagingEnableFalse]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/collectionView_isPagingEnableFalse.gif
 [collectionView_isPagingEnabledTrue]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/collectionView_isPagingEnabledTrue.gif
