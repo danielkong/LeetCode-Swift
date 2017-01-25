@@ -4,7 +4,7 @@ iOS CollectionView
 
 * [Smoothly scrolling](#life-cycle-of-uicollectionviewcell)
 * [self-sizing](#self-sizing-improvement)
-* [Interactive reordering](# interactive-reordering)
+* [Interactive reordering](#interactive-reordering)
 
 ## Life cycle of UICollectionViewCell
 
