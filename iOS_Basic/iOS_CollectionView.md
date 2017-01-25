@@ -6,7 +6,7 @@ iOS CollectionView
 * [self-sizing](#Self-sizing-improvement)
 * [Interactive reordering](# Interactive-Reordering)
 
-# Life cycle of UICollectionViewCell
+## Life cycle of UICollectionViewCell
 
 * prepareForReuse
 * cellFOrItemAtIndexPath
@@ -33,7 +33,7 @@ iOS 10 life cycle of cell:
 [Life_Cycle_CollectionView_Cell_iOS10_w]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/Life_Cycle_CollectionView_Cell_iOS10_w.png
 [Life_Cycle_CollectionView_Cell_iOS10_e]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/Life_Cycle_CollectionView_Cell_iOS10_e.png
 
-# New datasource -- prefetchDataSource in iOS 10
+## New datasource -- prefetchDataSource in iOS 10
 ```
 protocol UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView,
@@ -52,7 +52,7 @@ class UICollectionView : UIScrollView {
 3. If user slow scroll, or even reverse scroll/clicking action. call cancelPrefetchingAPI
 4. BTW, also could use in tableView. **UITableViewDataSourcePrefetching** 
 
-# Self-sizing improvement
+## Self-sizing improvement
 _First intro in iOS 8_
 
 1. UICollectionViewFlowLayout already support `self-sizing`. Use `estimatedItemSize` to trigger dynamic calculation layout. 
@@ -73,7 +73,7 @@ _First intro in iOS 8_
 [selfsizing_iOS9]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/selfsizing_iOS9.gif
 [selfsizing_iOS10]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/selfsizing_iOS10.gif
 
-# Interactive Reordering
+## Interactive Reordering
 
 1. In iOS 9, introducing interactive reordering. In iOS 10, enhanced.
     * iOS 9, we need call following method:
@@ -107,5 +107,5 @@ _First intro in iOS 8_
 [collectionView_isPagingEnableFalse]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/collectionView_isPagingEnableFalse.gif
 [collectionView_isPagingEnabledTrue]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/collectionView_isPagingEnabledTrue.gif
 
-# UIRefreshControl
+## UIRefreshControl
 
