@@ -127,6 +127,19 @@ iOS知识点小结
         - Development profiles _(tie to specific devices)_
         - Distribution profiles _(sign your app before submitting to Apple)_
     * Generate **push notification certificates**
+    * How to set up information?
+        - Automatic Device Provisioning (Worldwide Developer Relations CA)
+        - Manually
+            + Generate Cert. _KeyChain Access -> Request Certificate From Certificate Authority with email_
+            + Upload CSR（Certificate Signing Request）file
+            + Register devices with UUID
+            + Create App IDs (bundle ID)
+                - **Wildcard App ID** could let all your apps share same seed prefix, they'll share keychain information. Such as, “com.domainname.*”.
+                - **Explitcit App ID**(bundle ID unique) incorporate services, such as in-app purchases or iCloud, notification. Such as, “com.domainname.appname”.
+                - Recommends "reverse-domain name style string" for bundle ID.
+                - If want change from Wildcard App ID to explicit, it's impossible.
+            + Provisioning profile (Development/Distribution), then open them
+            + Open project and change the code signing
 
 2. iTunes Connect
     * Use to submit an app.
