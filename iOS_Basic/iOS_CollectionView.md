@@ -24,14 +24,14 @@ iOS 10 life cycle of cell:
 ![alt text][Life_Cycle_CollectionView_Cell_iOS10_c]
 ![alt text][Life_Cycle_CollectionView_Cell_iOS10_w]
 ![alt text][Life_Cycle_CollectionView_Cell_iOS10_e]
-[Life_Cycle_CollectionView_Cell_iOS9_p]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS9_p.png
-[Life_Cycle_CollectionView_Cell_iOS9_c]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS9_c.png
-[Life_Cycle_CollectionView_Cell_iOS9_w]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS9_w.png
-[Life_Cycle_CollectionView_Cell_iOS9_e]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS9_e.png
-[Life_Cycle_CollectionView_Cell_iOS10_p]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS10_p.png
-[Life_Cycle_CollectionView_Cell_iOS10_c]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS10_c.png
-[Life_Cycle_CollectionView_Cell_iOS10_w]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS10_w.png
-[Life_Cycle_CollectionView_Cell_iOS10_e]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Life_Cycle_CollectionView_Cell_iOS10_e.png
+[Life_Cycle_CollectionView_Cell_iOS9_p]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/Life_Cycle_CollectionView_Cell_iOS9_p.png
+[Life_Cycle_CollectionView_Cell_iOS9_c]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/Life_Cycle_CollectionView_Cell_iOS9_c.png
+[Life_Cycle_CollectionView_Cell_iOS9_w]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/Life_Cycle_CollectionView_Cell_iOS9_w.png
+[Life_Cycle_CollectionView_Cell_iOS9_e]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/Life_Cycle_CollectionView_Cell_iOS9_e.png
+[Life_Cycle_CollectionView_Cell_iOS10_p]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/Life_Cycle_CollectionView_Cell_iOS10_p.png
+[Life_Cycle_CollectionView_Cell_iOS10_c]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/Life_Cycle_CollectionView_Cell_iOS10_c.png
+[Life_Cycle_CollectionView_Cell_iOS10_w]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/Life_Cycle_CollectionView_Cell_iOS10_w.png
+[Life_Cycle_CollectionView_Cell_iOS10_e]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/Life_Cycle_CollectionView_Cell_iOS10_e.png
 
 # New datasource -- prefetchDataSource in iOS 10
 ```
@@ -63,8 +63,36 @@ class UICollectionView : UIScrollView {
     * preferredlayoutAttributesFittingAttributes()
 
 2. In iOS 10, we could use `layout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize`. 
-    iOS 9 selfsizing: ![alt text][selfsizing_iOS9]
-    iOS 10 selfsizing: ![alt text][selfsizing_iOS10]
-[selfsizing_iOS9]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/selfsizing_iOS9.gif
-[selfsizing_iOS10]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/selfsizing_iOS10.gif
 
+iOS 9 selfsizing: ![alt text][selfsizing_iOS9]
+
+iOS 10 selfsizing: ![alt text][selfsizing_iOS10]
+[selfsizing_iOS9]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/selfsizing_iOS9.gif
+[selfsizing_iOS10]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/selfsizing_iOS10.gif
+
+# Interactive Reordering
+
+1. In iOS 9, introducing interactive reordering. In iOS 10, enhanced.
+    * iOS 9, we need call following method:
+```
+class UICollectionView : UIScrollView {
+    func beginInteractiveMovementForItem(at indexPath: NSIndexPath) -> Bool
+    func updateInteractiveMovementTargetPosition(_ targetPosition: CGPoint)
+    func endInteractiveMovement()
+    func cancelInteractiveMovement()
+}
+```
+
+    * iOS 10, we have `installsStandardGestureForInteractiveMovement` and it will call above func automatically. And one more thing is `collectionView.isPagingEnabled = true`.
+```
+class UICollectionViewController : UIViewController {
+    var installsStandardGestureForInteractiveMovement: Bool
+}
+```
+
+iOS 9 selfsizing: ![alt text][interactive_reordering]
+
+iOS 10 selfsizing: ![alt text][collectionView_isPagingEnabledTrue]
+[interactive_reordering]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/interactive_reordering.gif
+[collectionView_isPagingEnableFalse]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/collectionView_isPagingEnableFalse.gif
+[collectionView_isPagingEnabledTrue]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/collectionView_isPagingEnabledTrue.gif
