@@ -12,6 +12,7 @@ iOS CollectionView
 * cellFOrItemAtIndexPath
 * willDisplayCell
 * didEndDisplayingCell
+
 iOS 9 life cycle of cell: 
 ![alt text][Life_Cycle_CollectionView_Cell_iOS9_p]
 ![alt text][Life_Cycle_CollectionView_Cell_iOS9_c]
