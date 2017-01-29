@@ -51,10 +51,12 @@ For Loop:
 
 String -> Array:
     
-    var arr = Array(s.characters) // char array
+    var arr = Array(s.characters) // char array， otherwise CharacterElement
+
 
 Char Set: 
 
     let vowelSet: Set<Character> = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
 
-
+Tree
+[Binary Tree in Swift](http://lincode.github.io/LeetCode-Binary-Tree)
