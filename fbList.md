@@ -9,12 +9,13 @@
 |278(Un) |[First Bad Version](First_Bad_Version.swift)|  24.3%  |    Easy    | 
 |157(Un) | Read N Characters Given Read4              |  29.4%  |    Easy    |
 |257(Un) |[Binary Tree Paths](Binary_Tree_Paths.swift)|  34.7%  |    Easy    |
-121        Best Time to Buy and Sell Stock        39.1%        Easy        
-1        Two Sum        29.8%        Easy        
-125        Valid Palindrome        25.3%        Easy        
-206        Reverse Linked List        43.4%        Easy        
-252        Meeting Rooms         45.3%        Easy        
-38        Count and Say        32.5%        Easy        
+|121     |[Best Time to Buy and Sell Stock](Best_Time_to_Buy_and_Sell Stock.swift)|39.1%|Easy|      
+|1       |[Two Sum](Two_Sum.swift)       | 29.8%      |  Easy |       
+|125     |   [Valid Palindrome](Valid_Palindrome.swift)|   25.3%   | Easy |
+|206     |   [Reverse Linked List](Reverse_Linked_List.swift) |43.4% | Easy |  
+|252     |   [Meeting Rooms](Meeting_Rooms.swift)        | 45.3%    |    Easy| 
+|38      |   [Count and Say](Count_and_Say.swift)        |32.5%    |    Easy  |
+
 13        Roman to Integer        43.4%        Easy        
 28        Implement strStr()        26.9%        Easy        
 102        Binary Tree Level Order Traversal        36.9%        Easy        
