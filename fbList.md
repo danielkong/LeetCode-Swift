@@ -4,8 +4,8 @@
 | 283    | [Move Zeroes](Move_Zeroes.swift)   | 47.7%   |    Easy    |   
 | 325 (L)|  Maximum Size Subarray Sum Equals k| 41.6%   |   Medium   | 
 | 301    |    Remove Invalid Parentheses      | 34.6%   |    Hard    |    
-| 311 (L)| Sparse Matrix Multiplication             | 50.5%   |   Medium   |  
-|67      | [Add Binary] (Add_Binary.swift)             | 30.4%   |    Easy    |      
+| 311 (L)| Sparse Matrix Multiplication       | 50.5%   |   Medium   |  
+|67      | [Add Binary] (Add_Binary.swift)    | 30.4%   |    Easy    |      
 |278(Un) |[First Bad Version](First_Bad_Version.swift)|  24.3%  |    Easy    | 
 |157(Un) | Read N Characters Given Read4              |  29.4%  |    Easy    |
 |257(Un) |[Binary Tree Paths](Binary_Tree_Paths.swift)|  34.7%  |    Easy    |
@@ -21,14 +21,14 @@
 |235     |[Lowest Common Ancestor of a Binary Search Tree](Lowest_Common_Ancestor_of_a_Binary_Search_Tree.swift)| 38.1%   | Easy  |
 |88      |[Merge Sorted Array](Merge_Sorted_Array.swift) |31.4%  |Easy   |   
 |20      |[Valid Parentheses](Valid_Parentheses.swift)   | 32.1% | Easy |     
-|234     |[Palindrome Linked List](Palindrome_Linked_List.swift) |31.6% | Easy|
-|26      |  Remove Duplicates from Sorted Array  |35.3%|Easy|        
-461        Hamming Distance        73.0%        Easy        
-168        Excel Sheet Column Title        24.4%        Easy        
-404        Sum of Left Leaves        45.7%        Easy   
+|234     |[Palindrome Linked List](Palindrome_Linked_List.swift) |31.6% |Easy|
+|26|[Remove Duplicates from Sorted Array](Remove_Duplicates_from_Sorted_Array.swift)  |35.3%|Easy|        
+|461     |[Hamming Distance](Hamming_Distance.swift) | 73.0%  |Easy |       
+|168     |[Excel Sheet Column Title](Excel_Sheet_Column_Title.swift)| 24.4%   |Easy|        
+|404     |[Sum of Left Leaves](Sum_of_Left_Leaves.swift)| 45.7% | Easy |
 
 
-314        Binary Tree Vertical Order Traversal         35.3%        Medium   
+|314 |        Binary Tree Vertical Order Traversal     | 35.3%  |  Medium | 
 17        Letter Combinations of a Phone Number        32.4%        Medium    
 253        Meeting Rooms II         38.2%        Medium        
 91        Decode Ways        18.8%        Medium        
