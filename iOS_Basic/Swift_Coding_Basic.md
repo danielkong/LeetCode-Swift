@@ -70,4 +70,4 @@ Swift Only Functions:
 
 2.flatmap()
     
-    [](Swift_Coding_Basic/flatMap)
+    [](https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Swift_Coding_Basic/flatMap)
