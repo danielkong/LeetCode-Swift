@@ -62,16 +62,28 @@ Tree
 [Binary Tree in Swift](http://lincode.github.io/LeetCode-Binary-Tree)
 
 Swift Only Functions:
-1. map
+1. `map`
 
     func lengthOf(strings: [Strings]) -> [Int] {
         return strings.map { $0.characters.count }
     } 
 
-2.flatmap()
+2.`flatmap()`
     - Remove `nil` in array
     - Flat nested array into array
 
 ![alt text][flatMap]
 [flatMap]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Swift_Coding_Basic_Attachment/flatMap.png
+
+    let files = (1...10).flatMap { try? String(contentsOfFile: "someFile-\($0).txt")}
+
+3. `filter()`
+4. `reduce()
+    
+    scores = [100, 89, 98]
+    let sum = scores.reduce(0, +)
+    let res = scores.reduce("") { $0 + String($1) }
+    
+
+
 
