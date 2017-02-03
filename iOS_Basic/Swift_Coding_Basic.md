@@ -69,5 +69,5 @@ Swift Only Functions:
     } 
 
 2.flatmap()
-    
-    [](https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Swift_Coding_Basic_Attachment/flatMap.png)
+    ![alt text][flatMap]
+[flatMap](https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/Swift_Coding_Basic_Attachment/flatMap.png)
