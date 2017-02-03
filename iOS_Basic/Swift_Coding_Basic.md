@@ -60,3 +60,14 @@ Char Set:
 
 Tree
 [Binary Tree in Swift](http://lincode.github.io/LeetCode-Binary-Tree)
+
+Swift Only Functions:
+1. map
+
+    func lengthOf(strings: [Strings]) -> [Int] {
+        return strings.map { $0.characters.count }
+    } 
+
+2.flatmap()
+    
+    [](Swift_Coding_Basic/flatMap)
