@@ -1,4 +1,19 @@
 // 17 Letter Combinations of a Phone Number
+/**
+ * 
+ * Primary idea: Classic Depth-first Search, create phone board at first
+ * 
+ * Time Complexity: O(nm), m stands for the average size of a string represented by a number 
+ * Space Complexity: O(n)
+ *
+ */
+/**
+Given a digit string, return all possible letter combinations that the number could represent.
+A mapping of digit to letters (just like on the telephone buttons) is given below.
+
+Input:Digit string "23"
+Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+*/
 
 // Solution: Java
 	public void helper(List<String> result, StringBuilder sb, String digits, int index, HashMap<Character, char[]> map){
@@ -6,8 +21,10 @@
 	        result.add(sb.toString());
 	        return;
 	    }
+
 		char c = digits.charAt(index);
-	    char[] arr = map.get(c);
+		char[] arr = map.get(c);
+		
 		for(int i=0; i<arr.length; i++){
 	        sb.append(arr[i]);
 	        helper(result, sb, digits, index+1, map);
@@ -29,17 +46,17 @@ class Solution {
     }
 
     private func initDict() -> [Character: [Character]] {
-            var dict = [Character: [Character]]()
-            dict["2"] = ["a", "b", "c"]
-            dict["3"] = ["d", "e", "f"]
-            dict["4"] = ["g", "h", "i"]
-            dict["5"] = ["j", "k", "l"]
-            dict["6"] = ["m", "n", "o"]
-            dict["7"] = ["p", "q", "r", "s"]
-            dict["8"] = ["t", "u", "v"]
-            dict["9"] = ["w", "x", "y", "z"]
-            
-            return dict
+        var dict = [Character: [Character]]()
+        dict["2"] = ["a", "b", "c"]
+        dict["3"] = ["d", "e", "f"]
+        dict["4"] = ["g", "h", "i"]
+        dict["5"] = ["j", "k", "l"]
+        dict["6"] = ["m", "n", "o"]
+        dict["7"] = ["p", "q", "r", "s"]
+        dict["8"] = ["t", "u", "v"]
+        dict["9"] = ["w", "x", "y", "z"]
+        
+        return dict
     }
     
     private func helper(_ str: String, _ dict: [Character: [Character]], _ chars: [Character], _ atIndex: Int) -> Void {
