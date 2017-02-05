@@ -26,10 +26,9 @@
 |461     |[Hamming Distance](Hamming_Distance.swift) | 73.0%  |Easy |       
 |168     |[Excel Sheet Column Title](Excel_Sheet_Column_Title.swift)| 24.4%   |Easy|        
 |404     |[Sum of Left Leaves](Sum_of_Left_Leaves.swift)| 45.7% | Easy |
+|314     |[Binary Tree Vertical Order Traversal](Binary_Tree_Vertical_Order_Traversal.swift)|35.3% |Medium| 
+|17  |[Letter Combinations of a Phone Number](Letter_Combinations_of_a_Phone_Number.swift)|32.4%|Medium|
 
-
-|314 |        Binary Tree Vertical Order Traversal     | 35.3%  |  Medium | 
-17        Letter Combinations of a Phone Number        32.4%        Medium    
 253        Meeting Rooms II         38.2%        Medium        
 91        Decode Ways        18.8%        Medium        
 15        3Sum        20.9%        Medium        
