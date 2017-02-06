@@ -33,6 +33,8 @@
 |15   |[3Sum](3Sum.swift)   | 20.9% | Medium |       
 |277  |[Find the Celebrity](Find_the_Celebrity.swift)| 35.6% | Medium |
 |161  |[One Edit Distance](One_Edit_Distance.swift) | 30.5%  | Medium |
+
+30
 200        Number of Islands        32.2%        Medium        
 285        Inorder Successor in BST         36.2%        Medium        
 211        Add and Search Word - Data structure design     20.1%        Medium
@@ -70,7 +72,7 @@
 
 
 
-
+20
 273        Integer to English Words        21.0%        Hard        
 10        Regular Expression Matching        23.5%        Hard        
 297        Serialize and Deserialize Binary Tree        31.5%        Hard     

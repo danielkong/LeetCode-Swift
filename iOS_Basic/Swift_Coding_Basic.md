@@ -78,12 +78,53 @@ Swift Only Functions:
     let files = (1...10).flatMap { try? String(contentsOfFile: "someFile-\($0).txt")}
 
 3. `filter()`
-4. `reduce()
+4. `reduce()`
     
     scores = [100, 89, 98]
     let sum = scores.reduce(0, +)
     let res = scores.reduce("") { $0 + String($1) }
+    let names = ["Taylor", "Paul", "Adele"]
+    let count = names.reduce(0) { $0 + $1.characters.count }
+    let longest = names.reduce("") { $1.characters.count > $0.characters.count ? $1 : $0 }
+    longest = names.max { $1.characters.count > $0.characters.count }
+
+OOP:
+    1. Abstraction
+    2. Encapsulation
+    3. Inheritance -- Composition (POP: Protocol Oriented Programming)
+    4. Polymorphism
+
+    protocol Payable {
+        func calculateWages() -> Int
+    }
+
+    extension Int {
+        func squared() -> Int { // -> Self // return what data type it used be
+            return self * self
+        }
+    }
+
+Example:
     
+    protocol Payable {
+        func calculateWages() -> Int
+    }
+    extension Payable {
+        func calcualteWages() -> Int {
+            return 10,000
+        }
+    }
+    protocol Employee: Payable, HasRestTime, NeedsTraining {}
+    struct Receptionist {}
+    struct Nurse {}
+    struct Doctor {}
+    extension Receptionist: Employee {}
+    extension Employee where Self: ProvidesTreatment {
+        func checkInsureance() {
+            print("I'm insured")
+        }
+    }
+
 
 
 
