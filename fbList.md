@@ -28,12 +28,11 @@
 |404     |[Sum of Left Leaves](Sum_of_Left_Leaves.swift)| 45.7% | Easy |
 |314     |[Binary Tree Vertical Order Traversal](Binary_Tree_Vertical_Order_Traversal.swift)|35.3% |Medium| 
 |17  |[Letter Combinations of a Phone Number](Letter_Combinations_of_a_Phone_Number.swift)|32.4%|Medium|
-
-253        Meeting Rooms II         38.2%        Medium        
-91        Decode Ways        18.8%        Medium        
-15        3Sum        20.9%        Medium        
-277        Find the Celebrity         35.6%        Medium        
-161        One Edit Distance         30.5%        Medium        
+|253  |[Meeting Rooms II]()|38.2%|Medium|
+|91   |[Decode Ways](Decode_Ways.swift) | 18.8%  |      Medium |
+|15   |[3Sum](3Sum.swift)   | 20.9% | Medium |       
+|277  |[Find the Celebrity](Find_the_Celebrity.swift)| 35.6% | Medium |
+|161  |[One Edit Distance](One_Edit_Distance.swift) | 30.5%  | Medium |
 200        Number of Islands        32.2%        Medium        
 285        Inorder Successor in BST         36.2%        Medium        
 211        Add and Search Word - Data structure design     20.1%        Medium
