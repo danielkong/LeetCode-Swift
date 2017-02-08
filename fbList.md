@@ -33,10 +33,10 @@
 |15   |[3Sum](3Sum.swift)   | 20.9% | Medium |       
 |277  |[Find the Celebrity](Find_the_Celebrity.swift)| 35.6% | Medium |
 |161  |[One Edit Distance](One_Edit_Distance.swift) | 30.5%  | Medium |
+|200  |[Number of Islands](Number_of_Islands.swift)| 32.2% | Medium |
+|285|[Inorder Successor in BST](Inorder_Successor_in_BST.swift)|36.2%| Medium|   
 
 30
-200        Number of Islands        32.2%        Medium        
-285        Inorder Successor in BST         36.2%        Medium        
 211        Add and Search Word - Data structure design     20.1%        Medium
 341        Flatten Nested List Iterator        38.6%        Medium        
 173        Binary Search Tree Iterator        38.9%        Medium        
