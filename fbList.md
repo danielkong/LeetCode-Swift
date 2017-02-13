@@ -43,8 +43,7 @@
 
 
 
-
-29
+26
 
 211        Add and Search Word - Data structure design     20.1%        Medium
 98        Validate Binary Search Tree        22.3%        Medium   
@@ -72,7 +71,6 @@
 80        Remove Duplicates from Sorted Array II        34.9%        Medium
 261        Graph Valid Tree         36.5%        Medium      
 477        Total Hamming Distance        44.8%        Medium 
-
 
 
 22
