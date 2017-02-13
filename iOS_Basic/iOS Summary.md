@@ -1,3 +1,9 @@
+# Content Menu
+
+* [Push Notification](#iOS-push-notificatio)
+* [Submitting App to Store](#submitting-app-to-store)
+
+
 iOS知识点小结
 * https://cnbin.github.io/blog/2016/03/23/ioszhi-shi-dian-xiao-jie/
 
@@ -118,7 +124,7 @@ iOS知识点小结
                     object:nil];
             ```
 
-# [Submitting App to Store](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html)
+## [Submitting App to Store](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html)
 
 [raywenderlich link](https://www.raywenderlich.com/127936/submit-an-app-part-1)
 
