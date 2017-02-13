@@ -34,15 +34,19 @@
 |277  |[Find the Celebrity](Find_the_Celebrity.swift)| 35.6% | Medium |
 |161  |[One Edit Distance](One_Edit_Distance.swift) | 30.5%  | Medium |
 |200  |[Number of Islands](Number_of_Islands.swift)| 32.2% | Medium |
-|285|[Inorder Successor in BST](Inorder_Successor_in_BST.swift)|36.2%| Medium|   
+|285|[Inorder Successor in BST](Inorder_Successor_in_BST.swift)|36.2%| Medium| |341 |[Flatten Nested List Iterator](Flatten_Nested_List_Iterator.swift)|38.6%|Medium |
+| 173 |       Binary Search Tree Iterator  |      38.9% |       Medium |     
+|  139  |      Word Break  |      28.2%   |     Medium   |
+|75 |[Sort Colors](Sort_Colors.swift)        |36.6%        |Medium  |
+|78 |[Subsets](Subsets.swift)|36.6%|Medium |
+|90|[Subsets II](Subsets_II.swift)|33.8%|Medium|        
 
-30
+
+
+
+29
+
 211        Add and Search Word - Data structure design     20.1%        Medium
-341        Flatten Nested List Iterator        38.6%        Medium        
-173        Binary Search Tree Iterator        38.9%        Medium        
-139        Word Break        28.2%        Medium        
-75        Sort Colors        36.6%        Medium        
-78        Subsets        36.6%        Medium        
 98        Validate Binary Search Tree        22.3%        Medium   
 236        Lowest Common Ancestor of a Binary Tree        29.3%        Medium 
 133        Clone Graph        25.0%        Medium        
@@ -54,7 +58,6 @@
 377        Combination Sum IV        41.6%        Medium        
 71        Simplify Path        24.0%        Medium        
 215        Kth Largest Element in an Array        37.4%        Medium   
-90        Subsets II        33.8%        Medium        
 208        Implement Trie (Prefix Tree)        25.6%        Medium
 334        Increasing Triplet Subsequence        37.8%        Medium        
 398        Random Pick Index        39.8%        Medium        
@@ -72,7 +75,7 @@
 
 
 
-20
+22
 273        Integer to English Words        21.0%        Hard        
 10        Regular Expression Matching        23.5%        Hard        
 297        Serialize and Deserialize Binary Tree        31.5%        Hard     

@@ -20,6 +20,10 @@ String:
     s = s.substring(to: str.index(before: str.endIndex)) // string without last character
     b = str.hasPrefix("")
     b = str.isEmpty()
+    let s = "www.stackoverflow.com"
+    let start = s.startIndex
+    let end = s.index(s.endIndex, offsetBy: -4)
+    let substring = s[start..<end] // www.stackoverflow
     Inserting And Removing:
         str.insert("i", at: str.startIndex) // insert single char
         str.insert(contentsOf: "best".characters, at: str.index(before:str.endIndex)) // insert contents of another string
@@ -125,6 +129,34 @@ Example:
         }
     }
 
+[Swift Iterator Protocol](https://developer.apple.com/reference/swift/iteratorprotocol)
 
+
+    for animal in animals { ... }
+    var animalIterator = animals.makeIterator()
+    while let animal = animalIterator.next() { ... }
+    Using Iterators Directly:
+    extension Sequence {
+        func reduce1(
+            _ nextPartialResult: (Iterator.Element, Iterator.Element) -> Iterator.Element
+        ) -> Iterator.Element?
+        {
+            var i = makeIterator()
+            guard var accumulated = i.next() else {
+                return nil
+            }
+            while let element = i.next() {
+                accumulated = nextPartialResult(accumulated, element)
+            }
+            return accumulated
+        }
+    }
+    let longestAnimal = animals.reduce1 { current, element in
+    if current.characters.count > element.characters.count {
+        return current
+    } else {
+        return element
+    }
+}
 
 
