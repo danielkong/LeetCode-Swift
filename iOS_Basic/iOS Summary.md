@@ -1,6 +1,6 @@
 # Content Menu
 
-* [Push Notification](#iOS-push-notificatio)
+* [Push Notification](#ios-push-notificatio)
 * [Submitting App to Store](#submitting-app-to-store)
 
 
