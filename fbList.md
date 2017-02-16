@@ -40,6 +40,7 @@
 |75 |[Sort Colors](Sort_Colors.swift)        |36.6%        |Medium  |
 |78 |[Subsets](Subsets.swift)|36.6%|Medium |
 |90|[Subsets II](Subsets_II.swift)|33.8%|Medium|        
+|98|[Validate Binary Search Tree](Validate_Binary_Search_Tree.swift)        |22.3%        |Medium|   
 
 
 
