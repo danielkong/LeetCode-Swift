@@ -46,6 +46,7 @@ Array:
     arr.index(of: "chimps")
     arr.filter() {$0 != "chimps"}
     arr.contains(ch) // arr contain char value
+    arr.forEach({ (item: Int) in ... })
 
 For Loop:
 
@@ -62,7 +63,14 @@ Char Set:
 
     let vowelSet: Set<Character> = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
 
-Tree
+Dictionary:
+
+    contains(key) -> if dict[key] != nil { } else { }
+
+
+
+Tree:
+
 [Binary Tree in Swift](http://lincode.github.io/LeetCode-Binary-Tree)
 
 Swift Only Functions:
@@ -130,7 +138,7 @@ Example:
     }
 
 [Swift Iterator Protocol](https://developer.apple.com/reference/swift/iteratorprotocol)
-
+    requirements: element / next()
 
     for animal in animals { ... }
     var animalIterator = animals.makeIterator()

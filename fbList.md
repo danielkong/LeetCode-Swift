@@ -41,15 +41,14 @@
 |78 |[Subsets](Subsets.swift)|36.6%|Medium |
 |90|[Subsets II](Subsets_II.swift)|33.8%|Medium|        
 |98|[Validate Binary Search Tree](Validate_Binary_Search_Tree.swift)        |22.3%        |Medium|   
+|236|[Lowest Common Ancestor of a Binary Tree](Lowest_Common_Ancestor_of_a_Binary_Tree.swift)|29.3%|Medium| 
+|133|[Clone Graph](Clone_Graph.swift)|25.0%|Medium|        
 
 
 
-26
+23
 
 211        Add and Search Word - Data structure design     20.1%        Medium
-98        Validate Binary Search Tree        22.3%        Medium   
-236        Lowest Common Ancestor of a Binary Tree        29.3%        Medium 
-133        Clone Graph        25.0%        Medium        
 49        Group Anagrams        31.8%        Medium        
 43        Multiply Strings        25.9%        Medium        
 79        Word Search        25.3%        Medium     
