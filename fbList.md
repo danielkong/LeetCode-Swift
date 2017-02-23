@@ -43,17 +43,17 @@
 |98|[Validate Binary Search Tree](Validate_Binary_Search_Tree.swift)        |22.3%        |Medium|   
 |236|[Lowest Common Ancestor of a Binary Tree](Lowest_Common_Ancestor_of_a_Binary_Tree.swift)|29.3%|Medium| 
 |133|[Clone Graph](Clone_Graph.swift)|25.0%|Medium|        
+49        Group Anagrams        31.8%        Medium        
+43        Multiply Strings        25.9%        Medium        
+79        Word Search        25.3%        Medium     
+238        Product of Array Except Self        47.0%        Medium        
+209        Minimum Size Subarray Sum        28.5%        Medium        
 
 
 
 23
 
 211        Add and Search Word - Data structure design     20.1%        Medium
-49        Group Anagrams        31.8%        Medium        
-43        Multiply Strings        25.9%        Medium        
-79        Word Search        25.3%        Medium     
-238        Product of Array Except Self        47.0%        Medium        
-209        Minimum Size Subarray Sum        28.5%        Medium        
 377        Combination Sum IV        41.6%        Medium        
 71        Simplify Path        24.0%        Medium        
 215        Kth Largest Element in an Array        37.4%        Medium   

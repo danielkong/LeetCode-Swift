@@ -67,8 +67,6 @@ Dictionary:
 
     contains(key) -> if dict[key] != nil { } else { }
 
-
-
 Tree:
 
 [Binary Tree in Swift](http://lincode.github.io/LeetCode-Binary-Tree)
