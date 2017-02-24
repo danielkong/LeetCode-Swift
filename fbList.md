@@ -43,23 +43,23 @@
 |98|[Validate Binary Search Tree](Validate_Binary_Search_Tree.swift)        |22.3%        |Medium|   
 |236|[Lowest Common Ancestor of a Binary Tree](Lowest_Common_Ancestor_of_a_Binary_Tree.swift)|29.3%|Medium| 
 |133|[Clone Graph](Clone_Graph.swift)|25.0%|Medium|        
-|49|        Group Anagrams|        31.8%|        Medium|        
-|43        |Multiply Strings        |25.9%        |Medium   |     
-|79        |Word Search     |   25.3%      |  Medium     |
-|238        |Product of Array Except Self        |47.0%        |Medium        |
-|209        |Minimum Size Subarray Sum        |28.5%|        Medium|        
-|377        |Combination Sum IV        |41.6%|        Medium|        
-|215        |Kth Largest Element in an Array        |37.4%|        Medium|   
-|71|        Simplify Path|        24.0%|        Medium|        
+|49|[Group Anagrams](Group_Anagrams.swift)|31.8%|Medium|        
+|43|[Multiply Strings](Multiply_Strings.swift)|25.9%|Medium|     
+|79|[Word Search](Word_Search.swift)|25.3%|Medium|
+|238|[Product of Array Except Self](Product_of_Array_Except_Self.swift)        |47.0%|Medium|
+|209|[Minimum Size Subarray Sum](Minimum_Size_Subarray_Sum.swift)|28.5%|Medium|        
+|377|[Combination Sum IV](Combination_Sum_IV.swift)|41.6%|Medium|      
+|215|[Kth Largest Element in an Array](Kth_Largest_Element_in_an_Array.swift)        |37.4%|Medium|
+|71|[Simplify Path](Simplify_Path.swift)|24.0%|Medium|        
+|334|[Increasing Triplet Subsequence](Increasing_Triplet_Subsequence.swift)|37.8%|Medium|
+|398|[Random Pick Index](Random_Pick_Index.swift)|39.8%|Medium|
 
 
 
-15
+13
 
 211        Add and Search Word - Data structure design     20.1%        Medium
 208        Implement Trie (Prefix Tree)        25.6%        Medium
-334        Increasing Triplet Subsequence        37.8%        Medium        
-398        Random Pick Index        39.8%        Medium        
 127        Word Ladder        19.3%        Medium        
 50        Pow(x, n)        27.1%        Medium        
 286        Walls and Gates         42.3%        Medium        

@@ -23,16 +23,14 @@ func simplifyPath(_ path: String) -> String {
     var stack = [String]()
     
     for dir in dirs {
-        if dir == "." {
+        if dir == "." || dir == "" {
             continue
         } else if dir == ".." {
             if !stack.isEmpty {
                 stack.removeLast()
             }
         } else {
-            if dir != "" {
-                stack.append(dir)
-            }
+            stack.append(dir)
         }
     }
     
