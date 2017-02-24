@@ -48,15 +48,15 @@
 79        Word Search        25.3%        Medium     
 238        Product of Array Except Self        47.0%        Medium        
 209        Minimum Size Subarray Sum        28.5%        Medium        
+377        Combination Sum IV        41.6%        Medium        
+215        Kth Largest Element in an Array        37.4%        Medium   
 
 
 
-23
+16
 
 211        Add and Search Word - Data structure design     20.1%        Medium
-377        Combination Sum IV        41.6%        Medium        
 71        Simplify Path        24.0%        Medium        
-215        Kth Largest Element in an Array        37.4%        Medium   
 208        Implement Trie (Prefix Tree)        25.6%        Medium
 334        Increasing Triplet Subsequence        37.8%        Medium        
 398        Random Pick Index        39.8%        Medium        
