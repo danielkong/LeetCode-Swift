@@ -53,18 +53,16 @@
 |71|[Simplify Path](Simplify_Path.swift)|24.0%|Medium|        
 |334|[Increasing Triplet Subsequence](Increasing_Triplet_Subsequence.swift)|37.8%|Medium|
 |398|[Random Pick Index](Random_Pick_Index.swift)|39.8%|Medium|
-
-
-
-13
-
-211        Add and Search Word - Data structure design     20.1%        Medium
-208        Implement Trie (Prefix Tree)        25.6%        Medium
-127        Word Ladder        19.3%        Medium        
-50        Pow(x, n)        27.1%        Medium        
+|127|[Word Ladder](Word_Ladder.swift)|19.3%|Medium|        
+|50|[Pow(x, n)](Pow(x, n).swift)|27.1%|Medium|        
 286        Walls and Gates         42.3%        Medium        
 69        Sqrt(x)        26.9%        Medium        
 221        Maximal Square        27.0%        Medium        
+
+8
+
+211        Add and Search Word - Data structure design     20.1%        Medium
+208        Implement Trie (Prefix Tree)        25.6%        Medium
 274        H-Index        32.0%        Medium        
 210        Course Schedule II        25.6%        Medium    
 275        H-Index II        33.5%        Medium        
