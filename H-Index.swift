@@ -1,4 +1,4 @@
-// 274. H-Index
+// 274. H-Index 1 & 2
 /**
 Given an array of citations (each citation is a non-negative integer) of a researcher, write a function to compute the researcher's h-index.
 
@@ -38,3 +38,20 @@ Note: If there are several possible values for h, the maximum one is taken as th
         }
         return 0
     }
+
+// Solution: 2. Time O(nLog(n)), space O(1). Sort first, then Binary search
+
+public class Solution {
+    public int hIndex(int[] citations) {
+        if(citations == null || citations.length == 0) return 0;
+        int l = 0, r = citations.length;
+        int n = citations.length;
+        while(l < r){
+            int mid = l + (r - l) / 2;
+            if(citations[mid] == n - mid) return n - mid;
+            if(citations[mid] < citations.length - mid) l = mid + 1;
+            else r = mid;
+        }
+        return n - l;
+    }
+}
