@@ -55,24 +55,20 @@
 |398|[Random Pick Index](Random_Pick_Index.swift)|39.8%|Medium|
 |127|[Word Ladder](Word_Ladder.swift)|19.3%|Medium|        
 |50|[Pow(x, n)](Pow(x, n).swift)|27.1%|Medium|        
-286        Walls and Gates         42.3%        Medium        
-69        Sqrt(x)        26.9%        Medium        
-221        Maximal Square        27.0%        Medium        
-
-8
-
-211        Add and Search Word - Data structure design     20.1%        Medium
-208        Implement Trie (Prefix Tree)        25.6%        Medium
-274        H-Index        32.0%        Medium        
-210        Course Schedule II        25.6%        Medium    
-275        H-Index II        33.5%        Medium        
-80        Remove Duplicates from Sorted Array II        34.9%        Medium
-261        Graph Valid Tree         36.5%        Medium      
-477        Total Hamming Distance        44.8%        Medium 
+|286|[Walls and Gates](Walls_and_Gates.swift)|42.3%|Medium|        
+|69|[Sqrt(x)](Sqrt_x.swift)|26.9%|Medium|
+|221|[Maximal Square](Maximal_Square.swift)|27.0%|Medium|
+|274|[H-Index](H-Index.swift)|32.0%|Medium|
+|275|[H-Index II](H-Index_II.swift)|33.5%|Medium|
+|210|[Course Schedule II](Course_Schedule_II.swift)|25.6%|Medium|    
+|80|[Remove Duplicates from Sorted Array II](Remove_Duplicates_from_Sorted_Array_II.swift)|34.9%|Medium|
+|261|[Graph Valid Tree](Graph_Valid_Tree.swift)|36.5%|Medium|
+|477|[Total Hamming Distance](Total_Hamming_Distance.swift)|44.8%|Medium| 
+|211|Add and Search Word - Data structure design     20.1%        Medium
+|273|[Integer to English Words](Integer_to_English_Words.swift)|21.0%|Hard|        
 
 
 22
-273        Integer to English Words        21.0%        Hard        
 10        Regular Expression Matching        23.5%        Hard        
 297        Serialize and Deserialize Binary Tree        31.5%        Hard     
 158        Read N Characters Given Read4 II - Call multiple times 24.3%  Hard 
