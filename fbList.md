@@ -65,22 +65,24 @@
 |261|[Graph Valid Tree](Graph_Valid_Tree.swift)|36.5%|Medium|
 |477|[Total Hamming Distance](Total_Hamming_Distance.swift)|44.8%|Medium| 
 |211|Add and Search Word - Data structure design     20.1%        Medium
-|273|[Integer to English Words](Integer_to_English_Words.swift)|21.0%|Hard|        
+|273|[Integer to English Words](Integer_to_English_Words.swift)|21.0%|Hard|
+|76|[Minimum Window Substring](Minimum_Window_Substring.swift)|23.8%|Hard|
+|282|[Expression Add Operators](Expression_Add_Operators.swift)|28.5%|Hard|
+|23|[Merge k Sorted Lists](Merge_k_Sorted_Lists.swift)|25.9%|Hard|        
+|56|[Merge Intervals](Merge_Intervals.swift)|28.3%|Hard|        
+|57|[Insert Interval](Insert_Interval.swift)|26.3%|Hard|             
+|146|[LRU Cache](LRU_Cache.swift)|16.0%|Hard|                
+|128|[Longest Consecutive Sequence](Longest_Consecutive_Sequence.swift)|35.3%|Hard|        
+|410|[Split Array Largest Sum](Split_Array_Largest_Sum.swift)|32.0%|Hard|
 
 
-22
-10        Regular Expression Matching        23.5%        Hard        
+13
+
 297        Serialize and Deserialize Binary Tree        31.5%        Hard     
+10        Regular Expression Matching        23.5%        Hard        
 158        Read N Characters Given Read4 II - Call multiple times 24.3%  Hard 
-76        Minimum Window Substring        23.8%        Hard        
-282        Expression Add Operators        28.5%        Hard        
-23        Merge k Sorted Lists        25.9%        Hard        
-56        Merge Intervals        28.3%        Hard        
 218        The Skyline Problem        25.5%        Hard        
-57        Insert Interval        26.3%        Hard             
 380        Insert Delete GetRandom O(1)        38.3%        Hard        
-146        LRU Cache        16.0%        Hard                
-128        Longest Consecutive Sequence        35.3%        Hard        
 44        Wildcard Matching        19.0%        Hard        
 33        Search in Rotated Sorted Array        31.9%        Hard        
 269        Alien Dictionary         22.4%        Hard        
@@ -89,4 +91,3 @@
 85        Maximal Rectangle        26.0%        Hard        
 25        Reverse Nodes in k-Group        29.7%        Hard        
 265        Paint House II         37.1%        Hard          
-410        Split Array Largest Sum        32.0%        Hard        
