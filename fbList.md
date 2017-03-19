@@ -5,11 +5,11 @@
 | 325 (L)|  Maximum Size Subarray Sum Equals k| 41.6%   |   Medium   | 
 | 301    |    Remove Invalid Parentheses      | 34.6%   |    Hard    |    
 | 311 (L)| Sparse Matrix Multiplication       | 50.5%   |   Medium   |  
-|67      | [Add Binary] (Add_Binary.swift)    | 30.4%   |    Easy    |      
+|67      | [Add Binary](Add_Binary.swift)     | 30.4%   |    Easy    |      
 |278(Un) |[First Bad Version](First_Bad_Version.swift)|  24.3%  |    Easy    | 
 |157(Un) | Read N Characters Given Read4              |  29.4%  |    Easy    |
 |257(Un) |[Binary Tree Paths](Binary_Tree_Paths.swift)|  34.7%  |    Easy    |
-|121     |[Best Time to Buy and Sell Stock](Best_Time_to_Buy_and_Sell Stock.swift)|39.1%|Easy|      
+|121     |[Best Time to Buy and Sell Stock](Best_Time_to_Buy_and_Sell_Stock.swift)|39.1%|Easy|      
 |1       |[Two Sum](Two_Sum.swift)       | 29.8%      |  Easy |       
 |125     |   [Valid Palindrome](Valid_Palindrome.swift)|   25.3%   | Easy |
 |206     |   [Reverse Linked List](Reverse_Linked_List.swift) |43.4% | Easy |  
@@ -54,7 +54,7 @@
 |334|[Increasing Triplet Subsequence](Increasing_Triplet_Subsequence.swift)|37.8%|Medium|
 |398|[Random Pick Index](Random_Pick_Index.swift)|39.8%|Medium|
 |127|[Word Ladder](Word_Ladder.swift)|19.3%|Medium|        
-|50|[Pow(x, n)](Pow(x, n).swift)|27.1%|Medium|        
+|50|[Pow(x, n)](Pow_x_n.swift)|27.1%|Medium|        
 |286|[Walls and Gates](Walls_and_Gates.swift)|42.3%|Medium|        
 |69|[Sqrt(x)](Sqrt_x.swift)|26.9%|Medium|
 |221|[Maximal Square](Maximal_Square.swift)|27.0%|Medium|
@@ -64,7 +64,7 @@
 |80|[Remove Duplicates from Sorted Array II](Remove_Duplicates_from_Sorted_Array_II.swift)|34.9%|Medium|
 |261|[Graph Valid Tree](Graph_Valid_Tree.swift)|36.5%|Medium|
 |477|[Total Hamming Distance](Total_Hamming_Distance.swift)|44.8%|Medium| 
-|211|Add and Search Word - Data structure design     20.1%        Medium
+|211|Add and Search Word - Data structure design|20.1%|Medium|
 |273|[Integer to English Words](Integer_to_English_Words.swift)|21.0%|Hard|
 |76|[Minimum Window Substring](Minimum_Window_Substring.swift)|23.8%|Hard|
 |282|[Expression Add Operators](Expression_Add_Operators.swift)|28.5%|Hard|
