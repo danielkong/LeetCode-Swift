@@ -74,9 +74,13 @@
 |146|[LRU Cache](LRU_Cache.swift)|16.0%|Hard|                
 |128|[Longest Consecutive Sequence](Longest_Consecutive_Sequence.swift)|35.3%|Hard|        
 |410|[Split Array Largest Sum](Split_Array_Largest_Sum.swift)|32.0%|Hard|
+269        Alien Dictionary         22.4%        Hard        
+85        Maximal Rectangle        26.0%        Hard        
+33        Search in Rotated Sorted Array        31.9%        Hard        
+117        Populating Next Right Pointers in Each Node II    33.5%        Hard
 
 
-13
+9
 
 297        Serialize and Deserialize Binary Tree        31.5%        Hard     
 10        Regular Expression Matching        23.5%        Hard        
@@ -84,10 +88,6 @@
 218        The Skyline Problem        25.5%        Hard        
 380        Insert Delete GetRandom O(1)        38.3%        Hard        
 44        Wildcard Matching        19.0%        Hard        
-33        Search in Rotated Sorted Array        31.9%        Hard        
-269        Alien Dictionary         22.4%        Hard        
-117        Populating Next Right Pointers in Each Node II    33.5%        Hard
 68        Text Justification        18.1%        Hard            
-85        Maximal Rectangle        26.0%        Hard        
 25        Reverse Nodes in k-Group        29.7%        Hard        
 265        Paint House II         37.1%        Hard          
