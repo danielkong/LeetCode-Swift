@@ -20,6 +20,14 @@ String:
     s = s.substring(to: str.index(before: str.endIndex)) // string without last character
     b = str.hasPrefix("")
     b = str.isEmpty()
+
+    <Substring> substring(with: range) // "Chaitanya".substring(2,5)  => ait
+    let s = "Chaita"
+    let startIdx = s.index(s.startIndex, offsetBy: 2)
+    let endIdx = s.index(s.startIndex, offsetBy: 5)
+    let range = startIdx..<endIdx // => ait
+
+    s.substring(with: range)
     let s = "www.stackoverflow.com"
     let start = s.startIndex
     let end = s.index(s.endIndex, offsetBy: -4)
@@ -53,6 +61,7 @@ For Loop:
     for i in 0...10 { ... } // 0,1,...,10
     for i in 0..<10 { ... } // 0,1,...,9
     for (index, num) in nums.enumerated() { ... }
+    for index in stride(from: length, to: 0, by: -1) { ... }
 
 String -> Array:
     
@@ -66,6 +75,7 @@ Char Set:
 Dictionary:
 
     contains(key) -> if dict[key] != nil { } else { }
+    Note: if var test = dict[key] { test += 1 } // could not add 1 to dict
 
 Tree:
 

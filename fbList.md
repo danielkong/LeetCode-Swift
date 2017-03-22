@@ -80,14 +80,14 @@
 |117|[Populating Next Right Pointers in Each Node II](Populating_Next_Right_Pointers_in_Each_Node.swift)|33.5%|Hard|
 |265|[Paint House II](Paint_House.swift)|37.1%|Hard|
 |25|[Reverse Nodes in k-Group](Reverse_Nodes_in_k-Group.swift)|29.7%|Hard|
+|380|[Insert Delete GetRandom O(1)](Insert_Delete_GetRandom.swift)|38.3%|Hard|
+|297|[Serialize and Deserialize Binary Tree](Serialize_and_Deserialize_Binary_Tree.swift)|31.5%|Hard|     
 
 218        The Skyline Problem        25.5%        Hard        
 
 6
 
-297        Serialize and Deserialize Binary Tree        31.5%        Hard     
 10        Regular Expression Matching        23.5%        Hard        
 158        Read N Characters Given Read4 II - Call multiple times 24.3%  Hard 
-380        Insert Delete GetRandom O(1)        38.3%        Hard        
 44        Wildcard Matching        19.0%        Hard        
 68        Text Justification        18.1%        Hard            
