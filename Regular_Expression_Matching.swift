@@ -18,7 +18,10 @@ isMatch("aa", "a*") → true
 isMatch("aa", ".*") → true
 isMatch("ab", ".*") → true
 isMatch("aab", "c*a*b") → true
+
+Notice: Different than Wildcard Matching
 */
+
 // http://articles.leetcode.com/regular-expression-matching
 bool isMatch(const char *s, const char *p) {
   assert(s && p);
