@@ -84,7 +84,6 @@
 |297|[Serialize and Deserialize Binary Tree](Serialize_and_Deserialize_Binary_Tree.swift)|31.5%|Hard|     
 |44|[Wildcard Matching](Wildcard_Matching.swift)|19.0%|Hard|
 |10|[Regular Expression Matching](Regular_Expression_Matching.swift)|23.5%|Hard|
-
-218        The Skyline Problem        25.5%        Hard        
-158        Read N Characters Given Read4 II - Call multiple times 24.3%  Hard 
-68        Text Justification        18.1%        Hard            
+|218|[The Skyline Problem](The_Skyline_Problem.swift)|25.5%|Hard|
+|158|[Read N Characters Given Read4 II - Call multiple times](Read_N_Characters_Given_Read4.swift)|24.3%|Hard| 
+|68|[Text Justification](Text_Justification.swift)|18.1%|Hard|
