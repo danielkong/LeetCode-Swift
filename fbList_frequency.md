@@ -1,31 +1,33 @@
-283	Move Zeroes	48.3%	Easy	
-325	Maximum Size Subarray Sum Equals k 	41.9%	Medium	
-301	Remove Invalid Parentheses	34.8%	Hard	
-311	Sparse Matrix Multiplication 	50.8%	Medium	
-314	Binary Tree Vertical Order Traversal 	36.0%	Medium	
-67	Add Binary	30.9%	Easy	
-273	Integer to English Words	21.4%	Hard	
-278	First Bad Version	24.6%	Easy	
-17	Letter Combinations of a Phone Number	32.9%	Medium	
-253	Meeting Rooms II 	38.5%	Medium	
-91	Decode Ways	19.0%	Medium	
-10	Regular Expression Matching	23.8%	Hard	
-15	3Sum	21.2%	Medium	
-277	Find the Celebrity 	35.5%	Medium	
-158	Read N Characters Given Read4 II - Call multiple times	24.4%	Hard	
-297	Serialize and Deserialize Binary Tree	32.1%	Hard	
-200	Number of Islands	32.8%	Medium	
-282	Expression Add Operators	28.9%	Hard	
-76	Minimum Window Substring	24.2%	Hard	
-257	Binary Tree Paths	35.8%	Easy	
-161	One Edit Distance 	30.7%	Medium	
-23	Merge k Sorted Lists	26.3%	Hard	
-285	Inorder Successor in BST 	36.2%	Medium	
-157	Read N Characters Given Read4 	29.2%	Easy	
-211	Add and Search Word - Data structure design	20.7%	Medium	
-341	Flatten Nested List Iterator	39.4%	Medium	
-121	Best Time to Buy and Sell Stock	39.6%	Easy	
-56	Merge Intervals	28.8%	Medium	
+| Number | Title                              | AC Rate | Difficulty |
+| ------ |:----------------------------------:| -------:|:----------:|
+|283|	Move Zeroes|	48.3%|	Easy|	
+|325|	Maximum Size Subarray Sum Equals k| 	41.9%|	Medium|	
+|301|	Remove Invalid Parentheses|	34.8%|	Hard|	
+|311|	Sparse Matrix Multiplication| 	50.8%|	Medium|	
+|314|	Binary Tree Vertical Order Traversal| 	36.0%|	Medium|	
+|67|	Add Binary|	30.9%|	Easy|	
+|273|	Integer to English Words|	21.4%|	Hard|	
+|278|	First Bad Version|	24.6%|	Easy|	
+|17|	Letter Combinations of a Phone Number|	32.9%|	Medium|	
+|253|	Meeting Rooms II| 	38.5%|	Medium|	
+|91|	Decode Ways|	19.0%|	Medium|	
+|10|	Regular Expression Matching|	23.8%|	Hard|	
+|15|	3Sum|	21.2%|	Medium|	
+|277|	Find the Celebrity| 	35.5%|	Medium|	
+|158|	Read N Characters Given Read4 II - Call multiple times|	24.4%|	Hard|	
+|297|	Serialize and Deserialize Binary Tree|	32.1%|	Hard|	
+|200|	Number of Islands|	32.8%|	Medium|	
+|282|	Expression Add Operators|	28.9%|	Hard|	
+|76|	Minimum Window Substring|	24.2%|	Hard|	
+|257|	Binary Tree Paths|	35.8%|	Easy|	
+|161|	One Edit Distance| 	30.7%|	Medium|	
+|23|	Merge k Sorted Lists|	26.3%|	Hard|	
+|285|	Inorder Successor in BST| 	36.2%|	Medium|	
+|157|	Read N Characters Given Read4| 	29.2%|	Easy|	
+|211|	Add and Search Word - Data structure design|	20.7%|	Medium|	
+|341|	Flatten Nested List Iterator|	39.4%|	Medium|	
+121|	Best Time to Buy and Sell Stock|	39.6%|	Easy|	
+|56|	Merge Intervals|	28.8%|	Medium|	
 139	Word Break	28.6%	Medium	
 1	Two Sum	31.0%	Easy	
 173	Binary Search Tree Iterator	39.6%	Medium	
