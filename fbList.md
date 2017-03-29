@@ -1,4 +1,3 @@
-
 | Number | Title                              | AC Rate | Difficulty |
 | ------ |:----------------------------------:| -------:|:----------:|
 | 283    | [Move Zeroes](Move_Zeroes.swift)   | 47.7%   |    Easy    |   
