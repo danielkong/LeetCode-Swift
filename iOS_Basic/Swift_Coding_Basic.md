@@ -17,6 +17,7 @@ String:
     char = str.characters.last 
     char == "[" // character comparing also could use "=="
     arr = Array(str.characters) // Array<Character>
+    arr = [Character](str.characters)
     s = s.substring(to: str.index(before: str.endIndex)) // string without last character
     b = str.hasPrefix("")
     b = str.isEmpty()
@@ -45,6 +46,7 @@ Int:
 
 Array:
 
+    Array(repeating: 0, count: 5)   // create [0,0,0,0,0] array
     arr.sort{ $0.name < $1.name } // sorted array of string 
     arr.sorted()
     arr.insert("add", atIndex: 1)

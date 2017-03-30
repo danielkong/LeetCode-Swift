@@ -1,3 +1,5 @@
+| Title                              | AC Rate | Difficulty |
+|:----------------------------------:| -------:|:----------:|
 •  Binary Tree - Iterator for Inorder traversal
 •  Binary Tree - Iterator for Postorder traversal
 •  Binary Tree - Longest Path (Diameter)
