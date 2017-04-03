@@ -29,6 +29,7 @@ public func lowestCommonAncestor(_ root: TreeNode?, p: TreeNode, q: TreeNode) {
 	return left == nil ? right : right == nil ? left : root
 }
 
+// Solution Java
 public class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) return root;
