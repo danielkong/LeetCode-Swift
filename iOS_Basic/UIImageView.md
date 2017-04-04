@@ -15,11 +15,11 @@ Usually JPEG/PNG file.
 - redraw.
 		option to redisplay view when bounds change by invoking `setNeedsDisplay()`. <Notify system that view's content needs to be redrawn. The view is not actually redrawn until the next drawing cycle, at which point all invalidated views are updated.>
 
-> About `setNeedsDisplay()`
-
-> If your view is backed by a CAEAGLLayer object, this method has no effect. It is intended for use only with views that use native drawing technologies (such as UIKit and Core Graphics) to render their content.
-
-> Use this method to request view redrawn only when content/appearance of the view change. If only change geometry of the vie, view typically not redrawn , and existing content adjusted baed on contentMode property.
+ > About `setNeedsDisplay()`
+ >
+ >  If your view is backed by a CAEAGLLayer object, this method has no effect. It is intended for use only with views that use native drawing technologies (such as UIKit and Core Graphics) to render their content.
+ >
+ > Use this method to request view redrawn only when content/appearance of the view change. If only change geometry of the vie, view typically not redrawn , and existing content adjusted baed on contentMode property.
 
 - center, top, bottom, left, right, topLeft, topRight, bottomLeft, bottomRight
 
@@ -34,50 +34,48 @@ Usually JPEG/PNG file.
 
 - ImageView could store an animated image sequence and play all/part of that sequence.
 
-	***
-	UIImageView *animationImageView = [[UIImageView alloc] initWithFrame:CGRectMake(60, 95, 86, 193)];
-    animationImageView.animationImages = images;
-    animationImageView.animationDuration = 0.5;
+		UIImageView animationImageView = [[UIImageView alloc] initWithFrame:CGRectMake(60, 95, 86, 193)];
+	    animationImageView.animationImages = images;
+	    animationImageView.animationDuration = 0.5;
 
-    [self.view addSubview:animationImageView];
-    [animationImageView startAnimating];
-	***
+	    [self.view addSubview:animationImageView];
+	    [animationImageView startAnimating];
+	> Note: All images should same size, and same scale.
 
-	Note: All images should same size, and same scale.
+## Responding to Touch Events
 
-# Responding to Touch Events
+- imageView ignore user events by default.
 
-	imageView ignore user events by default.
 	`isUserInteractionEnabled = true`, then could attach gesture recognizers.
 
-# Tips Improving Performance
+## Tips Improving Performance
 
-	- cache scaled versions of frequently used images.
-	- use image close to size of imageView.
-	- make imageView opaque.
+- cache scaled versions of frequently used images.
+- use image close to size of imageView.
+- make imageView opaque.
 
-# Debugging Issues with ImageView
+## Debugging Issues with ImageView
 
-	- Load image from asset/app bundle with `UIImage.init(named:​in:​compatible​With:​)`.
-	- Load image from outside app bundle with `UIImage.image​With​Contents​Of​File:`.
+- Load image from asset/app bundle with `UIImage.init(named:​in:​compatible​With:​)`.
+- Load image from outside app bundle with `UIImage.image​With​Contents​Of​File:`.
 
-# Attributes
+## Attributes
 
-	- image/animationImages
-	- highlightedImage/highlightedAnimationImages
-	- isHighlighted
+- image/animationImages
+- highlightedImage/highlightedAnimationImages
+- isHighlighted
 
-# Internationalization
+## Internationalization
 
-	- in app bundle,
-	- not in app bundle, providing localized string that contains the URL.
+- in app bundle,
+- not in app bundle, providing localized string that contains the URL.
 
-# State Preservation
+## State Preservation
 
-	- preserve value of `bounds`, `center`, `transform` and `anchorPoint`.
+- preserve value of `bounds`, `center`, `transform` and `anchorPoint`.
 
 
-# iPhone screen size
+## iPhone screen size
 
 	iPhone 4s 320 * 480 px
 	iPhone 5s 320 * 568 px
