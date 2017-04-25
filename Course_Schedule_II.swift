@@ -1,4 +1,4 @@
-// 210        Course Schedule II        25.6%        Medium    
+// 210        Course Schedule II        25.6%        Medium
 /**
 There are a total of n courses you have to take, labeled from 0 to n - 1.
 
@@ -20,28 +20,33 @@ Note:
 The input prerequisites is a graph represented by a list of edges, not adjacency matrices. Read more about how a graph is represented.
 You may assume that there are no duplicate edges in the input prerequisites.
 */
+/**
+http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=143467
+给一个数组[1,2,3,4]，根据dependency排序，比如2 depends on 4, 1 depends on 2, 3 depends on 4, 输出[4,2,1,3].
 
+UPDATE: 统一回答地里的问题：这个题就是拓扑排序，leetcode course schedule II
+*/
 // Solution: 1. BFS. large input time limited E
-// 			 2. Topological sort in DAG ???  
+// 			 2. Topological sort in DAG ???
 
 class Solution {
     func findOrder(_ numCourses: Int, _ prerequisites: [[Int]]) -> [Int] {
         var arrCounter = Array(repeating: 0, count: numCourses)
-        
+
         for temp in prerequisites {
             arrCounter[temp[0]] += 1
         }
-        
+
         var queue = [Int]()
-        
+
         for i in 0 ..< numCourses {
             if arrCounter[i] == 0 {
                 queue.append(i)
             }
         }
-        
+
         var res = [Int]()
-        
+
         while !queue.isEmpty {
             let c = queue.removeLast()
             res.append(c)
@@ -55,7 +60,7 @@ class Solution {
                 }
             }
         }
-        
+
         if res.count != numCourses {
             return []
         } else {

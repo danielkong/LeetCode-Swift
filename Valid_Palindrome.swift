@@ -1,5 +1,5 @@
-// 125        Valid Palindrome        25.3%        Easy        
-/** 
+// 125        Valid Palindrome        25.3%        Easy
+/**
 	Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 
 	For example,
@@ -10,6 +10,10 @@
 	Have you consider that the string might be empty? This is a good question to ask during an interview.
 
 	For the purpose of this problem, we define empty string as valid palindrome.
+*/
+/**
+https://instant.1point3acres.com/thread/169645/post/1868613
+Palindrome, in place. no extra-space, 
 */
 
 // Solution: 1. Two pointer.
