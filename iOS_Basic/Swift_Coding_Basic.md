@@ -3,6 +3,7 @@ Swift Coding Basic
 String:
 
 	length = str.characters.count
+    let t = Array("ABAB".characters) // [Character]
     str.characters // String.CharacterView
     str.characters.dropFirst()
     str.characters.dropFirst(2)
@@ -63,7 +64,9 @@ For Loop:
     for i in 0...10 { ... } // 0,1,...,10
     for i in 0..<10 { ... } // 0,1,...,9
     for (index, num) in nums.enumerated() { ... }
-    for index in stride(from: length, to: 0, by: -1) { ... }
+    for index in stride(from: length, to: 0, by: -1) { ... } // 1 ... length
+    for index in stride(from: length-1, to: -1, by: -1) { }  // 0 ... length-1
+
 
 String -> Array:
     
