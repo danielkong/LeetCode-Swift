@@ -1,5 +1,5 @@
  | Title                              | Relative | Confirm |
- |:----------------------------------:|:--------:|--------:|
+ |:----------------------------------:|:--------:|:-------:|
  |Math Int Divide without div operator|[Divide Two Integers](Divide_Two_Integers.swift)|leetcode|
  |Math Pow||leetcode|
  |Maximize Vacation Days| [Maximum Vacation Days](Maximum_Vacation_Days.swift)|1point3arce|
@@ -13,20 +13,20 @@
  |Natural Order Comparator|Natural_Order_Comparator.swift|1point3arces|
  |Next Permutation|Next_Permutation.swift|leetcode|
  |Object Dependency Ordering|[Course Schedule II](Cours_Schedule_II.swift)|1point3arces & leetcode|
-• Palindrome Generator
+|• Palindrome Generator|||
  |Palindrome, In-Place|valid palindrome|1point3arces|
  |Pangram||1point3arces?|
-• Parse Double|StringToFloat.swift|leetcode discussion?|
+|• Parse Double|StringToFloat.swift|leetcode discussion?|
  |Path in NxN Grid with obstacles||1point3arces|
  |Permutations Print|Permutations|leetcode & 1point3arces|
  |Phone Number to String||leetcode|
  |Pick Max Integer Uniformly in Array|Max_Int_Uniformly_Array.swift|careercup|
  |Point In Intervals||?|
  |Points Nearest(Points Nearest)|K Points(Nearest_K_Points.swift)|leetcode discussion|
-• Process Application Profile
+|• Process Application Profile|||
  |Pretty Json||1point3arces|
  |Previous permutation|Previous_Permutation.swift|1point3arces|
  |Products of Primes|Product_of_Prime.swift|1point3arces|
-• Read and interpret code that computes co-occurrences
+|• Read and interpret code that computes co-occurrences|||
  |Read arbitrarily given 4k chunks|Read_4K.swift|1point3arces|
  |Remove Zeros From Array||leetcode|
