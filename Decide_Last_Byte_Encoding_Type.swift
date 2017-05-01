@@ -10,6 +10,10 @@ character or a two-byte character
 Constraint: You must scan the byte array from the end to the start.
 Otherwise it will be very trivial.
 
+一种encoding的方法，
+如果一个byte第一个bit是0，比如 00000000，那它自己表示一个字符，
+如果一个byte第一个bit是1，比如 10000000，那它和它后面紧跟的byte表示一个字符，
+现在给一个byte array，判断最后一个字符是一个byte还是两个byte组成。
 */
 
 // Solution: C++
@@ -19,7 +23,7 @@ bool isBegin1(char *p){
     a = a<<7;
     return (*p&a);
 }
- 
+
 bool isOneByte(char *start,  char *end){
     int len = end-start+1;
     vector<bool> dp(end-start+1);
@@ -47,7 +51,7 @@ number of byte whose first bit is 1.
 If the number is even, return one byte char, otherwise return two byte char.
 O(n) time, O(1)space
 
-https://github.com/checkcheckzz/coding-questions/blob/master/problem/String/Onetwobyteencoding.cpp 
+https://github.com/checkcheckzz/coding-questions/blob/master/problem/String/Onetwobyteencoding.cpp
 */
 
 //firstBit is a function, I omit the implementation.
@@ -65,7 +69,7 @@ bool isOneByte(string str) {
          if ((len - i) % 2 == 0) {
 
 
-            res = "two-byte char";
+            res = "two-byte char"; true;
 
 
          } else {
