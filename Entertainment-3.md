@@ -3,7 +3,7 @@
  |Math Int Divide without div operator|[Divide Two Integers](Divide_Two_Integers.swift)|leetcode|
  |Math Pow||leetcode|
  |Maximize Vacation Days| [Maximum Vacation Days](Maximum_Vacation_Days.swift)|1point3arce|
- |Maze Walking||leetcode?|
+ |Maze Walking|[62. Unique Paths](Unique_Paths.swift)|leetcode?|
  |Merge Interval into Array|Merge Intervals|leetcode|
  |Minimum Number of Meeting Rooms|Meeting Rooms II|leetcode|
  |Monotonic Array|[Monotonic Array](Monotonic_Array.swift)|glassdoor(maybe) 1point3acres|

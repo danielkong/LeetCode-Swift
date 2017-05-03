@@ -1,4 +1,4 @@
-// 75        Sort Colors        36.6%        Medium        
+// 75        Sort Colors        36.6%        Medium   Dutch National Flag     
 /**
 Given an array with n objects colored red, white or blue, sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.
 
