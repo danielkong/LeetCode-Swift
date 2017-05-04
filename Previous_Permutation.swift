@@ -38,3 +38,91 @@ class Solution:
         num[i+1:length] = num[length-1:i:-1]
 
         return num
+
+// This is next permutation best solution.
+// Runtime O(n), Space O(1)
+// 1. From end to begin, find first nums[i - 1] < nums[i], and store nums[i-1](this one needs swap)
+// 2. Find a number, called temp, temp > nums[i-1] in subarray nums[i ..< nums.count] (from nums.count to i), swap(num[i-1], temp),
+// 3. Reverse subarray
+
+func nextPermutation(_ nums: inout [Int]) {
+	// find a number/temp > nums[i-1] in subarray nums[i ..< nums.count], swap(num[i-1], temp), then reverse subarray
+
+	guard nums.count > 1 else {
+		return
+	}
+	// 1.
+	var a = [-1, Int.max]
+	for i in stride(from: nums.count - 1, to: 0, by: -1) {
+		if nums[i] > nums[i - 1] {
+			a = [i-1, nums[i - 1]]
+			break
+		}
+	}
+	if a[0] == -1 {
+		nums.reverse()
+		return
+	}
+	// 2.
+	for (p, s) in nums[a[0]+1..<nums.count].enumerated().reversed() {
+		if a[1] < s {
+			let temp = s
+			nums[a[0]+1+p] = nums[a[0]]
+			nums[a[0]] = temp
+			break
+		}
+	}
+	// 3. reverse subarray
+	var j = a[0]+1
+	var k = nums.count-1
+	while j < k {
+		let test = nums[j]
+		nums[j] = nums[k]
+		nums[k] = test
+		j += 1
+		k -= 1
+	}
+}
+
+// 1. From end to begin, find first nums[i - 1] > nums[i]
+// 2. Find a number, called temp, temp < nums[i-1] in subarray nums[i ..< nums.count] (from nums.count to i), swap(num[i-1], temp),
+// 3. Reverse subarray
+
+func previousPermutation(_ nums: inout [Int]) {
+	// find a number/temp > nums[i-1] in subarray nums[i ..< nums.count], swap(num[i-1], temp), then reverse subarray
+
+	guard nums.count > 1 else {
+		return
+	}
+	// 1.
+	var a = [-1, Int.max]
+	for i in stride(from: nums.count - 1, to: 0, by: -1) {
+		if nums[i] < nums[i - 1] {
+			a = [i-1, nums[i - 1]]
+			break
+		}
+	}
+	if a[0] == -1 {
+		nums.reverse()
+		return
+	}
+	// 2.
+	for (p, s) in nums[a[0]+1..<nums.count].enumerated().reversed() {
+		if a[1] > s {
+			let temp = s
+			nums[a[0]+1+p] = nums[a[0]]
+			nums[a[0]] = temp
+			break
+		}
+	}
+	// 3. reverse subarray
+	var j = a[0]+1
+	var k = nums.count-1
+	while j < k {
+		let test = nums[j]
+		nums[j] = nums[k]
+		nums[k] = test
+		j += 1
+		k -= 1
+	}
+}
