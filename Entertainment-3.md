@@ -11,22 +11,22 @@
  |The number of subsets S with min(S) + max(S) <= K|Subset_min_max_k.swift|1point3acres|
  |N-Queens||1point3arces|
  |Natural Order Comparator|Natural_Order_Comparator.swift|1point3arces|
- |Next Permutation|Next_Permutation.swift|leetcode|
+ |Next Permutation|[Next_Permutation](Next_Permutation.swift)|leetcode|
  |Object Dependency Ordering|[Course Schedule II](Cours_Schedule_II.swift)|1point3arces & leetcode|
 |• Palindrome Generator|||
- |Palindrome, In-Place|valid palindrome|1point3arces|
+ |Palindrome, In-Place|[valid palindrome](Palindrome.swift)|1point3arces|
  |Pangram||1point3arces?|
 |• Parse Double|StringToFloat.swift|leetcode discussion?|
  |Path in NxN Grid with obstacles||1point3arces|
- |Permutations Print|Permutations|leetcode & 1point3arces|
- |Phone Number to String||leetcode|
+ |Permutations Print|[Permutations](Permutations.swift)|leetcode & 1point3arces|
+ |Phone Number to String|[Letter Combinations of a Phone Number](Letter_Combinations_of_a_Phone_Number.swift)|leetcode|
  |Pick Max Integer Uniformly in Array|Max_Int_Uniformly_Array.swift|careercup|
  |Point In Intervals||?|
  |Points Nearest(Points Nearest)|K Points(Nearest_K_Points.swift)|leetcode discussion|
 |• Process Application Profile|||
  |Pretty Json||1point3arces|
- |Previous permutation|Previous_Permutation.swift|1point3arces|
- |Products of Primes|Product_of_Prime.swift|1point3arces|
+ |Previous permutation|[Previous permutation](Previous_Permutation.swift)|1point3arces & lintcode|
+ |[Products of Primes](Product_of_Prime.swift)|[Subset_I](Subset_I.swift)|1point3arces|
 |• Read and interpret code that computes co-occurrences|||
  |Read arbitrarily given 4k chunks|Read_4K.swift|1point3arces|
  |Remove Zeros From Array||leetcode|

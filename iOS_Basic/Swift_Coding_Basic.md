@@ -66,6 +66,10 @@ For Loop:
     for (index, num) in nums.enumerated() { ... }
     for index in stride(from: length, to: 0, by: -1) { ... } // 1 ... length
     for index in stride(from: length-1, to: -1, by: -1) { }  // 0 ... length-1
+    for _ in stride(from: from, through: through, by: by) { }
+    for f in sequence(first: first, next: { $0 + interval <= last ? $0 + interval : nil }) { ... }
+    for f in sequence(first: first, next: { $0 + interval }).prefix(while: { $0 <= last }) { ... } //  https://stackoverflow.com/questions/37170203/swift-3-for-loop-with-increment
+
 
 
 String -> Array:

@@ -1,3 +1,36 @@
+// 207. Cours_Schedule_I
+// Solution: http://www.cnblogs.com/grandyang/p/4484571.html
+
+    func canFinish(_ numCourses: Int, _ prerequisites: [[Int]]) -> Bool {
+        guard numCourses > 1 else {
+            return true
+        }
+
+        for temp in prerequisites {
+            var test = temp
+            for temp2 in prerequisites {
+                if temp == temp2 { continue }
+                if temp2[0] == test[1] {
+                    test[1] = temp2[1]
+                    if test[0] == test[1] { return false }
+                }
+            }
+        }
+        return true
+    }
+    // Java
+            for(int i = 0; i < prerequisites.size(); ++i){
+                pair<int, int> p = prerequisites[i];
+                for(int j = 0; j < prerequisites.size(); ++j){
+                    if(j == i) continue;
+                    if(prerequisites[j].first == p.second){
+                        p.second = prerequisites[j].second;
+                        if(p.first == p.second) return false;
+                    }
+                }
+            }
+            return true;
+
 // 210        Course Schedule II        25.6%        Medium
 /**
 There are a total of n courses you have to take, labeled from 0 to n - 1.

@@ -56,7 +56,35 @@ public double findMedianSortedArrays(int[] nums1, int[] nums2) {
     return -1;
 }
 
-// Solution 2: Time Complexity: O(log(m + n)), Space Complexity: O(1)
+// Solution 2: Shortest line Solution
+
+class Solution {
+    func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
+      let merge = (nums1 + nums2).sorted(), n = merge.count
+      return n % 2 != 0 ? Double(merge[(n - 1) / 2]) : Double(merge[(n - 1) / 2] + merge[n / 2]) / 2
+    }
+}
+
+// Solution 3:
+class Solution {
+    func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
+      let (c1, c2) = (nums1.count, nums2.count), mid = (c1 + c2 + 1) / 2
+      if c1 > c2 { return findMedianSortedArrays(nums2, nums1) }
+      var t = (min: 0, max: c1)
+      while t.min <= t.max {
+        let i = (t.min + t.max) / 2
+        let j = mid - i
+        guard !(j > 0 && i < c1 && nums2[j-1] > nums1[i]) else { t.min = i + 1; continue }
+        guard !(i > 0 && j < c2 && nums1[i-1] > nums2[j]) else { t.max = i - 1; continue }
+        let leftMax = i == 0 ? nums2[j - 1] : j == 0 ? nums1[i-1] : max(nums1[i - 1], nums2[j - 1])
+        guard (c1 + c2) % 2 == 0 else { return Double(leftMax) }
+        let rightMin = i == c1 ? nums2[j] : j == c2 ? nums1[i] : min(nums1[i], nums2[j])
+        return Double(leftMax + rightMin) / 2.0
+      }
+      return 0.0
+    }
+}
+// Solution 4: Time Complexity: O(log(m + n)), Space Complexity: O(1)
 func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
 	let m = nums1.count
 	let n = nums2.count

@@ -1,0 +1,27 @@
+// 50 pow (x,n)
+// isPrime (x)
+
+bbs/thread-148693-1-1.html
+
+topological sort 解决 graph nodes， 可以用DFS/BFS实现（stack/queue）
+
+
+一般 tree dfs 都是recursion
+不用额外空间 morris tracersal http://www.cnblogs.com/AnnieKim/archive/2013/06/15/MorrisTraversal.html
+他要我输出第k层的所有值 （audible）
+
+https://www.youtube.com/watch?v=jksMzq4LgfM
+
+今天看topological sort的一个算法 有个细节让我顿时觉得这个算法很用心: 输出结果时会捕获有没有circle 我自己其实都没有care 这个
+
+判断一个matrix是不是toeplitz matrix，followup是what if matrix is 
+large and can't fit into memory
+
+map reduce
+首先保证每个machine能access到firstRow and firsyCol, 然后给每个machine 一个submatrix，和他们的starting row 和starting col，分别判断是否为toeplitz最后reduce就是and一下
+
+也很简单的：given an array of size 3n - 1: {1,1,1, 2,2,2, .... n,n,n} where exactly one number is missing, find the missing number, followup: what if there are two numbers missing?
+
+我面砸的：given a maze, and a function: bool hasObstacle(Point, Dir), and starting Point and ending Point, find out the minimum direction changes it take for a ball to move from the starting point to the end point. constraints: if a ball is "falling", it cannot move to left or right.
+
+最后一题：有n个office，输入是calendar，告诉你每个月各个office的一年内每个月holiday数量，另外你有一个matrix cost，cost[i][j]表示从office i 到office j的travel cost，constraint：有一个integer maxCost，你不能take a flight that costs more than that. 然后每次travel必须是直达。要求输出一个path of size 12, where path[i]是你month i 所在的office，so that you maximize the number of holidays you can take.

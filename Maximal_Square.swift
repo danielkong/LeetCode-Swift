@@ -1,4 +1,4 @@
-// 221        Maximal Square        27.0%        Medium        
+// 221        Maximal Square        27.0%        Medium
 /**
 Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.
 
@@ -17,34 +17,24 @@ Return 4.
  * Time Complexity: O(mn), Space Complexity: O(mn)
  */
 
-class MaximalSquare {
-    func maximalSquare(matrix: [[Character]]) -> Int {
-        guard matrix.count != 0 else {
-            return 0
-        }
-    
-        let m = matrix.count
-        let n = matrix[0].count
-    
-        var max_global = 0
-        var maxSquareSide = Array(count: m, repeatedValue: (Array(count: n, repeatedValue: 0)))
-        
-        for i in 0 ..< m {
-            for j in 0 ..< n {
-                guard matrix[i][j] != "0" else {
-                    continue;
-                }
-            
-                if i == 0 || j == 0 {
-                    maxSquareSide[i][j] = 1
-                } else {
-                    maxSquareSide[i][j] = min(maxSquareSide[i][j - 1], maxSquareSide[i - 1][j], maxSquareSide[i - 1][j - 1]) + 1
-                }
-                
-                max_global = max(max_global, maxSquareSide[i][j])
-            }
-        }
-        
-        return max_global * max_global
-    }
-}
+ func maximalSquare(_ matrix: [[Character]]) -> Int {
+     if matrix.count == 0 {
+         return 0
+     }
+     let m = matrix.count, n = matrix[0].count
+     var res_side = 0
+     var b = Array(repeating: Array(repeating: 0, count: n+1), count: m+1)
+     for i in 1 ... m {
+         for j in 1 ... n {
+             if String(matrix[i-1][j-1]) == "1" {
+                 if i == 0 || j == 0 {
+                     b[i][j] = 1
+                 } else {
+                     b[i][j] = min(min(b[i][j-1] , b[i-1][j-1]), b[i-1][j]) + 1
+                 }
+                 res_side = max(b[i][j], res)
+             }
+         }
+     }
+     return res_side*res_side
+ }

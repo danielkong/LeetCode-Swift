@@ -1,4 +1,4 @@
-//Product of Primes
+//Product of Primes leetcode subsets
 /**
 products of prime 用 bit manipulation 或者 backtracking
 

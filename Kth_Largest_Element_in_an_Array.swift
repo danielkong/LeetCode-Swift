@@ -1,18 +1,18 @@
-// 215        Kth Largest Element in an Array        37.4%        Medium   
+// 215        Kth Largest Element in an Array        37.4%        Medium
 /**
 Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
 For example,
 Given [3,2,1,5,6,4] and k = 2, return 5.
 
-Note: 
+Note:
 You may assume k is always valid, 1 ≤ k ≤ array's length.
 */
-
-    func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
-        let nums = nums.sorted()
-        return nums[nums.count - k]
-    }
+// Runtime: O(n log n) Space: O(n)
+func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
+    let test = nums.sorted()
+    return test[nums.count-k]
+}
 
 // Solution: Priority Queue.
 public int findKthLargest(int[] nums, int k) {
@@ -38,7 +38,7 @@ Repeat 2 for k times and the k-th largest element will be stored finally at nums
 Now I paste my code below. If you find it tricky, I suggest you to read the Heapsort chapter of Introduction to Algorithms, which has a nice explanation of the algorithm. My code simply translates the pseudo code in that book :-)
 */
 
-public:   
+public:
     inline int left(int idx) {
         return (idx << 1) + 1;
     }
