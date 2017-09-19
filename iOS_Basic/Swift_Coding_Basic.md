@@ -1,9 +1,9 @@
-Swift Coding Basic 
+Swift Coding Basic
 
 String:
 
 	length = str.characters.count
-    let t = Array("ABAB".characters) // [Character]
+    let chars = Array("ABAB".characters) // [Character]
     str.characters // String.CharacterView
     str.characters.dropFirst()
     str.characters.dropFirst(2)
@@ -15,7 +15,7 @@ String:
 	char = str[str.index(after: str.startIndex)] // sec character
 	char = str[str.index(str.startIndex, offsetBy: 3)] // 4th character
     char = str.characters.first // return first Char. == "A" true
-    char = str.characters.last 
+    char = str.characters.last
     char == "[" // character comparing also could use "=="
     arr = Array(str.characters) // Array<Character>
     arr = [Character](str.characters)
@@ -48,7 +48,7 @@ Int:
 Array:
 
     Array(repeating: 0, count: 5)   // create [0,0,0,0,0] array
-    arr.sort{ $0.name < $1.name } // sorted array of string 
+    arr.sort{ $0.name < $1.name } // sorted array of string
     arr.sorted()
     arr.insert("add", atIndex: 1)
     arr.removeFirst()
@@ -73,11 +73,11 @@ For Loop:
 
 
 String -> Array:
-    
+
     var arr = Array(s.characters) // char array， otherwise CharacterElement
 
 
-Char Set: 
+Char Set:
 
     let vowelSet: Set<Character> = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
 
@@ -95,7 +95,7 @@ Swift Only Functions:
 
     func lengthOf(strings: [Strings]) -> [Int] {
         return strings.map { $0.characters.count }
-    } 
+    }
 
 2.`flatmap()`
     - Remove `nil` in array
@@ -108,7 +108,7 @@ Swift Only Functions:
 
 3. `filter()`
 4. `reduce()`
-    
+
     scores = [100, 89, 98]
     let sum = scores.reduce(0, +)
     let res = scores.reduce("") { $0 + String($1) }
@@ -134,7 +134,7 @@ OOP:
     }
 
 Example:
-    
+
     protocol Payable {
         func calculateWages() -> Int
     }
@@ -183,5 +183,3 @@ Example:
         return element
     }
 }
-
-

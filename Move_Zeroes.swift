@@ -7,6 +7,16 @@
 //   Minimize the total number of operations.
 // Solution: 1. Naive. create new array without 0, for loop and add some 0. time O(n), space O(n)
 //			 2. Two pointer. swap 0 and non-zero. time O(n), space O(1)
+
+// Swifty way
+class Solution {
+    func moveZeroes(_ nums: inout [Int]) {
+        let nonZeroNums = nums.filter { $0 != 0 }
+        let zeroCount = nums.count - nonZeroNums.count
+        nums = nonZeroNums + Array(repeating: 0, count: zeroCount)
+    }
+}
+// Solution 2:
     func moveZeroes(_ nums: inout [Int]) {
         var zeroCount = 0
         for (index, num) in nums.enumerated() {
@@ -20,5 +30,3 @@
             nums[i] = 0
         }
     }
-
-
