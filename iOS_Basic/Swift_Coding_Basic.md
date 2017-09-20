@@ -1,5 +1,12 @@
 Swift Coding Basic
 
+Character: 
+
+    ch_ascii = ("A".unicodeScalars.filter{ $0.isASCII }.first?.value)!
+    // two characters diff
+    ch_ascii_a - ch_ascii_b
+    var arr = Array(s.characters) // char array， otherwise CharacterElement
+
 String:
 
 	length = str.characters.count
@@ -59,6 +66,18 @@ Array:
     arr.contains(ch) // arr contain char value
     arr.forEach({ (item: Int) in ... })
 
+Dictionary:
+
+    var dict = [Int: Int]()
+    contains(key) -> if dict[key] != nil { } else { }
+    Note: if var test = dict[key] { test += 1 } // could not add 1 to dict
+
+Sort Dictionary:
+
+    var sortedMap = Array(map).sorted(by: { $0.1 < $1.1 })  // sorted by value small to large
+    sortedMap[sortedMap.count-1].value
+
+
 For Loop:
 
     for i in 0...10 { ... } // 0,1,...,10
@@ -70,21 +89,9 @@ For Loop:
     for f in sequence(first: first, next: { $0 + interval <= last ? $0 + interval : nil }) { ... }
     for f in sequence(first: first, next: { $0 + interval }).prefix(while: { $0 <= last }) { ... } //  https://stackoverflow.com/questions/37170203/swift-3-for-loop-with-increment
 
-
-
-String -> Array:
-
-    var arr = Array(s.characters) // char array， otherwise CharacterElement
-
-
 Char Set:
 
     let vowelSet: Set<Character> = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
-
-Dictionary:
-
-    contains(key) -> if dict[key] != nil { } else { }
-    Note: if var test = dict[key] { test += 1 } // could not add 1 to dict
 
 Tree:
 

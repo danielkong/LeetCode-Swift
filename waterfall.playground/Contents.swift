@@ -156,62 +156,38 @@ func maxSubArrayLen(_ nums: [Int], _ k: Int) -> Int {
 let test = maxSubArrayLen([-2,-1,2,1], 1)
  */
 
-
-func addBinary(_ a: String, _ b: String) -> String {
-    var res1 = [Character]()
-    var ach = a.characters
-    var bch = b.characters
-    
-    var m = 0
-    
-    while ach.count > 0 && bch.count > 0 {
-        let (resdigit, temp) = add(ach.removeLast(), bch.removeLast(), m)
-        res1.append(resdigit)
-        m = temp
-    }
-    
-    var res2 = addRes((ach.count != 0 ? ach.characters : bch.characters), m)
-    
-    return res2 + res1.reversed()
-}
-
-private func add(_ adigit: Character, _ bdigit: Character, _ m: Int) -> (Character, Int) {
-    switch (adigit, bdigit, m) {
-    case ("1","1",0) :
-        return ("0", 1)
-    case ("1","1",1) :
-        return ("1", 1)
-    case ("1","0",0),
-         ("0","0",1),
-         ("0","1",0) :
-        return ("1", 0)
-    case ("0","1",1),
-         ("1","0",1) :
-        return ("0", 1)
-    case ("0","0",0):
-        return ("0", 0)
-    default : return ("0", 0)
-    }
-    
-}
-
-private func addRes(_ chs: [Character], _ m: Int) -> String {
-    var output = [Character]()
-    var m = m
-    for ch in chs.reversed() {
-        switch (Int(String(ch))! + m) {
-        case 0:
-            output.append("0")
-            m = 0
-        case 1:
-            output.append("1")
-            m = 0
-        case 2:
-            output.append("0")
-            m = 1
+func leastInterval(_ tasks: [Character], _ n: Int) -> Int {
+    var map = [Int: Int]()
+    let test = ("A".unicodeScalars.filter{$0.isASCII}.first?.value)!
+    for ch in tasks {
+        let test2 = (String(ch).unicodeScalars.filter{$0.isASCII}.first?.value)!
+        let diff = Int(test2 - test)
+        if map[diff] == nil {
+            map[diff] = 1
+        } else {
+            map[diff]! += 1
         }
     }
-    return String(output.reversed())
-}
+    var sortedMap = Array(map).sorted(by: { $0.1 < $1.1 })
+    var max_val = sortedMap[sortedMap.count-1].value-1 // 2
+    var idle_slots = max_val * (n+1)  // 12
+    var temp = 0
+    for i in stride(from: sortedMap.count-1, to: -1, by: -1) {
+        print(sortedMap[i].value)
+        if sortedMap[i].value-1 == max_val {
+            temp += 1
+            print("temp:\(temp)")
+        }
+    }
+    return temp + idle_slots
 
-let test = addBinary("10", "101")
+}
+let rest = leastInterval(["A","B","C","D","E","A","B","C","D","E"], 4)
+/**
+ int max_val = map[25] - 1, idle_slots = max_val * n;
+ for (int i = 24; i >= 0 && map[i] > 0; i--) {
+    idle_slots -= Math.min(map[i], max_val);
+ }
+ return idle_slots > 0 ? idle_slots + tasks.length : tasks.length;
+
+ */
