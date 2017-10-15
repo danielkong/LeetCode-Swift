@@ -66,6 +66,9 @@ Array:
     arr.contains(ch) // arr contain char value
     arr.forEach({ (item: Int) in ... })
 
+    arr1 += arr2    // array1 append array2, add another array
+    arr1.append("item3")    // arr as ["item1", "item2"], add one element
+
 Dictionary:
 
     var dict = [Int: Int]()

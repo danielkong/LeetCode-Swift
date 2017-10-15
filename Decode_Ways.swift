@@ -14,22 +14,25 @@ The number of ways decoding "12" is 2.
 
 /**
  * Question Link: https://leetcode.com/problems/decode-ways/
- * Primary idea: Dynamic Programming, dp[i] = dp[i - 1] + dp[i - 2], 
+ * Primary idea: Dynamic Programming, dp[i] = dp[i - 1] + dp[i - 2],
  *               determine if current one or two characters are number at first
  * Time Complexity: O(n), Space Complexity: O(n)
  *
  * This problem can be solve by using dynamic programming. It is similar to the problem of counting ways of climbing stairs. The relation is dp[n]=dp[n-1]+dp[n-2].
  */
+
+ // if single letter is 0, do not do dp[i] += dp[i-1]
+ // if double letters(num) are satisfied with  1 <= num <= 26 and i >=2, do dp[i] += d[i-2]
 class Solution {
     func numDecodings(_ s: String) -> Int {
         let sChars = [Character](s.characters), len = sChars.count
         var dp = Array(repeating: 0, count: len + 1)
         dp[0] = 1
-        
+
         guard len >= 1 else {
             return 0
         }
-        
+
         for i in 1 ... len {
             if isValid(String(sChars[i - 1 ..< i])) {
                 dp[i] += dp[i - 1]
@@ -38,7 +41,7 @@ class Solution {
                 dp[i] += dp[i - 2]
             }
         }
-        
+
         return dp[len]
     }
     
@@ -46,11 +49,11 @@ class Solution {
         if Array(numStr.characters).first == "0" {
             return false
         }
-    
+
         guard let num = Int(numStr) else {
             return false
         }
-        
+
         return num >= 1 && num <= 26
     }
  }

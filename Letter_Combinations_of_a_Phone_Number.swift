@@ -15,6 +15,46 @@ Input:Digit string "23"
 Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 */
 
+// Solution: Swift
+class Solution {
+    let dict: [Character: [Character]] = [
+			"2" : ["a", "b", "c"],
+            "3" : ["d", "e", "f"],
+            "4" : ["g", "h", "i"],
+            "5" : ["j", "k", "l"],
+            "6" : ["m", "n", "o"],
+            "7" : ["p", "q", "r", "s"],
+            "8" : ["t", "u", "v"],
+            "9" : ["w", "x", "y", "z"],
+           ]
+
+    func letterCombinations(_ digits: String) -> [String] {
+        var temp = ""
+        var res = [String]()
+
+        if digits == "" { return [] }
+        helper([Character](digits.characters), 0, digits.characters.count, &res, temp)
+
+        return res
+    }
+
+    func helper(_ chs: [Character], _ idx: Int, _ end: Int, _ res: inout [String], _ temp: String) {
+        var temp = temp
+        if idx == end {
+            res.append(temp)
+            return
+        }
+
+        if let ch: Character = chs[idx], let map: [Character] = dict[ch] {
+            for i in 0 ..< map.count {
+                temp.append(map[i])
+                helper(chs, idx+1, end, &res, temp)
+                temp = String(temp.characters.dropLast())
+            }
+        }
+    }
+}
+
 // Solution: Java
 	public void helper(List<String> result, StringBuilder sb, String digits, int index, HashMap<Character, char[]> map){
 	    if(index>=digits.length()){
