@@ -10,3 +10,17 @@ click to show more practice.
 More practice:
 If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 */
+class Solution {
+    func maxSubArray(_ nums: [Int]) -> Int {
+        var nums = nums
+        var best = nums[0];
+        var current = nums[0];
+
+        for i in 1..<nums.count {
+            current = max(current + nums[i], nums[i])
+            best = max(current, best)
+        }
+
+        return best
+    }
+}

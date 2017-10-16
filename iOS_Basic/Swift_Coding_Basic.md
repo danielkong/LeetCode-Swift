@@ -56,7 +56,9 @@ Array:
 
     Array(repeating: 0, count: 5)   // create [0,0,0,0,0] array
     arr.sort{ $0.name < $1.name } // sorted array of string
-    arr.sorted()
+    arr.sorted() // return sorted array
+    print(students.sorted()) // Prints "["Abena", "Akosua", "Kofi", "Kweku", "Peter"]"
+    print(students.sorted(by: <)) // Prints "["Abena", "Akosua", "Kofi", "Kweku", "Peter"]"
     arr.insert("add", atIndex: 1)
     arr.removeFirst()
     arr.removeLast()
@@ -67,6 +69,7 @@ Array:
     arr.forEach({ (item: Int) in ... })
 
     arr1 += arr2    // array1 append array2, add another array
+    
     arr1.append("item3")    // arr as ["item1", "item2"], add one element
 
 Dictionary:
