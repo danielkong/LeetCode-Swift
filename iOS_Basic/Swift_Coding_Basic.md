@@ -1,6 +1,6 @@
 Swift Coding Basic
 
-Character: 
+Character:
 
     ch_ascii = ("A".unicodeScalars.filter{ $0.isASCII }.first?.value)!
     // two characters diff
@@ -16,6 +16,7 @@ String:
     str.characters.dropFirst(2)
     str.characters.dropLast()
     str.characters.popFirst/Last
+
 	<String Indices>
 	char = str[str.startIndex] // first character
 	char = str[str.index(before: str.endIndex)] // last character
@@ -48,6 +49,16 @@ String:
         let range = str.index(str.endIndex, offsetBy: -6)..<str.endIndex
         str.removeSubrange(range) // remove 6 chars
 
+    String separate:
+        dirArr = split(dirStr) { $0 == "\n" }
+        dirArr = dirStr.componentsSeparatedByString("\n") // swift2
+                 dirStr.components(separatedBy: "\n") // swift3
+    String combined:
+        str = "".join(srtArr) // swift2
+        str = "".joined(strArr) // swift3
+        str = arr.joinWithSeparator("-") // swift2
+        str = arr.joined(separator: "-") // swift3
+
 Int:
 
     Int.max // max_value
@@ -69,7 +80,7 @@ Array:
     arr.forEach({ (item: Int) in ... })
 
     arr1 += arr2    // array1 append array2, add another array
-    
+
     arr1.append("item3")    // arr as ["item1", "item2"], add one element
 
 Dictionary:

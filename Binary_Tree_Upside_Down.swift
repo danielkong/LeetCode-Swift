@@ -15,6 +15,52 @@ return the root of the binary tree [4,5,2,#,#,3,1].
   / \
  5   2
     / \
-   3   1  
+   3   1
 confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
 */
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public var val: Int
+ *     public var left: TreeNode?
+ *     public var right: TreeNode?
+ *     public init(_ val: Int) {
+ *         self.val = val
+ *         self.left = nil
+ *         self.right = nil
+ *     }
+ * }
+ */
+
+// Recursion
+class Solution {
+    func upsideDownBinaryTree(_ root: TreeNode?) -> TreeNode? {
+        guard let root = root else { return nil }
+        guard let left = root.left else { return root }
+        let newRoot = upsideDownBinaryTree(root.left)
+        left.left = root.right
+        left.right = root
+        root.left = nil
+        root.right = nil
+        return newRoot
+    }
+}
+
+// Iterative
+func upsideDownBinaryTree(_ root: TreeNode?) -> TreeNode? {
+	var parent: TreeNode?
+	var node: TreeNode? = root
+	var right: TreeNode?
+
+	while node != nil {
+		let left = node!.left
+		node!.left = right
+		right = node!.right
+		node!.right = parent
+		parent = node
+		node = left
+	}
+
+	return parent
+}
