@@ -18,38 +18,38 @@ Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 // Solution: Swift
 class Solution {
     let dict: [Character: [Character]] = [
-			"2" : ["a", "b", "c"],
-            "3" : ["d", "e", "f"],
-            "4" : ["g", "h", "i"],
-            "5" : ["j", "k", "l"],
-            "6" : ["m", "n", "o"],
-            "7" : ["p", "q", "r", "s"],
-            "8" : ["t", "u", "v"],
-            "9" : ["w", "x", "y", "z"],
-           ]
-
+        "2" : ["a", "b", "c"],
+        "3" : ["d", "e", "f"],
+        "4" : ["g", "h", "i"],
+        "5" : ["j", "k", "l"],
+        "6" : ["m", "n", "o"],
+        "7" : ["p", "q", "r", "s"],
+        "8" : ["t", "u", "v"],
+        "9" : ["w", "x", "y", "z"],
+        ]
+    
     func letterCombinations(_ digits: String) -> [String] {
+        if digits == "" { return [] }
+        
         var temp = ""
         var res = [String]()
-
-        if digits == "" { return [] }
-        helper([Character](digits.characters), 0, digits.characters.count, &res, temp)
-
+        helper(&res, temp, 0, [Character](digits.characters))
         return res
     }
-
-    func helper(_ chs: [Character], _ idx: Int, _ end: Int, _ res: inout [String], _ temp: String) {
-        var temp = temp
-        if idx == end {
+    
+    private func helper(_ res: inout [String], _ temp: String, _ idx: Int, _ chs:[Character]) {
+        if idx == chs.count {
             res.append(temp)
             return
         }
-
-        if let ch: Character = chs[idx], let map: [Character] = dict[ch] {
+        
+        var temp = temp
+        if let ch: Character = chs[idx], let map = dict[ch] {
             for i in 0 ..< map.count {
                 temp.append(map[i])
-                helper(chs, idx+1, end, &res, temp)
-                temp = String(temp.characters.dropLast())
+                helper(&res, temp, idx+1, chs)
+                // name.substring(to: name.index(before: name.endIndex))
+                temp = temp.substring(to: temp.index(before: temp.endIndex))
             }
         }
     }

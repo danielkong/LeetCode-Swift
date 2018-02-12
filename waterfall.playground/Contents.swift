@@ -1,58 +1,41 @@
 //: Playground - noun: a place where people can play
 
-import UIKit
-import Dispatch
-
-var str = "Hello, playground"
-
-func solve(_ board: inout [[Character]]) {
-    guard board.count > 0 else { return }
-    let row = board.count
-    let col = board[0].count
-    if col == 0 { return }
+func threeSum(_ nums: [Int]) -> [[Int]] {
+    guard nums.count > 2 else { return [] }
+    let sortedNums = nums.sorted()
+    var res = [[Int]]()
     
-    for i in 0..<row {
-        for j in 0..<col {
-            print("1")
-            if i == 0 || i == row-1 || j == 0 || j == col-1 {
-                continue
-            } else {
-                print("12")
-
-                if board[i][j] == Character("O") && checkSurroundsO(&board, i, j) {
-                    continue
-                    print("123")
-
-                } else {
-                    board[i][j] = Character("X")
-                }
+    for i in 0 ..< sortedNums.count-2 {
+        if i != 0 {
+            if sortedNums[i] != sortedNums[i-1] {
+                helper(&res, sortedNums, i)
             }
+        } else {
+            helper(&res, sortedNums, i)
+        }
+    }
+    return res
+}
+
+private func helper(_ res: inout [[Int]], _ sortedNums: [Int], _ i: Int) {
+    let temp = 0 - sortedNums[i]
+    var l = i + 1, r = sortedNums.count-1
+    while l < r {
+        if sortedNums[l] + sortedNums[r] == temp {
+            res.append([sortedNums[i], sortedNums[l], sortedNums[r]])
+            while l+1 < sortedNums.count && sortedNums[l+1] == sortedNums[l] { l += 1 }
+            l += 1
+            
+            while 0 < r-1 && sortedNums[r-1] == sortedNums[r] { r -= 1 }
+            r -= 1
+            
+        } else if sortedNums[l] + sortedNums[r] > temp {
+            r -= 1
+        } else if sortedNums[l] + sortedNums[r] < temp {
+            l += 1
         }
     }
 }
 
-func checkSurroundsO(_ board: inout [[Character]], _ i: Int, _ j: Int) -> Bool {
-
-    
-    if (i == 0 || i == board.count-1) && board[i][j] == Character("O") {
-        return true
-    }
-    if (j == 0 || j == board[0].count-1) && board[i][j] == Character("O") {
-        return true
-    } else if i < 0 || j < 0 || i >= board.count || j >= board[0].count {
-        return false
-    }
-    if (checkSurroundsO(&board, i-1, j) || checkSurroundsO(&board, i+1, j) || checkSurroundsO(&board, i, j-1) || checkSurroundsO(&board, i, j+1)) {
-        return true
-    }
-    return false
-}
-
-
-var test: [[Character]] = [["X","X","X"],["X","O","X"],["X","O","X"]]
-
-solve(&test)
-print(test)
-
-
+let res = threeSum([0, 0, 0])
 

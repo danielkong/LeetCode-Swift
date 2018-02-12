@@ -30,3 +30,25 @@ class Solution {
             nums[i] = 0
         }
     }
+
+// Solution 3:
+class Solution {
+    func moveZeroes(_ nums: inout [Int]) {
+        guard nums.count > 1 else { return }
+        var idx = 0
+        var newidx = 0
+        while idx < nums.count {
+            if nums[idx] == 0 {
+                // idx += 1
+            } else {
+                nums[newidx] = nums[idx]
+                newidx += 1
+            }
+            idx += 1
+        }
+        
+        for i in newidx ..< nums.count {
+            nums[i] = 0
+        }
+    }
+}

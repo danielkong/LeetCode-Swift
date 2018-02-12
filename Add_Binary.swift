@@ -69,3 +69,53 @@ func addBinary(_ a: String, _ b: String) -> String {
         return output
     }
 
+// Solution 2:
+class Solution {
+    func addBinary(_ a: String, _ b: String) -> String {
+        let ach = Array(a.characters.reversed())
+        let alen = ach.count
+        let bch = Array(b.characters.reversed())
+        let blen = bch.count
+        
+        // make a length < b length
+        if alen > blen { return addBinary(b, a) }
+        
+        var temp = 0
+        var res = 0
+        
+        var resultArr : [Int] = []
+        for i in 0 ..< blen {
+            if i <= alen-1 {
+                res = Int(String(ach[i]))! + Int(String(bch[i]))! + temp
+            } else {
+                res = Int(String(bch[i]))! + temp
+            }
+            let test: (Int, Int) = parseRes(res)
+            resultArr.append(test.1)
+            temp = test.0
+        }
+        
+        if temp == 1 {
+            resultArr.append(1)
+        }
+        
+        let stringArray = resultArr.reversed().map{ String($0) }
+        
+        return stringArray.joined()
+    }
+    
+    private func parseRes(_ res: Int) -> (Int, Int) {
+        switch res {
+        case 3:
+            return (1, 1)
+        case 2:
+            return (1, 0)
+        case 1:
+            return (0, 1)
+        case 0:
+            return (0, 0)
+        default:
+            return (0, 0)
+        }
+    }
+}

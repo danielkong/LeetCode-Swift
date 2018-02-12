@@ -54,7 +54,6 @@ This maps node into different col buckets
 Get col boundary min and max on the fly
 Retrieve result from cols
 Note that TreeMap version takes 9ms.
-*/
 
 public List<List<Integer>> verticalOrder(TreeNode root) {
     List<List<Integer>> res = new ArrayList<>();
@@ -100,3 +99,73 @@ public List<List<Integer>> verticalOrder(TreeNode root) {
 
     return res;
 }
+*/
+// Swift solution
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public var val: Int
+ *     public var left: TreeNode?
+ *     public var right: TreeNode?
+ *     public init(_ val: Int) {
+ *         self.val = val
+ *         self.left = nil
+ *         self.right = nil
+ *     }
+ * }
+ */
+class Solution {
+    func verticalOrder(_ root: TreeNode?) -> [[Int]] {
+        guard let root = root else { return [] }
+        
+        var res = [[Int]]()
+        var dict = [Int: [Int]]()
+        
+        var q = [TreeNode]()
+        q.append(root)
+        
+        var cols = [Int]()
+        cols.append(0)
+        
+        var minRange = 0, maxRange = 0
+        
+        while q.count > 0 {
+            let node = q.removeFirst()
+            let col = cols.removeFirst()
+            
+            if dict[col] == nil {
+                dict[col] = []
+            }
+            dict[col]!.append(node.val)
+            
+            if let nleft = node.left {
+                q.append(nleft)
+                cols.append(col-1)
+                minRange = min(minRange, col-1)
+            }
+            
+            if let nright = node.right {
+                q.append(nright)
+                cols.append(col+1)
+                maxRange = max(maxRange, col+1)
+            }
+        }
+        
+        for i in minRange...maxRange {
+            res.append(dict[i]!)
+        }
+        
+        return res
+    }
+}
+/** Change to removeFirst() from removeLast() solve the problem
+ input: [3,9,8,4,0,1,7]
+        3
+    9       8
+ 4     0 1     7
+ 
+ Output:
+ [[4],[9],[3,1,0],[8],[7]]
+ Expected:
+ [[4],[9],[3,0,1],[8],[7]]
+ */
