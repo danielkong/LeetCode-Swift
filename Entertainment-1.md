@@ -12,7 +12,7 @@
 |[Coin Denominations](Coin_Change.swift)|Medium||
 |[Contiguous sequence sums to a given integer](Continuous_Subarray_Sum.swift)|Maximum Size Subarray Sum Equals k| Continuous Subarray Sum|
 |[Contact De-duplication](Contact_De-duplication.swift)|||
-|•  Count interpretations|||
+|•  Count interpretations|count and say||
 |[Count number of 1s in binary representation of integer](http://www.geeksforgeeks.org/count-set-bits-in-an-integer/)|||
 |•  Count number of 1s in a subgrid of a large 2D grid made up of l's and O's|||
 |•  Date Compare -  Given 2 dates, get the latest date.|||
