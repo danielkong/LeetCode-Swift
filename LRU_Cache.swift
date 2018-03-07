@@ -23,6 +23,9 @@ cache.get(3);       // returns 3
 cache.get(4);       // returns 4
 */
 
+// Solution swift: double linked list + hashmap
+// runtime O(1)
+
 class Node {
     var key: Int
     var value: Int

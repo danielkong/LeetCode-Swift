@@ -22,6 +22,7 @@ String:
 	char = str[str.index(before: str.endIndex)] // last character
 	char = str[str.index(after: str.startIndex)] // sec character
 	char = str[str.index(str.startIndex, offsetBy: 3)] // 4th character
+    
     char = str.characters.first // return first Char. == "A" true
     char = str.characters.last
     char == "[" // character comparing also could use "=="
@@ -42,6 +43,17 @@ String:
     let start = s.startIndex
     let end = s.index(s.endIndex, offsetBy: -4)
     let substring = s[start..<end] // www.stackoverflow
+    
+    Sub-Srtring Reverse:
+        1. String(word.characters.reverse()) //"gfedcba"
+        2. let maxIndex = newWord.count - 1
+        
+            for i in 0...maxIndex {
+                if i > maxIndex - i {
+                    break
+                }
+                (newWord[i], newWord[maxIndex - i]) = (newWord[maxIndex - i], newWord[i])
+                }
     Inserting And Removing:
         str.insert("i", at: str.startIndex) // insert single char
         str.insert(contentsOf: "best".characters, at: str.index(before:str.endIndex)) // insert contents of another string

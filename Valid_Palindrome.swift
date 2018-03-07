@@ -18,28 +18,66 @@ Palindrome, in place. no extra-space,
 
 // Solution: 1. Two pointer.
 
-func isPalindrome(_ str: String) -> Bool {
-    if str.lowercased().characters.count == 0 {
+    func isPalindrome(_ s: String) -> Bool {
+        // Make String into an array of lowercase Characters
+        let characters = s.lowercased().characters
+        
+        // Only keep alphanumeric characters.
+        let cleaned = characters.filter { character in
+            return character.description.rangeOfCharacter(from: CharacterSet.alphanumerics) != nil
+        }
+        
+        // Compare values at mirroring indices.
+        let total = cleaned.count
+        for i in 0 ..< total/2 {
+            if Array(cleaned)[i] != Array(cleaned)[total - 1 - i] {
+                return false
+            }
+        }
         return true
     }
-    var i = 0
-    var j = str.characters.count-1
-    print(j)
-    let temp = Array(str.lowercased().characters)
-    while i < j {
-        if (temp[i] <= "a" || temp[i] >= "z") {
-            i+=1
-        }
-        if (temp[j] <= "a" || temp[j] >= "z") {
-            j-=1
-        }
-        if temp[i] != temp[j] {
-            return false
-        }
-    }
-    return true
-}
 
+class Solution {
+    func isPalindrome(_ s: String) -> Bool {
+        var sch = [Character](s.characters)
+        var i = 0
+        var j = s.characters.count-1
+        
+        while i<j {
+            if isValid(sch[i]) && isValid(sch[j]) {
+                if String(sch[i]).lowercased() == String(sch[j]).lowercased() {
+                    i += 1
+                    j -= 1
+                } else {
+                    return false
+                }
+            } else {
+                if !isValid(sch[i]) {
+                    i += 1
+                }
+                if !isValid(sch[j]) {
+                    j -= 1
+                }
+            }
+        }
+        
+        return true
+    }
+    
+    private func isValid(_ ch: Character) -> Bool {
+        let s = String(ch).lowercased()
+        
+        for temp in s.unicodeScalars {
+            if temp.isAlpha() {
+                return true
+            } else if temp.isDigit() {
+                return true
+            } 
+        }
+
+        return false
+    }
+}
 // Java version
 public static boolean isValidPalindrome(String s) {
 	if(s==null || s.length()==0) return false;

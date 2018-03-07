@@ -37,3 +37,26 @@ class Solution {
         return map.values.map { value in value.sorted() }
     }
 }
+
+// Runtime: O(nmlogm), Space: O(n)
+
+class Solution {
+    func groupAnagrams(_ strs: [String]) -> [[String]] {
+        var map = [String : [String]]()
+        
+        for str in strs {
+            let chs = String(str.characters.sorted())
+            if map[chs] != nil {
+                map[chs]!.append(str)
+            } else {
+                map[chs] = [str]
+            }
+        }
+        
+        var res = [[String]]()
+        for key in map.keys {
+            res.append(map[key]!)
+        }
+        return res
+    }
+}
