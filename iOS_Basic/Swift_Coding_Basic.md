@@ -2,6 +2,7 @@ Swift Coding Basic
 
 Character:
 
+    ch_ascii = UnicodeScalar("a").value // UInt from 0 to ~
     ch_ascii = ("A".unicodeScalars.filter{ $0.isASCII }.first?.value)!
     // two characters diff
     ch_ascii_a - ch_ascii_b

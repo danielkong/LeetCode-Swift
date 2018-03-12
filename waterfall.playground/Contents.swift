@@ -243,54 +243,126 @@
 //test.get(3) // 3
 //test.get(4) // 4
 
-class Solution {
-    var map = [String: [String]]()
-//    var test = Dictionary<String, [String]>()
-    func wordBreak(_ s: String, _ wordDict: [String]) -> [String] {
-        if map[s] != nil {
-            return map[s]!
+//class Solution {
+//    var map = [String: [String]]()
+////    var test = Dictionary<String, [String]>()
+//    func wordBreak(_ s: String, _ wordDict: [String]) -> [String] {
+//        if map[s] != nil {
+//            return map[s]!
+//        }
+//        var res = [String]()
+//        if s.count == 0 {
+//            res.append("")
+//            return res
+//        }
+//
+//        for word in wordDict {
+//            if s.hasPrefix(word) {
+//                let sublist = wordBreak(s[word.count...], wordDict) // String(Array(s.characters)[word.count..<s.count])
+//                for sub in sublist {
+//                    let temp = word + (sub.isEmpty ? "" : " ") + sub
+//                    res.append(temp)
+//                }
+//            }
+//        }
+//        map[s] = res
+//        return res
+//    }
+//
+//    // public class Solution {
+//    // HashMap<String, LinkedList<String>> map = new HashMap<String, LinkedList<String>>();
+//
+//    // public List<String> wordBreak(String s, Set<String> wordDict) {
+//    //     if (map.containsKey(s))
+//    //         return map.get(s);
+//
+//    //     LinkedList<String> res = new LinkedList<String>();
+//    //     if (s.length() == 0) {
+//    //         res.add("");
+//    //         return res;
+//    //     }
+//    //     for (String word : wordDict) {
+//    //         if (s.startsWith(word)) {
+//    //             List<String> sublist = wordBreak(s.substring(word.length()), wordDict);
+//    //             for (String sub : sublist)
+//    //                 res.add(word + (sub.isEmpty() ? "" : " ") + sub);
+//    //         }
+//    //     }
+//    //     map.put(s, res);
+//    //     return res;
+//    // }
+//    // }
+//}
+//func topKFrequent(_ words: [String], _ k: Int) -> [String] {
+//    var map = [String: Int]()
+//
+//    for num in words {
+//        guard let times = map[num] else {
+//            map[num] = 1
+//            continue
+//        }
+//        map[num] = times + 1
+//    }
+//
+//    var keys = Array(map.keys)
+//    keys.sort(by:{
+//        let value1 = map[$0]!
+//        let value2 = map[$1]!
+//        if value1 != value2 {
+//            return value1 > value2
+//        } else {
+//            // alpha
+//            return
+//        }
+//    })
+//
+//    return Array(keys[0..<k])
+//}
+//let res = topKFrequent(["i", "love", "leetcode", "i", "love", "coding"], 2)
+
+func groupStrings(_ strings: [String]) -> [[String]] {
+    // 1. group length, each word calculate sequence
+    // 2.
+    // Runtime: O(n*m) Space: O(m)
+    var dict = [String: [String]]()
+    let a_ascii = ("a".unicodeScalars.filter{ $0.isASCII }.first?.value)!
+    for str in strings {
+        var key = String(str.count)
+        let chs = Array(str.characters)
+        let ch0 = String(Array(str.characters)[0])
+        let asc = Int((ch0.unicodeScalars.filter{ $0.isASCII }.first?.value)!)
+        for i in 1..<str.characters.count {
+//            if str == "ba" {print("ba")}
+            let asc2 = Int((chs[i].unicodeScalars.filter{ $0.isASCII }.first?.value)!)
+//            if str == "ba" {
+//                print("\(asc)")
+//                print("\(asc2)")
+//                print("\(97-98)")
+//                print("\(String(asc2 - asc))")
+//
+//            }
+
+            key.append(String(asc2 - asc))
         }
-        var res = [String]()
-        if s.count == 0 {
-            res.append("")
-            return res
+        print(key)
+    
+        if dict[key] != nil {
+            dict[key]!.append(str)
+        } else {
+            dict[key] = [str]
         }
-        
-        for word in wordDict {
-            if s.hasPrefix(word) {
-                let sublist = wordBreak(s[word.count...], wordDict) // String(Array(s.characters)[word.count..<s.count])
-                for sub in sublist {
-                    let temp = word + (sub.isEmpty ? "" : " ") + sub
-                    res.append(temp)
-                }
-            }
-        }
-        map[s] = res
-        return res
     }
     
-    // public class Solution {
-    // HashMap<String, LinkedList<String>> map = new HashMap<String, LinkedList<String>>();
-    
-    // public List<String> wordBreak(String s, Set<String> wordDict) {
-    //     if (map.containsKey(s))
-    //         return map.get(s);
-    
-    //     LinkedList<String> res = new LinkedList<String>();
-    //     if (s.length() == 0) {
-    //         res.add("");
-    //         return res;
-    //     }
-    //     for (String word : wordDict) {
-    //         if (s.startsWith(word)) {
-    //             List<String> sublist = wordBreak(s.substring(word.length()), wordDict);
-    //             for (String sub : sublist)
-    //                 res.add(word + (sub.isEmpty() ? "" : " ") + sub);
-    //         }
-    //     }
-    //     map.put(s, res);
-    //     return res;
-    // }
-    // }
+    var res = [[String]]()
+    for k in dict.keys {
+        res.append(dict[k]!)
+    }
+    return res
 }
+//let res = groupStrings(["abc","bcd","acef","xyz","az","ba","a","z"])
+let test = Array("abcd".unicodeScalars)[0]
+
+Character(test)
+//test.value
+print(test)
 

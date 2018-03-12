@@ -14,6 +14,8 @@ UPDATE (2017/1/4):
 The wordDict parameter had been changed to a list of strings (instead of a set of strings). Please reload the code definition to get the latest changes.
 */
 
+// Using DFS directly will lead to TLE, so I just used HashMap to save the previous results to prune duplicated branches, as the following:
+
 class Solution {
     var map = [String: [String]]()
 //    var test = Dictionary<String, [String]>()
