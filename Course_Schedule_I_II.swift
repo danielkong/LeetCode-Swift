@@ -1,5 +1,8 @@
 // 207. Cours_Schedule_I
-// Solution: http://www.cnblogs.com/grandyang/p/4484571.html
+/**
+ */
+// Following solution does not cover all cases.
+// Wrong Solution: http://www.cnblogs.com/grandyang/p/4484571.html
 
     func canFinish(_ numCourses: Int, _ prerequisites: [[Int]]) -> Bool {
         guard numCourses > 1 else {
@@ -19,17 +22,93 @@
         return true
     }
     // Java
-            for(int i = 0; i < prerequisites.size(); ++i){
-                pair<int, int> p = prerequisites[i];
-                for(int j = 0; j < prerequisites.size(); ++j){
-                    if(j == i) continue;
-                    if(prerequisites[j].first == p.second){
-                        p.second = prerequisites[j].second;
-                        if(p.first == p.second) return false;
+//        for(int i = 0; i < prerequisites.size(); ++i){
+//            pair<int, int> p = prerequisites[i];
+//            for(int j = 0; j < prerequisites.size(); ++j){
+//                if(j == i) continue;
+//                if(prerequisites[j].first == p.second){
+//                    p.second = prerequisites[j].second;
+//                    if(p.first == p.second) return false;
+//                }
+//            }
+//        }
+//        return true;
+
+// Solution Swift: topological -- dfs implementation
+class Solution {
+    func canFinish(_ numCourses: Int, _ prerequisites: [[Int]]) -> Bool {
+        var graph = Array(repeating: [Int](), count: numCourses)
+        for edge in prerequisites {
+            graph[edge[0]].append(edge[1])
+        }
+        
+        var visited = Array(repeating: false, count: numCourses)
+        var topoSet = Set<Int>()
+        for i in 0..<numCourses {
+            let result = dfs(graph, &visited, &topoSet, i)
+            if result == true { return false }
+        }
+        return true
+    }
+    
+    // detects whether there is a cycle
+    private func dfs(_ graph: [[Int]], _ visited: inout [Bool], _ set: inout Set<Int>, _ vertex: Int) -> Bool {
+        if visited[vertex] == false {
+            visited[vertex] = true
+            set.insert(vertex)
+            for neighbor in graph[vertex] {
+                if set.contains(neighbor) {
+                    return true
+                }
+                let result = dfs(graph, &visited, &set, neighbor)
+                if result == true {
+                    return true
+                }
+            }
+            set.remove(vertex)
+        }
+        return false
+    }
+}
+// Solution Swift: topological -- bfs
+class Solution {
+    func canFinish(_ numCourses: Int, _ prerequisites: [[Int]]) -> Bool {
+        let temp = [Int](repeating: 0, count: numCourses)
+        var matrix = Array(repeating: temp, count: numCourses)
+        var indegree = [Int](repeating: 0, count: numCourses)
+        
+        for i in 0..<prerequisites.count {
+            let ready = prerequisites[i][0]
+            let pre = prerequisites[i][1]
+            if matrix[pre][ready] == 0 {
+                indegree[ready] += 1
+            }
+            matrix[pre][ready] = 1
+        }
+        var count = 0
+        var queue = [Int]()
+        for i in 0..<indegree.count {
+            if indegree[i] == 0 {
+                queue.append(i)
+            }
+        }
+        while !queue.isEmpty {
+            var course = queue.remove(at: 0)
+            count += 1
+            for i in 0..<numCourses {
+                if matrix[course][i] != 0 {
+                    indegree[i] -= 1
+                    if indegree[i] == 0 {
+                        queue.append(i)
                     }
                 }
             }
-            return true;
+        }
+        
+        return count == numCourses
+    }
+}
+
 
 // 210        Course Schedule II        25.6%        Medium
 /**

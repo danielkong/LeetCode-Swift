@@ -108,6 +108,13 @@ Sort Dictionary:
     sortedMap[sortedMap.count-1].value
 
 
+Set:
+
+    var sets = Set<Int>()
+    sets.insert(1)
+    sets.remove(1)
+    sets.contains(1)
+
 For Loop:
 
     for i in 0...10 { ... } // 0,1,...,10
