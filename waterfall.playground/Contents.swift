@@ -319,50 +319,33 @@
 //    return Array(keys[0..<k])
 //}
 //let res = topKFrequent(["i", "love", "leetcode", "i", "love", "coding"], 2)
-
-func groupStrings(_ strings: [String]) -> [[String]] {
-    // 1. group length, each word calculate sequence
-    // 2.
-    // Runtime: O(n*m) Space: O(m)
-    var dict = [String: [String]]()
-    let a_ascii = ("a".unicodeScalars.filter{ $0.isASCII }.first?.value)!
-    for str in strings {
-        var key = String(str.count)
-        let chs = Array(str.characters)
-        let ch0 = String(Array(str.characters)[0])
-        let asc = Int((ch0.unicodeScalars.filter{ $0.isASCII }.first?.value)!)
-        for i in 1..<str.characters.count {
-//            if str == "ba" {print("ba")}
-            let asc2 = Int((chs[i].unicodeScalars.filter{ $0.isASCII }.first?.value)!)
-//            if str == "ba" {
-//                print("\(asc)")
-//                print("\(asc2)")
-//                print("\(97-98)")
-//                print("\(String(asc2 - asc))")
-//
-//            }
-
-            key.append(String(asc2 - asc))
-        }
-        print(key)
+func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
+    var res = [[Int]]()
+    var temp = [Int]()
     
-        if dict[key] != nil {
-            dict[key]!.append(str)
-        } else {
-            dict[key] = [str]
-        }
-    }
+    helper(candidates.sorted(), target, &temp, &res, 0)
     
-    var res = [[String]]()
-    for k in dict.keys {
-        res.append(dict[k]!)
-    }
     return res
 }
-//let res = groupStrings(["abc","bcd","acef","xyz","az","ba","a","z"])
-let test = Array("abcd".unicodeScalars)[0]
 
-Character(test)
-//test.value
-print(test)
+private func helper(_ candidates: [Int], _ target: Int, _ temp: inout [Int],_ res: inout [[Int]], _ idx: Int) {
+    
+    if target == 0 {
+//        if !res.contains(where: temp) {
+        
+        if !res.contains(where: { $0 == temp }) {
+            res.append(temp)
+        }
+        return
+    }
+    for i in idx..<candidates.count {
+        if target - candidates[i] >= 0 {
+            temp.append(candidates[i])
+            helper(candidates, target-candidates[i], &temp, &res, i+1)
+            temp.removeLast()
+        }
+    }
+}
+
+let res = combinationSum2([2,3,4,7], 7)
 
