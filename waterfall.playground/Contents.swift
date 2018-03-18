@@ -319,33 +319,179 @@
 //    return Array(keys[0..<k])
 //}
 //let res = topKFrequent(["i", "love", "leetcode", "i", "love", "coding"], 2)
-func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
-    var res = [[Int]]()
-    var temp = [Int]()
-    
-    helper(candidates.sorted(), target, &temp, &res, 0)
-    
-    return res
+//func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
+//    var res = [[Int]]()
+//    var temp = [Int]()
+//
+//    helper(candidates.sorted(), target, &temp, &res, 0)
+//
+//    return res
+//}
+//
+//private func helper(_ candidates: [Int], _ target: Int, _ temp: inout [Int],_ res: inout [[Int]], _ idx: Int) {
+//
+//    if target == 0 {
+////        if !res.contains(where: temp) {
+//
+//        if !res.contains(where: { $0 == temp }) {
+//            res.append(temp)
+//        }
+//        return
+//    }
+//    for i in idx..<candidates.count {
+//        if target - candidates[i] >= 0 {
+//            temp.append(candidates[i])
+//            helper(candidates, target-candidates[i], &temp, &res, i+1)
+//            temp.removeLast()
+//        }
+//    }
+//}
+//
+//let res = combinationSum2([2,3,4,7], 7)
+
+func reverseWords(_ str: inout [Character]) {
+//    var left = 0
+//    var right = str.count-1
+//
+//    var leftCount = 0
+//    var rightCount = 0
+//    while left <= right {
+//
+//        // last time
+//        if left == right && str[left] == " " {
+//            if rightCount == 1 { return }
+//            let test = right+rightCount
+//
+//            var left2 = right+1
+//            var right2 = test+1
+//            print("left2 last \(left2)")
+//            print("right2 last \(right2)")
+//
+//            while left2 < right2 {
+//                (str[left2], str[right2]) = (str[right2], str[left2])
+//                left2 += 1
+//                right2 -= 1
+//            }
+//
+//            rightCount = 0
+//
+//            // change another
+//            print("right has empty: \(str)")
+//            (str[left], str[right]) = (str[right], str[left])
+//            let test3 = left+leftCount
+//
+//            var left3 = left-leftCount
+//            var right3 = left-1
+//
+//            while left3 <= right3 {
+//                (str[left3], str[right3]) = (str[right3], str[left3])
+//                left3 += 1
+//                right3 -= 1
+//            }
+//            print("right has empty: \(str)")
+//            leftCount = 0
+//
+//            return
+//
+//        }
+//        if str[left] != " " && str[right] != " " {
+//            (str[left], str[right]) = (str[right], str[left])
+//            print("no empty: \(str)")
+//
+//            leftCount += 1
+//            rightCount += 1
+//        } else
+//        if str[left] == " " {
+//            (str[left], str[right]) = (str[right], str[left])
+//            print("left has empty: \(str)")
+//            print(left)
+//            print(right)
+//            let test = right+rightCount
+//
+//            var left2 = right+1
+//            var right2 = test
+//            print("left2 \(left2)")
+//            print("right2 \(test)")
+//
+//            while left2 < right2 {
+//                (str[left2], str[right2]) = (str[right2], str[left2])
+//                left2 += 1
+//                right2 -= 1
+//            }
+//
+//            rightCount = 0
+//        } else
+//        if str[right] == " " {
+//            print("right has empty: \(str)")
+//            (str[left], str[right]) = (str[right], str[left])
+//            let test2 = left+leftCount
+//
+//            var left2 = left-leftCount-1
+//            var right2 = left-1
+//
+//            while left2 <= right2 {
+//                (str[left2], str[right2]) = (str[right2], str[left2])
+//                left2 += 1
+//                right2 -= 1
+//            }
+//            print("right has empty: \(str)")
+//            leftCount = 0
+//        }
+//        left += 1
+//        right -= 1
+//    }
 }
 
-private func helper(_ candidates: [Int], _ target: Int, _ temp: inout [Int],_ res: inout [[Int]], _ idx: Int) {
-    
-    if target == 0 {
-//        if !res.contains(where: temp) {
-        
-        if !res.contains(where: { $0 == temp }) {
-            res.append(temp)
-        }
-        return
-    }
-    for i in idx..<candidates.count {
-        if target - candidates[i] >= 0 {
-            temp.append(candidates[i])
-            helper(candidates, target-candidates[i], &temp, &res, i+1)
-            temp.removeLast()
-        }
+public class ListNode {
+    public var val: Int
+    public var next: ListNode?
+    public init(_ val: Int) {
+        self.val = val
+        self.next = nil
     }
 }
 
-let res = combinationSum2([2,3,4,7], 7)
+func mergeKLists(_ lists: [ListNode?]) -> ListNode? {
+    guard lists.count > 1 else {
+        if lists.count == 0 { return nil }
+        return lists[0]
+    }
+    var tempLists = lists
+    var passCount = 0
+    while passCount <= tempLists.count/2 {
+        for i in stride(from: 0, to:tempLists.count, by: 2) {
+            if i == tempLists.count-1 {
+                tempLists[i] = lists[i]
+            } else {
+                tempLists[i] = mergeTwoLists(lists[i], lists[i+1])
+            }
+            passCount += 1
+        }
+    }
+    return tempLists[0]
+}
+
+private func mergeTwoLists(_ list1: ListNode?, _ list2: ListNode?) -> ListNode? {
+    let dummy = ListNode(0)
+    var res: ListNode?
+    dummy.next = res
+    while list1 != nil && list2 != nil {
+        if list1!.val < list2!.val {
+            res = list1!
+        } else {
+            res = list2!
+        }
+        res = res!.next
+    }
+    while list1 != nil {
+        res!.next = list1!
+    }
+    while list2 != nil {
+        res!.next = list2!
+    }
+    return dummy.next
+}
+
+let res = mergeKLists([nil, nil])
+
 
