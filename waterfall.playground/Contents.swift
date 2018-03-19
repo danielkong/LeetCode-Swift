@@ -441,57 +441,46 @@ func reverseWords(_ str: inout [Character]) {
 //        right -= 1
 //    }
 }
+func search(_ nums: [Int], _ target: Int) -> Int {
+    guard nums.count >= 1 else { return -1 }
+    var low = 0
+    var high = nums.count-1
+    while low < high {
+        let mid = (high-low)/2 + low
+        print(mid)
+        if nums[mid] == target { return mid }
+        
+        print("test")
+        print(mid)
 
-public class ListNode {
-    public var val: Int
-    public var next: ListNode?
-    public init(_ val: Int) {
-        self.val = val
-        self.next = nil
-    }
-}
+        if nums[low] <= nums[mid] {
+            print("testdd")
 
-func mergeKLists(_ lists: [ListNode?]) -> ListNode? {
-    guard lists.count > 1 else {
-        if lists.count == 0 { return nil }
-        return lists[0]
-    }
-    var tempLists = lists
-    var passCount = 0
-    while passCount <= tempLists.count/2 {
-        for i in stride(from: 0, to:tempLists.count, by: 2) {
-            if i == tempLists.count-1 {
-                tempLists[i] = lists[i]
+            if target >= nums[low] && target < nums[mid] {
+                high = mid - 1
             } else {
-                tempLists[i] = mergeTwoLists(lists[i], lists[i+1])
+                low = mid + 1
             }
-            passCount += 1
-        }
-    }
-    return tempLists[0]
-}
-
-private func mergeTwoLists(_ list1: ListNode?, _ list2: ListNode?) -> ListNode? {
-    let dummy = ListNode(0)
-    var res: ListNode?
-    dummy.next = res
-    while list1 != nil && list2 != nil {
-        if list1!.val < list2!.val {
-            res = list1!
         } else {
-            res = list2!
+            print(nums[high])
+            if target > nums[mid] && target <= nums[high] {
+                print("---")
+
+                low = mid + 1
+                print("testdd")
+
+            } else {
+                print("---")
+                high = mid - 1
+
+            }
         }
-        res = res!.next
     }
-    while list1 != nil {
-        res!.next = list1!
-    }
-    while list2 != nil {
-        res!.next = list2!
-    }
-    return dummy.next
+    print("---")
+
+    if low > nums.count-1 { return -1 }
+    return nums[low] == target ? low : -1
 }
 
-let res = mergeKLists([nil, nil])
-
+let res = search([1], 1)
 
