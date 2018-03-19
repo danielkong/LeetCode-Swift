@@ -441,46 +441,37 @@ func reverseWords(_ str: inout [Character]) {
 //        right -= 1
 //    }
 }
-func search(_ nums: [Int], _ target: Int) -> Int {
-    guard nums.count >= 1 else { return -1 }
-    var low = 0
-    var high = nums.count-1
-    while low < high {
-        let mid = (high-low)/2 + low
-        print(mid)
-        if nums[mid] == target { return mid }
-        
-        print("test")
-        print(mid)
-
-        if nums[low] <= nums[mid] {
-            print("testdd")
-
-            if target >= nums[low] && target < nums[mid] {
-                high = mid - 1
-            } else {
-                low = mid + 1
-            }
+func romanToInt(_ s: String) -> Int {
+    let dict: [String: Int] = {
+        var dict = [String: Int]()
+        dict["I"] = 1
+        dict["V"] = 5
+        dict["X"] = 10
+        dict["L"] = 50
+        dict["C"] = 100
+        dict["D"] = 500
+        dict["M"] = 1000
+        return dict
+    }()
+    
+    let sch = Array(s.reversed())
+    var res = 0
+    for i in 0..<sch.count {
+        guard let curr = dict[String(sch[i])] else {
+            return res
+        }
+        if i>0 && curr<dict[String(sch[i-1])]! {
+            res -= curr
         } else {
-            print(nums[high])
-            if target > nums[mid] && target <= nums[high] {
-                print("---")
-
-                low = mid + 1
-                print("testdd")
-
-            } else {
-                print("---")
-                high = mid - 1
-
-            }
+            res += curr
         }
     }
-    print("---")
-
-    if low > nums.count-1 { return -1 }
-    return nums[low] == target ? low : -1
+    return res
 }
 
-let res = search([1], 1)
+let res = romanToInt("XIV")
+let maxxx = Int16.max // 11484849885
+print(maxxx)
+
+
 

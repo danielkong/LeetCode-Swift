@@ -20,6 +20,19 @@ If nums = [1,2,3], a solution is:
 ]
 */
 
+func subsets(_ nums: [Int]) -> [[Int]] {
+    var res = [[Int]]()
+    res.append([])
+    for i in 0..<nums.count {
+        for item in res {
+            var temp = item
+            temp.append(nums[i])
+            res.append(temp)
+        }
+    }
+    return res
+}
+
 class Solution {
     func subsets(_ nums: [Int]) -> [[Int]] {
         var res = [[Int]]()
@@ -60,7 +73,7 @@ class Solution {
         return res
     }
     
-    private func _dfs(inout res: [[Int]], inout _ path: [Int], _ nums: [Int], _ index: Int) {
+    private func _dfs(_ res: inout [[Int]], _ path: inout [Int], _ nums: [Int], _ index: Int) {
         // termination case
         res.append(Array(path))
         
@@ -131,19 +144,19 @@ class Solution {
  *
  */
 
-class SubsetsII {
-    func subsetsWithDup(nums: [Int]) -> [[Int]] {
+class Solution {
+    func subsetsWithDup(_ nums: [Int]) -> [[Int]] {
         var res = [[Int]]()
         var path = [Int]()
         
-        let nums = nums.sort({$0 < $1})
+        let nums = nums.sorted()
         
-        _dfs(&res, &path, nums, 0)
+        dfs(&res, &path, nums, 0)
         
         return res
     }
     
-    private func _dfs(inout res: [[Int]], inout _ path:[Int], _ nums: [Int], _ index: Int) {
+    private func dfs(_ res: inout [[Int]], _ path: inout [Int], _ nums: [Int], _ index: Int) {
         res.append(Array(path))
         
         for i in index ..< nums.count {
@@ -152,8 +165,45 @@ class SubsetsII {
             }
             
             path.append(nums[i])
-            _dfs(&res, &path, nums, i + 1)
+            dfs(&res, &path, nums, i + 1)
             path.removeLast()
         }
     }
+}
+
+
+
+func subsetsWithDup(_ nums: [Int]) -> [[Int]] {
+    let sortedNums = nums.sorted()
+    var ans = [[Int]]()
+    ans.append([Int]())
+    var count = 0
+    var startIndex = 0
+    for i in 0..<sortedNums.count {
+        if i > 0 && sortedNums[i] == sortedNums[i-1] {
+            startIndex = count
+        } else {
+            startIndex = 0
+        }
+        count = ans.count
+        for j in startIndex..<count {
+            var temp = ans[j]
+            temp.append(sortedNums[i])
+            ans.append(temp)
+        }
+    }
+    return ans
+}
+
+func subsets(_ nums: [Int]) -> [[Int]] {
+    var res = [[Int]]()
+    res.append([])
+    for i in 0..<nums.count {
+        for item in res {
+            var temp = item
+            temp.append(nums[i])
+            res.append(temp)
+        }
+    }
+    return res
 }
