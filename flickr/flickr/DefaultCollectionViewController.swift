@@ -10,14 +10,37 @@
     2. sizeForItemAt set each cell size. (UICollectionViewDelegateFlowLayout)
     3. use FlowLayout change swipe direction to horizontal
     4. UIStackView as prev, next, and UIPageControl
- TODO:
     5. Add page dot/previous/next button
     6. UIScrollView
- 6. Handle rotation
+    7. Handle rotation
  
  */
 import Foundation
 import UIKit
+
+// Enum
+enum ButtonType: Int {
+    case Slow = 0,
+    Fast,
+    Chipmunk,
+    Vader,
+    Echo,
+    Reverb
+}
+
+// Struct Sample:
+struct Alerts {
+    static let DismissAlert = "Dismiss"
+    static let RecordingDisabledTitle = "Recording Disabled"
+    static let RecordingDisabledMessage = "You've disabled this app from recording your microphone. Check Settings."
+    static let RecordingFailedTitle = "Recording Failed"
+    static let RecordingFailedMessage = "Something went wrong with your recording."
+    static let AudioRecorderError = "Audio Recorder Error"
+    static let AudioSessionError = "Audio Session Error"
+    static let AudioRecordingError = "Audio Recording Error"
+    static let AudioFileError = "Audio File Error"
+    static let AudioEngineError = "Audio Engine Error"
+}
 
 extension UIColor {
     static var mainPink = UIColor(red: 232/255, green: 68/255, blue: 133/255, alpha: 1)

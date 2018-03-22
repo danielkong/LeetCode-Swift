@@ -13,3 +13,6 @@ struct Page {
     let headerText: String
     let bodyText: String
 }
+
+let test = Page(imageName: "test", headerText: "thank you", bodyText: "string")
+

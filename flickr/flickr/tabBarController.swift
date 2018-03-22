@@ -9,6 +9,7 @@
  Note:
     1. TabBarController
     2. UITabBarControllerDelegate
+    3. UINavigationController
  
  */
 import Foundation
@@ -19,7 +20,11 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         let tabOne = TableViewController()
-        tabOne.tabBarItem = UITabBarItem(title: "tab 1", image: nil, selectedImage: nil)
+        let nav = UINavigationController(rootViewController: tabOne)
+//        nav.isNavigationBarHidden = true
+        nav.tabBarItem = UITabBarItem(title: "tab 1", image: nil, selectedImage: nil)
+
+        
         let tabTwo = CustomizedCollectionViewController()
         tabTwo.tabBarItem = UITabBarItem(title: "tab 2", image: nil, selectedImage: nil)
         
@@ -30,7 +35,7 @@ class TabBarController: UITabBarController {
         let tabThree = DefaultCollectionViewController(collectionViewLayout: layout)
         tabThree.tabBarItem = UITabBarItem(title: "tab 3", image: nil, selectedImage: nil)
         
-        viewControllers = [tabOne, tabTwo, tabThree]
+        viewControllers = [nav, tabTwo, tabThree]
     }
 }
 

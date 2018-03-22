@@ -10,7 +10,8 @@
     Autolayout + UITableView
   1. Did not set `translatesAutoresizingMaskIntoConstraints` then nothing show up
   2. When imageView is UIView, tableView does not show up, UIView does not have height
-  3.
+  3. `topLayoutGuide` fix NavigationBar hidden imageView.
+ 
  */
 
 import UIKit
@@ -56,7 +57,13 @@ class TableViewController: UIViewController {
         let margin = view! // view.layoutMarginsGuide
         imageView.leadingAnchor.constraint(equalTo: margin.leadingAnchor).isActive = true
         imageView.trailingAnchor.constraint(equalTo: margin.trailingAnchor).isActive = true
-        imageView.topAnchor.constraint(equalTo: margin.topAnchor, constant: 26).isActive = true
+        
+//        imageView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+        if #available(iOS 11, *) {
+            imageView.topAnchor.constraint(equalTo: margin.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+        } else {
+            imageView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 10).isActive = true
+        }
 //        blueview.bottomAnchor.constraint(equalTo: margin.bottomAnchor, constant: -20).isActive = true
         imageView.bottomAnchor.constraint(equalTo: tableview.topAnchor, constant: -20).isActive = true
         imageView.heightAnchor.constraint(lessThanOrEqualToConstant: 88)
@@ -71,7 +78,8 @@ class TableViewController: UIViewController {
 
 extension TableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("click on \(indexPath.row)")
+        let dvc = DetailViewController()
+        navigationController?.pushViewController(dvc, animated: true)
     }
 }
 

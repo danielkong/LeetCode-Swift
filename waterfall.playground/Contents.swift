@@ -441,37 +441,115 @@ func reverseWords(_ str: inout [Character]) {
 //        right -= 1
 //    }
 }
-func romanToInt(_ s: String) -> Int {
-    let dict: [String: Int] = {
-        var dict = [String: Int]()
-        dict["I"] = 1
-        dict["V"] = 5
-        dict["X"] = 10
-        dict["L"] = 50
-        dict["C"] = 100
-        dict["D"] = 500
-        dict["M"] = 1000
-        return dict
-    }()
+//func romanToInt(_ s: String) -> Int {
+//    let dict: [String: Int] = {
+//        var dict = [String: Int]()
+//        dict["I"] = 1
+//        dict["V"] = 5
+//        dict["X"] = 10
+//        dict["L"] = 50
+//        dict["C"] = 100
+//        dict["D"] = 500
+//        dict["M"] = 1000
+//        return dict
+//    }()
+//
+//    let sch = Array(s.reversed())
+//    var res = 0
+//    for i in 0..<sch.count {
+//        guard let curr = dict[String(sch[i])] else {
+//            return res
+//        }
+//        if i>0 && curr<dict[String(sch[i-1])]! {
+//            res -= curr
+//        } else {
+//            res += curr
+//        }
+//    }
+//    return res
+//}
+//
+//let res = romanToInt("XIV")
+//let maxxx = Int16.max // 11484849885
+//print(maxxx)
+func asteroidCollision(_ asteroids: [Int]) -> [Int] {
+    var start  = 0
+    var end = asteroids.count - 1
+    var res = [Int]()
+    var endArr = [Int]()
+    // Trim start and end of array
+    while asteroids[start] < 0 && start <= end {
+        res.append(asteroids[start])
+        start += 1
+        if start == asteroids.count { break }
+    }
+    while asteroids[end] > 0 && start <= end {
+        endArr.append(asteroids[end])
+        end -= 1
+        if end == 0 { break }
+    }
     
-    let sch = Array(s.reversed())
-    var res = 0
-    for i in 0..<sch.count {
-        guard let curr = dict[String(sch[i])] else {
-            return res
-        }
-        if i>0 && curr<dict[String(sch[i-1])]! {
-            res -= curr
+    var stack = [Int]()
+    var negativeStack = [Int]()
+    var directionRight = true
+    
+    // "+, -" is the only case need to consider
+    while start <= end {
+        if asteroids[start] > 0 {
+            stack.append(asteroids[start])
         } else {
-            res += curr
+            negativeStack.append(asteroids[start])
+        }
+        while !stack.isEmpty && !negativeStack.isEmpty {
+            let p = stack.last!
+            let q = abs(negativeStack.last!)
+            if p < q {
+                stack.removeLast()
+//                if stack.isEmpty {
+//                    while !negativeStack.isEmpty {
+//                        res.append(negativeStack.removeLast())
+//                    }
+//                }
+                directionRight = false
+            } else if p > q {
+                negativeStack.removeLast()
+//                if negativeStack.isEmpty {
+//                    var temp = [Int]()
+//                    while !stack.isEmpty {
+//                        temp.append(stack.removeLast())
+//                    }
+//                    res.append(contentsOf: temp.reversed())
+//                }
+            } else {
+                stack.removeLast()
+                negativeStack.removeLast()
+            }
+        }
+        print(res)
+        
+        start += 1
+    }
+
+    
+    if negativeStack.isEmpty {
+        var temp = [Int]()
+        while !stack.isEmpty {
+            temp.append(stack.removeLast())
+        }
+        res.append(contentsOf: temp.reversed())
+    }
+    
+    if stack.isEmpty {
+        while !negativeStack.isEmpty {
+            res.append(negativeStack.removeLast())
         }
     }
+
+    let ttt = endArr.reversed()
+    res = res + ttt
     return res
 }
+let res = asteroidCollision([-2,2,-1,-2])
 
-let res = romanToInt("XIV")
-let maxxx = Int16.max // 11484849885
-print(maxxx)
-
-
+print(res)
 
