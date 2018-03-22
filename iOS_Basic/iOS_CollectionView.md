@@ -24,6 +24,7 @@ iOS 10 life cycle of cell:
 ![alt text][Life_Cycle_CollectionView_Cell_iOS10_c]
 ![alt text][Life_Cycle_CollectionView_Cell_iOS10_w]
 ![alt text][Life_Cycle_CollectionView_Cell_iOS10_e]
+
 [Life_Cycle_CollectionView_Cell_iOS9_p]: https://github.com/danielkong/iOS/blob/master/iOS_Basic/CollectionViewAttachment/Life_Cycle_CollectionView_Cell_iOS9_p.png
 [Life_Cycle_CollectionView_Cell_iOS9_c]: https://github.com/danielkong/iOS/blob/master/iOS_Basic/CollectionViewAttachment/Life_Cycle_CollectionView_Cell_iOS9_c.png
 [Life_Cycle_CollectionView_Cell_iOS9_w]: https://github.com/danielkong/iOS/blob/master/iOS_Basic/CollectionViewAttachment/Life_Cycle_CollectionView_Cell_iOS9_w.png
