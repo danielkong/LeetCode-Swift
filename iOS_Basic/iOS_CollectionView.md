@@ -72,8 +72,8 @@ _First intro in iOS 8_
     iOS 10 selfsizing: 
     ![alt text][selfsizing_iOS10]
 
-[selfsizing_iOS9]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/selfsizing_iOS9.gif
-[selfsizing_iOS10]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/selfsizing_iOS10.gif
+[selfsizing_iOS9]: https://github.com/danielkong/iOS/blob/master/iOS_Basic/CollectionViewAttachment/selfsizing_iOS9.gif
+[selfsizing_iOS10]: https://github.com/danielkong/iOS/blob/master/iOS_Basic/CollectionViewAttachment/selfsizing_iOS10.gif
 
 ## Interactive Reordering
 
@@ -105,10 +105,10 @@ _First intro in iOS 8_
 
     iOS 10 pageing enable as true: 
     ![alt text][collectionView_isPagingEnabledTrue]
-    
-[interactive_reordering]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/interactive_reordering.gif
-[collectionView_isPagingEnableFalse]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/collectionView_isPagingEnableFalse.gif
-[collectionView_isPagingEnabledTrue]: https://github.com/danielkong/iOS_2017/blob/master/iOS_Basic/CollectionViewAttachment/collectionView_isPagingEnabledTrue.gif
+
+[interactive_reordering]: https://github.com/danielkong/iOS/blob/master/iOS_Basic/CollectionViewAttachment/interactive_reordering.gif
+[collectionView_isPagingEnableFalse]: https://github.com/danielkong/iOS/blob/master/iOS_Basic/CollectionViewAttachment/collectionView_isPagingEnableFalse.gif
+[collectionView_isPagingEnabledTrue]: https://github.com/danielkong/iOS/blob/master/iOS_Basic/CollectionViewAttachment/collectionView_isPagingEnabledTrue.gif
 
 ## UIRefreshControl
 
