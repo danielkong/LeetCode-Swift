@@ -16,6 +16,9 @@
 		454D3FA3205B0FDD00B8777B /* CustomizedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D3FA2205B0FDD00B8777B /* CustomizedCollectionViewController.swift */; };
 		454D3FA5205B1C6100B8777B /* CustomizedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D3FA4205B1C6100B8777B /* CustomizedCollectionViewCell.swift */; };
 		454D3FA7205B2F2700B8777B /* DefaultCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D3FA6205B2F2700B8777B /* DefaultCollectionViewController.swift */; };
+		45654ADE2063953400F27582 /* FlickrListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45654ADD2063953400F27582 /* FlickrListViewController.swift */; };
+		45654AE0206397F900F27582 /* Monkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45654ADF206397F900F27582 /* Monkey.swift */; };
+		45654AE22064469400F27582 /* MonkeyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45654AE12064469400F27582 /* MonkeyCell.swift */; };
 		45E0A3B72058F22600435F51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E0A3B62058F22600435F51 /* AppDelegate.swift */; };
 		45E0A3B92058F22600435F51 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E0A3B82058F22600435F51 /* TableViewController.swift */; };
 		45E0A3BC2058F22600435F51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E0A3BA2058F22600435F51 /* Main.storyboard */; };
@@ -52,6 +55,9 @@
 		454D3FA2205B0FDD00B8777B /* CustomizedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedCollectionViewController.swift; sourceTree = "<group>"; };
 		454D3FA4205B1C6100B8777B /* CustomizedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedCollectionViewCell.swift; sourceTree = "<group>"; };
 		454D3FA6205B2F2700B8777B /* DefaultCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollectionViewController.swift; sourceTree = "<group>"; };
+		45654ADD2063953400F27582 /* FlickrListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrListViewController.swift; sourceTree = "<group>"; };
+		45654ADF206397F900F27582 /* Monkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monkey.swift; sourceTree = "<group>"; };
+		45654AE12064469400F27582 /* MonkeyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonkeyCell.swift; sourceTree = "<group>"; };
 		45E0A3B32058F22600435F51 /* flickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E0A3B62058F22600435F51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45E0A3B82058F22600435F51 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +131,9 @@
 				454D3FA4205B1C6100B8777B /* CustomizedCollectionViewCell.swift */,
 				454D3FA0205B0DAC00B8777B /* TabBarController.swift */,
 				45201E4A2061BF62008546E8 /* BaseClientAPI.swift */,
+				45654ADD2063953400F27582 /* FlickrListViewController.swift */,
+				45654AE12064469400F27582 /* MonkeyCell.swift */,
+				45654ADF206397F900F27582 /* Monkey.swift */,
 				45201E4C20621710008546E8 /* TMDBClient.swift */,
 				45E0A3BA2058F22600435F51 /* Main.storyboard */,
 				45E0A3BD2058F22600435F51 /* Assets.xcassets */,
@@ -289,13 +298,16 @@
 				45201E4D20621710008546E8 /* TMDBClient.swift in Sources */,
 				45201E492061B182008546E8 /* DetailViewController.swift in Sources */,
 				454D3FA3205B0FDD00B8777B /* CustomizedCollectionViewController.swift in Sources */,
+				45654ADE2063953400F27582 /* FlickrListViewController.swift in Sources */,
 				45E0A3B92058F22600435F51 /* TableViewController.swift in Sources */,
 				452B5543205B866400CF8B05 /* Page.swift in Sources */,
 				454D3FA1205B0DAC00B8777B /* TabBarController.swift in Sources */,
 				454D3FA5205B1C6100B8777B /* CustomizedCollectionViewCell.swift in Sources */,
 				45201E4B2061BF62008546E8 /* BaseClientAPI.swift in Sources */,
+				45654AE0206397F900F27582 /* Monkey.swift in Sources */,
 				454D3FA7205B2F2700B8777B /* DefaultCollectionViewController.swift in Sources */,
 				45E0A3B72058F22600435F51 /* AppDelegate.swift in Sources */,
+				45654AE22064469400F27582 /* MonkeyCell.swift in Sources */,
 				452B5541205B815000CF8B05 /* PageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

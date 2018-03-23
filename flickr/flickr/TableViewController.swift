@@ -35,10 +35,6 @@ class TableViewController: UIViewController {
         tableview.register(UITableViewCell.self, forCellReuseIdentifier: self.cellId)
         tableview.delegate = self
         tableview.dataSource = self
-        
-//        tableview.rowHeight = UITableViewAutomaticDimension
-//        tableview.estimatedRowHeight = 44.0
-//        tableview.rowHeight =
         return tableview
     }()
     
@@ -49,6 +45,9 @@ class TableViewController: UIViewController {
         view.addSubview(imageView)
         view.addSubview(tableview)
         
+        tableview.rowHeight = UITableViewAutomaticDimension
+        tableview.estimatedRowHeight = 150
+        
         setupConstraints()
         
     }
@@ -58,15 +57,13 @@ class TableViewController: UIViewController {
         imageView.leadingAnchor.constraint(equalTo: margin.leadingAnchor).isActive = true
         imageView.trailingAnchor.constraint(equalTo: margin.trailingAnchor).isActive = true
         
-//        imageView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
         if #available(iOS 11, *) {
             imageView.topAnchor.constraint(equalTo: margin.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
         } else {
             imageView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 10).isActive = true
         }
-//        blueview.bottomAnchor.constraint(equalTo: margin.bottomAnchor, constant: -20).isActive = true
         imageView.bottomAnchor.constraint(equalTo: tableview.topAnchor, constant: -20).isActive = true
-        imageView.heightAnchor.constraint(lessThanOrEqualToConstant: 88)
+        imageView.heightAnchor.constraint(lessThanOrEqualToConstant: 60).isActive = true
 
         tableview.leadingAnchor.constraint(equalTo: margin.leadingAnchor).isActive = true
         tableview.trailingAnchor.constraint(equalTo: margin.trailingAnchor).isActive = true

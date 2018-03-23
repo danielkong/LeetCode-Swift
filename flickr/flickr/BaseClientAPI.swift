@@ -41,11 +41,49 @@ class BaseClientAPI: NSObject {
         static let TimeOutError = "Connection timed out"
         static let SOCKError = "SOCK Errors"
         static let NoDataError = "No data was returned by the request!"
+    }
     
+    /**
+     {
+         "id": "40242713784",
+         "owner": "10881108@N06",
+         "secret": "2ac9f47c1e",
+         "server": "813",
+         "farm": 1,
+         "title": "CAMILLE ALAPHILIPPE TOURS",
+         "ispublic": 1,
+         "isfriend": 0,
+         "isfamily": 0,
+         "url_m": "https:\/\/farm1.staticflickr.com\/813\/40242713784_2ac9f47c1e.jpg",
+         "height_m": "500",
+         "width_m": "282"
+     let id: String
+     let owner: String
+     let secret: String
+     let url_m: String
+     let height_m: String
+     let width_m: String
+     },
+     */
+    struct JSONResponseKeys {
+        static let id = "id"
+        static let owner = "owner"
+        static let secret = "secret"
+        static let url_m = "url_m"
+        static let height_m = "height_m"
+        static let width_m = "width_m"
+        static let title = "title"
     }
     
     // Singleton
-    static let shared = BaseClientAPI()
+//    static let shared = BaseClientAPI()
+    
+     class func shared() -> BaseClientAPI {
+        struct Singleton {
+            static var sharedInstance = BaseClientAPI()
+        }
+        return Singleton.sharedInstance
+     }
     
     // private parameters
     var headers: [String: String] = [String: String]()

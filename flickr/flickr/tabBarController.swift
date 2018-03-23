@@ -19,13 +19,15 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tabOne = TableViewController()
+//        let tabOne = TableViewController()
+        let tabOne = FlickrListViewController()
         let nav = UINavigationController(rootViewController: tabOne)
 //        nav.isNavigationBarHidden = true
         nav.tabBarItem = UITabBarItem(title: "tab 1", image: nil, selectedImage: nil)
 
         
-        let tabTwo = CustomizedCollectionViewController()
+        let tabTwo = TableViewController()
+//        let tabTwo = CustomizedCollectionViewController()
         tabTwo.tabBarItem = UITabBarItem(title: "tab 2", image: nil, selectedImage: nil)
         
         let layout = UICollectionViewFlowLayout()
