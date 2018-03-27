@@ -1,0 +1,4 @@
+UIImagePickerController
+	- showCameraControls = false // default true
+	- cameraOverlayView
+	- cameraViewTransform

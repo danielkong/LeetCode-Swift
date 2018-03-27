@@ -50,3 +50,24 @@ class Solution {
         return sum
     }
 }
+
+// Solution Swift: DFS. Use tuple track depth and runtime O(N), space O(1)
+class Solution {
+    func depthSum(_ nestedList: [NestedInteger]) -> Int {
+        var res = 0
+        var queue: [([NestedInteger], Int)] = [(nestedList, 1)]
+        
+        while queue.count != 0 {
+            let temp = queue.removeLast()
+            var nextLevel: [NestedInteger] = []
+            for item in temp.0 {
+                if item.isInteger() {
+                    res += item.getInteger() * temp.1
+                } else {
+                    queue.append((item.getList(), (temp.1 + 1)))
+                }
+            }
+        }
+        return res
+    }
+}

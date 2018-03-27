@@ -106,6 +106,7 @@ extension FlickrListViewController: UITableViewDelegate, UITableViewDataSource {
 //    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dvc = DetailViewController()
+        dvc.delegate = self
         loadImageWithURL(monkeys[indexPath.row].url_m) { image in
             DispatchQueue.main.async {
                 dvc.imageView.image = image!
@@ -127,5 +128,11 @@ extension FlickrListViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         task.resume()
+    }
+}
+
+extension FlickrListViewController: DetailViewDelegate {
+    func highlightSelectedImage() {
+        print("highlight")
     }
 }

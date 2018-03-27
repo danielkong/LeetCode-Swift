@@ -65,15 +65,7 @@ class BaseClientAPI: NSObject {
      let width_m: String
      },
      */
-    struct JSONResponseKeys {
-        static let id = "id"
-        static let owner = "owner"
-        static let secret = "secret"
-        static let url_m = "url_m"
-        static let height_m = "height_m"
-        static let width_m = "width_m"
-        static let title = "title"
-    }
+
     
     // Singleton
 //    static let shared = BaseClientAPI()

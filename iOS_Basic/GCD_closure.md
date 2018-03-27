@@ -94,9 +94,28 @@ func g(x: Int) -> Double {
 - DispatchQueue(label: attributes: ) -- create a queue // attribute: .serial .concurrent
 - DispatchQueue(label: ) -- create a queue
 - async // add closure to queue, and the closure will run somtime in the immediate future
+-  asyncAfter(deadline: DispatchTime, qos: DispatchQoS = default, flags: DispatchWorkItemFlags = default, execute work: @escaping @convention(block) () -> Swift.Void)
 - DispatchQueue.global(qos: ) 
     + //QOS_CLASS_utility, Background, initiated, interactive
     + iOS always gives each app four extra queues on top of the name one
 - DispatchQueue.main
-- 
+- If update UIView in other queue(not main queue), it not crash every time, like 6 of 10 times.
+
+    @IBAction func simpleAsynchronousDownload(_ sender: UIBarButtonItem) {
+        // Get the URL for the image
+        let url = URL(string: BigImages.shark.rawValue)
+        // create a queue from scratch
+        let downloadQueue = DispatchQueue(label: "download", attributes: [])
+        // call dispatch async to send a closure to the downloads queue
+        downloadQueue.async { () -> Void in
+            // download Data
+            let imgData = try? Data(contentsOf: url!)
+            // Turn it into a UIImage
+            let image = UIImage(data: imgData!)
+            // display it
+            DispatchQueue.main.async(execute: { () -> Void in
+                self.photoView.image = image
+            })
+        }
+    }
 
