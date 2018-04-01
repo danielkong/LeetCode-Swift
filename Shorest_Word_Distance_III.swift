@@ -17,7 +17,7 @@ Note:
 You may assume word1 and word2 are both in the list.
 */
 
-// Use dictionary store index, Runtime: O(N)
+// Use dictionary store index, Runtime: O(N) + O(pq) // p count of word1, q coutn of word2
 
 class Solution {
     func shortestWordDistance(_ words: [String], _ word1: String, _ word2: String) -> Int {
@@ -52,6 +52,40 @@ class Solution {
     }
 }
 
+class Solution {
+    func shortestWordDistance(_ words: [String], _ word1: String, _ word2: String) -> Int {
+        var dict = [String: [Int]]()
+        for (i, word) in words.enumerated() {
+            if dict[word] == nil {
+                dict[word] = [i]
+            } else {
+                dict[word]!.append(i)
+            }
+        }
+        
+        var res = Int.max
+        if word1 == word2 {
+            if let aidx = dict[word1] {
+                for i in 0...aidx.count-2 {
+                    res = min(res, abs(aidx[i]-aidx[i+1]))
+                }
+            }
+        } else {
+            if let aidx = dict[word1], let bidx = dict[word2] {
+                for a in aidx {
+                    for b in bidx {
+                        res = min(res, abs(a-b))
+                    }
+                }
+            }
+        }
+        
+        
+        return res
+    }
+}
+
+/**
 public:
     int shortestWordDistance(vector<string>& words, string word1, string word2) {
         int p1 = -1, p2 = -1, res = INT_MAX;
@@ -70,3 +104,4 @@ public:
         return res;
     }
 };
+ */
