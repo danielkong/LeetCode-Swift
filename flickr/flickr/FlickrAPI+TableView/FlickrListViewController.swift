@@ -107,11 +107,14 @@ extension FlickrListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dvc = DetailViewController()
         dvc.delegate = self
-        loadImageWithURL(monkeys[indexPath.row].url_m) { image in
-            DispatchQueue.main.async {
-                dvc.imageView.image = image!
+        DispatchQueue.global().async {
+            self.loadImageWithURL(self.monkeys[indexPath.row].url_m) { image in
+                DispatchQueue.main.async {
+                    dvc.imageView.image = image!
+                }
             }
         }
+
         navigationController?.pushViewController(dvc, animated: true)
     }
     
@@ -121,9 +124,6 @@ extension FlickrListViewController: UITableViewDelegate, UITableViewDataSource {
             if let data = data {
                 if let image = UIImage.init(data: data) {
                     completionHandler(image)
-//                    DispatchQueue.main.async {
-//                        self.imgView.image = image
-//                    }
                 }
             }
         }

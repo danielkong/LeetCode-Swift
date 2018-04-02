@@ -46,7 +46,7 @@ extension UIColor {
     static var mainPink = UIColor(red: 232/255, green: 68/255, blue: 133/255, alpha: 1)
 }
 
-class DefaultCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class DefaultPagingCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     private let kCellId = "defaultCollectionViewCellId"
     
     let pages = [

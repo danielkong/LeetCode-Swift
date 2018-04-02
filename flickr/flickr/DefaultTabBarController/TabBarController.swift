@@ -34,7 +34,7 @@ class TabBarController: UITabBarController {
         layout.scrollDirection = .horizontal
 //        layout.minimumInteritemSpacing = 30
 //        layout.minimumLineSpacing = 15 // default is 10
-        let tabThree = DefaultCollectionViewController(collectionViewLayout: layout)
+        let tabThree = DefaultPagingCollectionViewController(collectionViewLayout: layout)
         tabThree.tabBarItem = UITabBarItem(title: "tab 3", image: nil, selectedImage: nil)
         
         viewControllers = [nav, tabTwo, tabThree]
