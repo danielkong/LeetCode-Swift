@@ -19,6 +19,10 @@
 		454D4CBF20718AE800F652EA /* DefaultHeaderFooterCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D4CBE20718AE800F652EA /* DefaultHeaderFooterCollectionViewController.swift */; };
 		454D4CC320718E6500F652EA /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D4CC220718E6500F652EA /* UserCell.swift */; };
 		454D4CCC2071AC1C00F652EA /* ColletionViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D4CCB2071AC1C00F652EA /* ColletionViewHeaderCell.swift */; };
+		454D4CCE2071B5CC00F652EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D4CCD2071B5CC00F652EA /* User.swift */; };
+		45511B0A2071F6C4009363B1 /* DefaultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45511B092071F6C4009363B1 /* DefaultTableViewController.swift */; };
+		45511B0C2071F99C009363B1 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45511B0B2071F99C009363B1 /* CustomTableViewCell.swift */; };
+		45511B0E20720B1B009363B1 /* CollectionViewFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45511B0D20720B1B009363B1 /* CollectionViewFooterCell.swift */; };
 		45654ADE2063953400F27582 /* FlickrListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45654ADD2063953400F27582 /* FlickrListViewController.swift */; };
 		45654AE0206397F900F27582 /* Monkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45654ADF206397F900F27582 /* Monkey.swift */; };
 		45654AE22064469400F27582 /* MonkeyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45654AE12064469400F27582 /* MonkeyCell.swift */; };
@@ -62,6 +66,10 @@
 		454D4CBE20718AE800F652EA /* DefaultHeaderFooterCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHeaderFooterCollectionViewController.swift; sourceTree = "<group>"; };
 		454D4CC220718E6500F652EA /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		454D4CCB2071AC1C00F652EA /* ColletionViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColletionViewHeaderCell.swift; sourceTree = "<group>"; };
+		454D4CCD2071B5CC00F652EA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		45511B092071F6C4009363B1 /* DefaultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewController.swift; sourceTree = "<group>"; };
+		45511B0B2071F99C009363B1 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		45511B0D20720B1B009363B1 /* CollectionViewFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFooterCell.swift; sourceTree = "<group>"; };
 		45654ADD2063953400F27582 /* FlickrListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrListViewController.swift; sourceTree = "<group>"; };
 		45654ADF206397F900F27582 /* Monkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monkey.swift; sourceTree = "<group>"; };
 		45654AE12064469400F27582 /* MonkeyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonkeyCell.swift; sourceTree = "<group>"; };
@@ -106,13 +114,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		454D4CBD20718AC000F652EA /* DefaultCollectionViewController */ = {
+		454D4CBD20718AC000F652EA /* DefaultCollectionViewController(Twitter) */ = {
 			isa = PBXGroup;
 			children = (
 				454D4CC120718E4300F652EA /* HeaderFooter */,
 				454D4CC020718E3400F652EA /* Paging */,
 			);
-			path = DefaultCollectionViewController;
+			path = "DefaultCollectionViewController(Twitter)";
 			sourceTree = "<group>";
 		};
 		454D4CC020718E3400F652EA /* Paging */ = {
@@ -130,7 +138,9 @@
 			children = (
 				454D4CBE20718AE800F652EA /* DefaultHeaderFooterCollectionViewController.swift */,
 				454D4CC220718E6500F652EA /* UserCell.swift */,
+				454D4CCD2071B5CC00F652EA /* User.swift */,
 				454D4CCB2071AC1C00F652EA /* ColletionViewHeaderCell.swift */,
+				45511B0D20720B1B009363B1 /* CollectionViewFooterCell.swift */,
 			);
 			path = HeaderFooter;
 			sourceTree = "<group>";
@@ -138,6 +148,8 @@
 		454D4CC420718FA000F652EA /* DefaultTableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				45511B092071F6C4009363B1 /* DefaultTableViewController.swift */,
+				45511B0B2071F99C009363B1 /* CustomTableViewCell.swift */,
 			);
 			path = DefaultTableViewController;
 			sourceTree = "<group>";
@@ -208,7 +220,7 @@
 				454D4CC72071900200F652EA /* CustomCollectionViewController */,
 				454D4CC620718FC100F652EA /* CustomTableViewController */,
 				454D4CC420718FA000F652EA /* DefaultTableViewController */,
-				454D4CBD20718AC000F652EA /* DefaultCollectionViewController */,
+				454D4CBD20718AC000F652EA /* DefaultCollectionViewController(Twitter) */,
 				45E0A3B62058F22600435F51 /* AppDelegate.swift */,
 				45201E4C20621710008546E8 /* TMDBClient.swift */,
 				45E0A3BA2058F22600435F51 /* Main.storyboard */,
@@ -372,8 +384,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				45201E4D20621710008546E8 /* TMDBClient.swift in Sources */,
+				45511B0E20720B1B009363B1 /* CollectionViewFooterCell.swift in Sources */,
 				45654AE42064C35400F27582 /* FlickrConstants.swift in Sources */,
 				45201E492061B182008546E8 /* DetailViewController.swift in Sources */,
+				45511B0C2071F99C009363B1 /* CustomTableViewCell.swift in Sources */,
 				454D3FA3205B0FDD00B8777B /* CustomizedCollectionViewController.swift in Sources */,
 				454D4CBF20718AE800F652EA /* DefaultHeaderFooterCollectionViewController.swift in Sources */,
 				45654ADE2063953400F27582 /* FlickrListViewController.swift in Sources */,
@@ -385,10 +399,12 @@
 				45654AE0206397F900F27582 /* Monkey.swift in Sources */,
 				454D4CC320718E6500F652EA /* UserCell.swift in Sources */,
 				454D3FA7205B2F2700B8777B /* DefaultPagingCollectionViewController.swift in Sources */,
+				45511B0A2071F6C4009363B1 /* DefaultTableViewController.swift in Sources */,
 				45E0A3B72058F22600435F51 /* AppDelegate.swift in Sources */,
 				454D4CCC2071AC1C00F652EA /* ColletionViewHeaderCell.swift in Sources */,
 				45654AE22064469400F27582 /* MonkeyCell.swift in Sources */,
 				452B5541205B815000CF8B05 /* PageCell.swift in Sources */,
+				454D4CCE2071B5CC00F652EA /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

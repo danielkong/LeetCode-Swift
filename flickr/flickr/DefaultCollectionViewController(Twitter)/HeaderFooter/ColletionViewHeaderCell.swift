@@ -12,7 +12,7 @@ class CollectionViewHeaderCell: UICollectionViewCell {
     // UI Properties
     let textLabel: UILabel = {
         let label = UILabel()
-        label.text = "testing header"
+        label.text = "People you may know"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
         return label
@@ -20,6 +20,7 @@ class CollectionViewHeaderCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .white
         setupViews()
     }
     

@@ -16,6 +16,16 @@ let followColor = UIColor(red: 61.0/255.0, green: 167.0/255.0, blue: 244.0/255.0
 
 class UserCell: UICollectionViewCell {
     
+    // model
+    var model: User? {
+        didSet {
+            if let user = model {
+                nameLabel.text = user.name
+                userIdLabel.text = user.username
+                bioTextView.text = user.bioText
+            }
+        }
+    }
     // UI Properties
     let nameLabel: UILabel = {
         let nameLabel = UILabel()
@@ -50,10 +60,12 @@ class UserCell: UICollectionViewCell {
     
     let bioTextView: UITextView = {
         let textView = UITextView()
-//        textView.backgroundColor = .yellow
+        textView.backgroundColor = .clear
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.isEditable = false
+        textView.isScrollEnabled = false
         textView.text = "Bio testing, Bio testing, Bio testing, Bio testing, Bio testing, Bio testing, Bio testing, Bio testing, Bio testing ..."
+        
         textView.font = UIFont.systemFont(ofSize: 15)
         
         return textView
@@ -78,6 +90,7 @@ class UserCell: UICollectionViewCell {
     // create init since get called when a cell is dequeued
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .white
         setupViews()
     }
     
