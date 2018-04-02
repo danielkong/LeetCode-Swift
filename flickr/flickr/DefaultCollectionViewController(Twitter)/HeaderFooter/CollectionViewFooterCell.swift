@@ -30,18 +30,22 @@ class CollectionViewFooterCell: UICollectionViewCell {
     private func setupViews() {
         clipsToBounds = true
         
-        addSubview(textLabel)
-        textLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive = true
-        textLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        textLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        textLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        
-        
         let whiteBackgroundView = UIView()
+        whiteBackgroundView.translatesAutoresizingMaskIntoConstraints  = false
         whiteBackgroundView.backgroundColor = .white
         addSubview(whiteBackgroundView)
-        whiteBackgroundView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        whiteBackgroundView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        
+        addSubview(textLabel)
+        textLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12).isActive = true
+        textLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        textLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        textLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -14).isActive = true
+        
+        
+
+        
+        whiteBackgroundView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        whiteBackgroundView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         whiteBackgroundView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         whiteBackgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -14).isActive = true
         

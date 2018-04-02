@@ -11,18 +11,30 @@ import UIKit
 class DefaultHeaderFooterCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private let kCellId = "cellId"
+    private let kTweetCellId = "tweetcellId"
+
     private let kHeaderId = "headerId"
     private let kFooterId = "footerId"
 
     // Data Model
     let users: [User] = {
-        let aUser = User(id: 1000, name: "Test Name", username: "@testName", bioText: "I am bio texting ...")
+        let aUser = User(id: 1000, name: "Test Name", username: "@testName", bioText: "I am bio texting ...", imageString: "profile_image")
         
-        let brianUser = User(id: 1001, name: "Brian Voong", username: "@buildthatapp", bioText: "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!")
+        let danielUser = User(id: 1001, name: "Daniel Kong", username: "@daniel kong", bioText: "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!", imageString: "profile_image")
         
-        let rayUser = User(id: 1002, name: "Ray Wenderlich", username: "@rwenderlich", bioText: "Ray Wenderlich is an iPhone developer and tweets on topics related to iPhone, software, and gaming. Check out our conference.")
+        let rayUser = User(id: 1002, name: "Ray Wenderlich", username: "@rwenderlich", bioText: "Ray Wenderlich is an iPhone developer and tweets on topics related to iPhone, software, and gaming. Check out our conference.", imageString: "ray_profile_image")
         
-        return [aUser,aUser,aUser,aUser,aUser, brianUser, rayUser]
+        return [aUser,aUser,aUser,aUser,aUser, danielUser, rayUser]
+    }()
+    
+    let tweets: [Tweet] = {
+        let aUser = User(id: 1000, name: "Test Name", username: "@testName", bioText: "I am bio texting ...", imageString: "profile_image")
+        let danielUser = User(id: 1001, name: "Daniel Kong", username: "@daniel kong", bioText: "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!", imageString: "profile_image")
+        let rayUser = User(id: 1002, name: "Ray Wenderlich", username: "@rwenderlich", bioText: "Ray Wenderlich is an iPhone developer and tweets on topics related to iPhone, software, and gaming. Check out our conference.", imageString: "profile_image")
+
+        let first = Tweet(user: aUser, message: "Welcome Tweet, Welcome Tweet,Welcome Tweet,Welcome Tweet,Welcome Tweet,Welcome Tweet,Welcome Tweet,Welcome Tweet,Welcome Tweet,")
+        let second = Tweet(user: danielUser, message: "good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!")
+        return [first, second]
     }()
     
     override func viewDidLoad() {
@@ -32,6 +44,8 @@ class DefaultHeaderFooterCollectionViewController: UICollectionViewController, U
 
         collectionView?.backgroundColor = UIColor(red: 232.0/255.0, green: 236.0/255.0, blue: 241.0/255.0, alpha: 1)
         collectionView?.register(UserCell.self, forCellWithReuseIdentifier: kCellId)
+        collectionView?.register(TweetCell.self, forCellWithReuseIdentifier: kTweetCellId)
+
         collectionView?.register(CollectionViewHeaderCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderId)
         collectionView?.register(CollectionViewFooterCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: kFooterId)
 
@@ -52,14 +66,26 @@ class DefaultHeaderFooterCollectionViewController: UICollectionViewController, U
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 1 { return tweets.count }
         return users.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:kCellId
-            , for: indexPath) as! UserCell
-        cell.model = users[indexPath.row]
-        return cell
+        let cell: UICollectionViewCell
+        if indexPath.section == 1 {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier:kTweetCellId, for: indexPath) as! TweetCell
+            (cell as! TweetCell).tweet = tweets[indexPath.row]
+//            cell.layer.borderColor = UIColor.black.cgColor
+//            cell.layer.borderWidth = 2
+            
+//            cell.model = users[indexPath.row]
+            return cell
+        } else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier:kCellId, for: indexPath) as! UserCell
+            (cell as! UserCell).model = users[indexPath.row]
+            return cell
+        }
+
     }
     
     // Collection View Delegate Flowlayout
@@ -87,7 +113,7 @@ class DefaultHeaderFooterCollectionViewController: UICollectionViewController, U
 //            header.backgroundColor = .blue
             return header
         } else {
-            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kFooterId, for: indexPath) as! CollectionViewHeaderCell
+            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kFooterId, for: indexPath) as! CollectionViewFooterCell
             footer.textLabel.text = "Show Me More"
             footer.textLabel.textColor = .blue
 //            footer.backgroundColor = .darkGray
