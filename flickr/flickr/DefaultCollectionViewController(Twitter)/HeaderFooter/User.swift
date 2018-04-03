@@ -8,10 +8,19 @@
 
 import Foundation
 
-struct User {
+struct User: Decodable {
     let id: Int
     let name: String
     let username: String
-    let bioText: String
-    let imageString: String
+    let bio: String
+    let profileImageUrl: String
+}
+
+class another: NSObject {
+    var id: Int = 0
+    init(_ test: Int) {
+        id = test
+        super.init()
+    }
+    
 }

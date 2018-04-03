@@ -22,7 +22,7 @@ class UserCell: UICollectionViewCell {
             if let user = model {
                 nameLabel.text = user.name
                 userIdLabel.text = user.username
-                bioTextView.text = user.bioText
+                bioTextView.text = user.bio
             }
         }
     }

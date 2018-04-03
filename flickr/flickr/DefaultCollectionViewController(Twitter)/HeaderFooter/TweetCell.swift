@@ -13,7 +13,7 @@ class TweetCell: UICollectionViewCell {
         didSet {
             if let t = tweet {
                 messageTextView.text = t.message
-                profileImageView.image = UIImage(named: t.user.imageString)
+                profileImageView.image = UIImage(named: t.user.profileImageUrl)
             }
         }
     }
