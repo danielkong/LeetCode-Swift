@@ -1,0 +1,3 @@
+target 'flickr' do
+  pod 'TRON' '~>2.0.0'
+end

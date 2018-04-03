@@ -19,9 +19,7 @@ class DefaultHeaderFooterCollectionViewController: UICollectionViewController, U
     // Data Model
     let users: [User] = {
         let aUser = User(id: 1000, name: "Test Name", username: "@testName", bioText: "I am bio texting ...", imageString: "profile_image")
-        
         let danielUser = User(id: 1001, name: "Daniel Kong", username: "@daniel kong", bioText: "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!", imageString: "profile_image")
-        
         let rayUser = User(id: 1002, name: "Ray Wenderlich", username: "@rwenderlich", bioText: "Ray Wenderlich is an iPhone developer and tweets on topics related to iPhone, software, and gaming. Check out our conference.", imageString: "ray_profile_image")
         
         return [aUser,aUser,aUser,aUser,aUser, danielUser, rayUser]
@@ -31,7 +29,6 @@ class DefaultHeaderFooterCollectionViewController: UICollectionViewController, U
         let aUser = User(id: 1000, name: "Test Name", username: "@testName", bioText: "I am bio texting ...", imageString: "profile_image")
         let danielUser = User(id: 1001, name: "Daniel Kong", username: "@daniel kong", bioText: "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!", imageString: "profile_image")
         let rayUser = User(id: 1002, name: "Ray Wenderlich", username: "@rwenderlich", bioText: "Ray Wenderlich is an iPhone developer and tweets on topics related to iPhone, software, and gaming. Check out our conference.", imageString: "profile_image")
-
         let first = Tweet(user: aUser, message: "Welcome Tweet, Welcome Tweet,Welcome Tweet,Welcome Tweet,Welcome Tweet,Welcome Tweet,Welcome Tweet,Welcome Tweet,Welcome Tweet,")
         let second = Tweet(user: danielUser, message: "good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!good luck!")
         return [first, second]
@@ -48,15 +45,11 @@ class DefaultHeaderFooterCollectionViewController: UICollectionViewController, U
 
         collectionView?.register(CollectionViewHeaderCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderId)
         collectionView?.register(CollectionViewFooterCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: kFooterId)
-
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(relatedActionTap))
-//            // navigationItem.navigationItem.rightBarButtonItem = UIBarButtonItem.init(
-//            title: "Title",
-//            style: .done,
-//            target: self,
-//            action: "rightButtonAction:"
-//        )
-//        collectionView?.reloadData()
+    }
+    
+    // Rotation -- uptake cell and UIStackView
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionViewLayout.invalidateLayout()
     }
     
     // CollectionView Delegate and DataSource
