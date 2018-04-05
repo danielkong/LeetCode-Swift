@@ -32,6 +32,13 @@
 		45DA53BC2073257F00FE17BA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA53BB2073257F00FE17BA /* Service.swift */; };
 		45DA53C02073FDDC00FE17BA /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA53BF2073FDDC00FE17BA /* CachedImageView.swift */; };
 		45DA53C22074151400FE17BA /* WebsiteRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA53C12074151400FE17BA /* WebsiteRoot.swift */; };
+		45DA53C520749F2900FE17BA /* DefaultImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA53C420749F2900FE17BA /* DefaultImageTableViewController.swift */; };
+		45DA53C720749F9800FE17BA /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA53C620749F9800FE17BA /* APIService.swift */; };
+		45DA53C92074A40400FE17BA /* RootFlickrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA53C82074A40400FE17BA /* RootFlickrModel.swift */; };
+		45DA53CB2074A44F00FE17BA /* PhotoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA53CA2074A44F00FE17BA /* PhotoListModel.swift */; };
+		45DA53CD2074A49A00FE17BA /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA53CC2074A49A00FE17BA /* PhotoModel.swift */; };
+		45DA53CF2074AA5900FE17BA /* DefaultImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA53CE2074AA5900FE17BA /* DefaultImageDetailViewController.swift */; };
+		45DA53D120756B4E00FE17BA /* CustomImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA53D020756B4E00FE17BA /* CustomImageTableViewCell.swift */; };
 		45E0A3B72058F22600435F51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E0A3B62058F22600435F51 /* AppDelegate.swift */; };
 		45E0A3B92058F22600435F51 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E0A3B82058F22600435F51 /* TableViewController.swift */; };
 		45E0A3BC2058F22600435F51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E0A3BA2058F22600435F51 /* Main.storyboard */; };
@@ -39,6 +46,8 @@
 		45E0A3C12058F22600435F51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E0A3BF2058F22600435F51 /* LaunchScreen.storyboard */; };
 		45E0A3CC2058F22600435F51 /* flickrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E0A3CB2058F22600435F51 /* flickrTests.swift */; };
 		45E0A3D72058F22600435F51 /* flickrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E0A3D62058F22600435F51 /* flickrUITests.swift */; };
+		45F3D3A820758CCD005FD62C /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F3D3A720758CCD005FD62C /* CustomImageView.swift */; };
+		45F3D3AB2075F7B6005FD62C /* SearchableCustomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F3D3AA2075F7B6005FD62C /* SearchableCustomCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +93,13 @@
 		45DA53BB2073257F00FE17BA /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		45DA53BF2073FDDC00FE17BA /* CachedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
 		45DA53C12074151400FE17BA /* WebsiteRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteRoot.swift; sourceTree = "<group>"; };
+		45DA53C420749F2900FE17BA /* DefaultImageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageTableViewController.swift; sourceTree = "<group>"; };
+		45DA53C620749F9800FE17BA /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		45DA53C82074A40400FE17BA /* RootFlickrModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFlickrModel.swift; sourceTree = "<group>"; };
+		45DA53CA2074A44F00FE17BA /* PhotoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListModel.swift; sourceTree = "<group>"; };
+		45DA53CC2074A49A00FE17BA /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		45DA53CE2074AA5900FE17BA /* DefaultImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageDetailViewController.swift; sourceTree = "<group>"; };
+		45DA53D020756B4E00FE17BA /* CustomImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageTableViewCell.swift; sourceTree = "<group>"; };
 		45E0A3B32058F22600435F51 /* flickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E0A3B62058F22600435F51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45E0A3B82058F22600435F51 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +113,8 @@
 		45E0A3D22058F22600435F51 /* flickrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flickrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E0A3D62058F22600435F51 /* flickrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flickrUITests.swift; sourceTree = "<group>"; };
 		45E0A3D82058F22600435F51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45F3D3A720758CCD005FD62C /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		45F3D3AA2075F7B6005FD62C /* SearchableCustomCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableCustomCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +233,21 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		45DA53C320749EE100FE17BA /* TableViewController(Flickr) */ = {
+			isa = PBXGroup;
+			children = (
+				45DA53C420749F2900FE17BA /* DefaultImageTableViewController.swift */,
+				45DA53D020756B4E00FE17BA /* CustomImageTableViewCell.swift */,
+				45DA53CE2074AA5900FE17BA /* DefaultImageDetailViewController.swift */,
+				45F3D3A720758CCD005FD62C /* CustomImageView.swift */,
+				45DA53C82074A40400FE17BA /* RootFlickrModel.swift */,
+				45DA53CA2074A44F00FE17BA /* PhotoListModel.swift */,
+				45DA53CC2074A49A00FE17BA /* PhotoModel.swift */,
+				45DA53C620749F9800FE17BA /* APIService.swift */,
+			);
+			path = "TableViewController(Flickr)";
+			sourceTree = "<group>";
+		};
 		45E0A3AA2058F22600435F51 = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +271,8 @@
 		45E0A3B52058F22600435F51 /* flickr */ = {
 			isa = PBXGroup;
 			children = (
+				45F3D3A92075F718005FD62C /* SearchableCollectionViewController */,
+				45DA53C320749EE100FE17BA /* TableViewController(Flickr) */,
 				454D4CCA2071917300F652EA /* FlickrAPI+TableView */,
 				454D4CC92071902F00F652EA /* DefaultTabBarController */,
 				454D4CC72071900200F652EA /* CustomCollectionViewController */,
@@ -270,6 +305,14 @@
 				45E0A3D82058F22600435F51 /* Info.plist */,
 			);
 			path = flickrUITests;
+			sourceTree = "<group>";
+		};
+		45F3D3A92075F718005FD62C /* SearchableCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45F3D3AA2075F7B6005FD62C /* SearchableCustomCollectionViewController.swift */,
+			);
+			path = SearchableCollectionViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,23 +451,32 @@
 			files = (
 				45DA53C22074151400FE17BA /* WebsiteRoot.swift in Sources */,
 				45201E4D20621710008546E8 /* TMDBClient.swift in Sources */,
+				45DA53C720749F9800FE17BA /* APIService.swift in Sources */,
 				45511B0E20720B1B009363B1 /* CollectionViewFooterCell.swift in Sources */,
 				45DA53BC2073257F00FE17BA /* Service.swift in Sources */,
 				45654AE42064C35400F27582 /* FlickrConstants.swift in Sources */,
+				45DA53CD2074A49A00FE17BA /* PhotoModel.swift in Sources */,
 				45201E492061B182008546E8 /* DetailViewController.swift in Sources */,
 				45511B0C2071F99C009363B1 /* CustomTableViewCell.swift in Sources */,
 				454D3FA3205B0FDD00B8777B /* CustomizedCollectionViewController.swift in Sources */,
+				45DA53D120756B4E00FE17BA /* CustomImageTableViewCell.swift in Sources */,
 				454D4CBF20718AE800F652EA /* DefaultHeaderFooterCollectionViewController.swift in Sources */,
+				45DA53C92074A40400FE17BA /* RootFlickrModel.swift in Sources */,
 				45654ADE2063953400F27582 /* FlickrListViewController.swift in Sources */,
 				45E0A3B92058F22600435F51 /* TableViewController.swift in Sources */,
 				452B5543205B866400CF8B05 /* Page.swift in Sources */,
+				45F3D3AB2075F7B6005FD62C /* SearchableCustomCollectionViewController.swift in Sources */,
 				454D3FA1205B0DAC00B8777B /* TabBarController.swift in Sources */,
 				454D3FA5205B1C6100B8777B /* CustomizedCollectionViewCell.swift in Sources */,
 				45201E4B2061BF62008546E8 /* BaseClientAPI.swift in Sources */,
 				45654AE0206397F900F27582 /* Monkey.swift in Sources */,
 				454D4CC320718E6500F652EA /* UserCell.swift in Sources */,
 				45511B1220722D13009363B1 /* Tweet.swift in Sources */,
+				45DA53CF2074AA5900FE17BA /* DefaultImageDetailViewController.swift in Sources */,
 				454D3FA7205B2F2700B8777B /* DefaultPagingCollectionViewController.swift in Sources */,
+				45F3D3A820758CCD005FD62C /* CustomImageView.swift in Sources */,
+				45DA53C520749F2900FE17BA /* DefaultImageTableViewController.swift in Sources */,
+				45DA53CB2074A44F00FE17BA /* PhotoListModel.swift in Sources */,
 				45511B102072229E009363B1 /* TweetCell.swift in Sources */,
 				45511B0A2071F6C4009363B1 /* DefaultTableViewController.swift in Sources */,
 				45E0A3B72058F22600435F51 /* AppDelegate.swift in Sources */,

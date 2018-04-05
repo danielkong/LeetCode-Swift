@@ -25,14 +25,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window?.rootViewController = tabBarController
         
         // 2. collection view controller
-        let flowlayout = UICollectionViewFlowLayout()
-        let vc = DefaultHeaderFooterCollectionViewController(collectionViewLayout: flowlayout)
-        let nav = UINavigationController(rootViewController: vc)
-        window?.rootViewController = UINavigationController(rootViewController: vc)
+//        let flowlayout = UICollectionViewFlowLayout()
+//        let vc = DefaultHeaderFooterCollectionViewController(collectionViewLayout: flowlayout)
+//        let nav = UINavigationController(rootViewController: vc)
+//        window?.rootViewController = UINavigationController(rootViewController: vc)
         
         // 3. table view controller
 //        let defaulttablevc = DefaultTableViewController()
 //        window?.rootViewController = UINavigationController.init(rootViewController: defaulttablevc)
+        
+        // 4. table view controller
+//        let defaultimagevc = DefaultImageTableViewController()
+//        let nav = UINavigationController.init(rootViewController: defaultimagevc)
+//        window?.rootViewController = nav
+        let vc = SearchableCustomCollectionViewController()
+        window?.rootViewController = vc
         return true
     }
 
