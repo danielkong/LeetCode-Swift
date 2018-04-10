@@ -1,1 +1,1 @@
-UIStackView
+UICollectionViewController

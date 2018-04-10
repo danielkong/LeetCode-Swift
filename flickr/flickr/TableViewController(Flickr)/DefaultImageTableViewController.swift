@@ -11,7 +11,7 @@ import UIKit
 
 class DefaultImageTableViewController: UITableViewController {
 
-    let apistring = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=9efb9172233e8ec5f3d8d22d0f4b6247&text=uber&safe_search=1&extras=url_m&per_page=20&format=json&nojsoncallback=1"
+    let apistring = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=69c4f86b20ceb7438e1496e03ee17ae3&text=tesla&safe_search=1&extras=url_m&per_page=8&format=json&nojsoncallback=1"
     
     private let kCellId = "cellId"
     
@@ -40,7 +40,7 @@ class DefaultImageTableViewController: UITableViewController {
         setupConstraints()
         
         // API call
-        APIService.shared.fetchData(urlString: apistring, completion: { (data, errorString) in
+        APIService.shared.fetchData(urlString: apistring, completion: { [weak self] (data, errorString) in
 
             if errorString != nil {
                 print(errorString!)
@@ -49,11 +49,11 @@ class DefaultImageTableViewController: UITableViewController {
             print(str_data)
             do {
                 let json = try JSONDecoder().decode(RootFlickrModel.self, from: data!)
-                self.rowsModel = json.photos.photo
+                self?.rowsModel = json.photos.photo
             
                 DispatchQueue.main.async {
-                    self.loadingIndicatorView.stopAnimating()
-                    self.tableView.reloadData()
+                    self?.loadingIndicatorView.stopAnimating()
+                    self?.tableView.reloadData()
                 }
                 
             } catch let jsonErr {
@@ -93,6 +93,10 @@ class DefaultImageTableViewController: UITableViewController {
 //        present(detailvc, animated: true, completion: nil)
         navigationController?.pushViewController(detailvc, animated: true)
     }
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        
+//    }
     
     
 }

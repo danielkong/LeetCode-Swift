@@ -48,6 +48,7 @@
 		45E0A3D72058F22600435F51 /* flickrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E0A3D62058F22600435F51 /* flickrUITests.swift */; };
 		45F3D3A820758CCD005FD62C /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F3D3A720758CCD005FD62C /* CustomImageView.swift */; };
 		45F3D3AB2075F7B6005FD62C /* SearchableCustomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F3D3AA2075F7B6005FD62C /* SearchableCustomCollectionViewController.swift */; };
+		45F3D3AD207678B0005FD62C /* flicrCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F3D3AC207678B0005FD62C /* flicrCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		45E0A3D82058F22600435F51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45F3D3A720758CCD005FD62C /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		45F3D3AA2075F7B6005FD62C /* SearchableCustomCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableCustomCollectionViewController.swift; sourceTree = "<group>"; };
+		45F3D3AC207678B0005FD62C /* flicrCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flicrCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				45F3D3AA2075F7B6005FD62C /* SearchableCustomCollectionViewController.swift */,
+				45F3D3AC207678B0005FD62C /* flicrCell.swift */,
 			);
 			path = SearchableCollectionViewController;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				45511B1220722D13009363B1 /* Tweet.swift in Sources */,
 				45DA53CF2074AA5900FE17BA /* DefaultImageDetailViewController.swift in Sources */,
 				454D3FA7205B2F2700B8777B /* DefaultPagingCollectionViewController.swift in Sources */,
+				45F3D3AD207678B0005FD62C /* flicrCell.swift in Sources */,
 				45F3D3A820758CCD005FD62C /* CustomImageView.swift in Sources */,
 				45DA53C520749F2900FE17BA /* DefaultImageTableViewController.swift in Sources */,
 				45DA53CB2074A44F00FE17BA /* PhotoListModel.swift in Sources */,

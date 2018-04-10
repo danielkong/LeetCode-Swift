@@ -8,13 +8,15 @@
 
 import UIKit
 
-class SearchableCustomCollectionViewController: UIViewController, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class SearchableCustomCollectionViewController: UIViewController, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    let kSpacing: CGFloat = 10.0
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .lightGray
         return collectionView
     }()
     
@@ -33,12 +35,11 @@ class SearchableCustomCollectionViewController: UIViewController, UISearchBarDel
         searchBar.delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCellId)
+        collectionView.register(FlickrCell.self, forCellWithReuseIdentifier: kCellId)
         view.addSubview(searchBar)
         view.addSubview(collectionView)
         
         setupConstraints()
-        
     }
     
     func setupConstraints() {
@@ -69,7 +70,7 @@ class SearchableCustomCollectionViewController: UIViewController, UISearchBarDel
         // call api service
         // https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=9efb9172233e8ec5f3d8d22d0f4b6247&text=uber&safe_search=1&extras=url_m&per_page=20&format=json&nojsoncallback=1
         if searchContent.count == 0 { return }
-        let urlString = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=9efb9172233e8ec5f3d8d22d0f4b6247&text=\(searchContent)&safe_search=1&extras=url_m&per_page=20&format=json&nojsoncallback=1"
+        let urlString = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=69c4f86b20ceb7438e1496e03ee17ae3&text=\(searchContent)&safe_search=1&extras=url_m&per_page=8&format=json&nojsoncallback=1"
         APIService.shared.fetchData(urlString: urlString, completion: {(data, errorString) in
             if errorString != nil {
                 print(errorString!)
@@ -84,8 +85,8 @@ class SearchableCustomCollectionViewController: UIViewController, UISearchBarDel
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
                     }
-                } catch let err {
-                    print(err)
+                } catch let jsonErr {
+                    print("Error decoding Json Questions", jsonErr)
                 }
             }
         })
@@ -97,8 +98,20 @@ class SearchableCustomCollectionViewController: UIViewController, UISearchBarDel
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellId, for: indexPath)
-        cell.backgroundColor = .blue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellId, for: indexPath) as! FlickrCell
+//        cell.backgroundColor = .blue
+        cell.model = photos[indexPath.row]
         return cell
+    }
+    
+    // flow layout delegate
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = view.frame.size.width/3 - kSpacing*3
+        
+        return CGSize(width: width,height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.init(top: kSpacing, left: kSpacing, bottom: kSpacing, right: kSpacing)
     }
 }

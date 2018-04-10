@@ -1,16 +1,33 @@
 // 50        Pow(x, n)        27.1%        Medium        
 /**
 Implement pow(x, n). x Double, n Int
-
 */
 
 /**
- * Question Link: https://leetcode.com/problems/powx-n/
+ * 
  * Primary idea: Classic Recursion and handle positive/negative case at first
  *
  * Time Complexity: O(logn), Space Complexity: O(1)
  */
 
+ // Swift Solution 1 -- short and clean
+ class Solution {
+    func myPow(_ x: Double, _ n: Int) -> Double {
+        if x == 0 { return 0 }
+        if n == 0 { return 1 }
+        if n < 0 { return 1/(myPow(x, abs(n))) }
+        
+        let a = n / 2
+        let b = n % 2
+        if b == 1 {
+            return x * myPow(x*x, a)
+        } else {
+            return myPow(x*x, a)
+        }        
+    }
+}
+
+ // Swift Solution 2
 class Solution {
     func myPow(_ x: Double, _ n: Int) -> Double {
         guard x != 0 else {

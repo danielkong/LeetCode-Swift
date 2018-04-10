@@ -1068,7 +1068,55 @@ let points = [Point(1,1), Point(2,2), Point(3,3), Point(2,3), Point(4,6), Point(
 let res = maxPoints(points)
 
 */
+func canPartitionKSubsets(_ nums: [Int], _ k: Int) -> Bool {
+    // hash map key as Val, value as count
+    // calculate sum, sum/k group means each group sum.
+    
+    guard nums.count > k else { return false }
+    guard k != 1 else { return true }
+    var sum = 0
+    for num in nums {
+        sum += num
+    }
+    if sum % k != 0 { return false }
+    let groupSum = sum/k
+    var dict = [Int: Int]()
+    for num in nums {
+        dict[num] = (dict[num] ?? 1) + 1
+    }
+    // dfs, if could not find a sum matched group, then return false
 
+    var tempK = k
+    print(123)
+    return dfs(&dict, groupSum, &tempK)
+    
+    
+}
 
+private func dfs(_ dict: inout [Int: Int], _ sum: Int, _ k: inout Int) -> Bool {
+    while k > 0 {
+//        print(3221)
+        
+
+        for key in dict.keys {
+            if key == sum {
+                dict[key]! -= 1
+                k -= 1
+                print("-")
+            } else {
+                dict[key]! -= 1
+                dfs(&dict, sum - dict[key]!, &k)
+                dict[key]! += 1
+                print("++++")
+
+            }
+        }
+    }
+    print(321)
+
+    return true//k == 0
+}
+let res = canPartitionKSubsets([1,1,1,1,1,1,1,1,1,1], 5)
+print(res)
 
 

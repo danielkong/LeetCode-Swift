@@ -100,7 +100,9 @@ class BaseClientAPI: NSObject {
             }
             if body != nil {
                 do {
-                    req.httpBody = try! JSONSerialization.data(withJSONObject: body!, options: [])
+                    req.httpBody = try JSONSerialization.data(withJSONObject: body!, options: [])
+                } catch let errStr {
+                    print("something got wrong", errStr)
                 }
             }
             return req

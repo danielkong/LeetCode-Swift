@@ -6,6 +6,8 @@ The cost of painting each house with a certain color is represented by a n x 3 c
 
 Note: All costs are positive integers.
 */
+// DP Runtime: O(N)
+//    Space: O(N) could enhance to O(1)
 // Solution: DP Java
 public int minCost(int[][] costs) {
     if(costs==null||costs.length==0){
@@ -35,6 +37,41 @@ public func minCost(_ costs: inout [[Int]]) {
     return min(min(costs[last][0],costs[last][1]), costs[last][2])
 }
 
+// Swift with latest Leetcode
+
+class Solution {
+    func minCost(_ costs: [[Int]]) -> Int {
+        // dp
+        let n = costs.count
+        guard n > 0 else { return 0 }
+        var dp = Array(repeating: Array(repeating: 0, count: 3), count: n+1)
+        for i in 1 ... costs.count {
+            dp[i][0] = costs[i][0] + min(dp[i-1][1], dp[i-1][2])
+            dp[i][1] = costs[i][1] + min(dp[i-1][0], dp[i-1][2])
+            dp[i][2] = costs[i][2] + min(dp[i-1][0], dp[i-1][1])
+        }
+        return min(dp[n][0], min(dp[n][1], dp[n][2]))
+    }
+}
+
+// best Solution: 
+class Solution {
+    func minCost(_ costs: [[Int]]) -> Int {
+        // dp
+        let n = costs.count
+        guard n > 0 else { return 0 }
+        var r = 0, b = 0, g = 0
+        for i in 0..<n {
+            let curR = min(g, b) + costs[i][0]
+            let curB = min(r, g) + costs[i][1]
+            let curG = min(r, b) + costs[i][2]
+            r = curR
+            b = curB
+            g = curG
+        }
+        return min(r, min(b, g))
+    }
+}
 
 // 265        Paint House II         37.1%        Hard          
 /**
