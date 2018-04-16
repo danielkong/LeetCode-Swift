@@ -11,8 +11,7 @@ Could you solve it with constant space complexity? (Note: The output array does 
 */
 
 /**
- * Question Link: https://leetcode.com/problems/product-of-array-except-self/
- * Primary idea: Use two arrays to hold multiplication result from left and right sides 
+ * Primary idea: Use two arrays to hold multiplication result from left and right sides
  *               while iterating the original array
  * Time Complexity: O(n), Space Complexity: O(n)
  */
