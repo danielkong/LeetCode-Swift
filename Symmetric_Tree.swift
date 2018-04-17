@@ -14,25 +14,28 @@
  *     }
  * }
  */
+/** Idea: Recursion
+            1. root nil
+            2. root.left and root.right should be mirror
+ Runtime: O(N)
+   Space: O(N)
+ */
 class Solution {
     func isSymmetric(_ root: TreeNode?) -> Bool {
-        if root == nil {
-            return true
-        }
-        return helper(root!.left, root!.right)
+        guard let root = root else { return true }
+        return helper(root.left, root.right)
+        
     }
     
-    private func helper(_ left: TreeNode?, _ right: TreeNode?) -> Bool {
-        if left == nil && right == nil {
-            return true
+    func helper(_ leftNode: TreeNode?, _ rightNode: TreeNode?) -> Bool {
+        guard let left = leftNode, let right = rightNode else {
+            if leftNode == nil && rightNode == nil { return true }
+            else { return false }
         }
-        if left == nil || right == nil {
+        if left.val == right.val {
+            return helper(left.left, right.right) && helper(left.right, right.left)
+        } else {
             return false
         }
-        if  left!.val == right!.val {
-            return helper(left!.left, right!.right) && helper(left!.right, right!.left)
-        }
-        
-        return false
     }
 }

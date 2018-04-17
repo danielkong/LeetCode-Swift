@@ -28,7 +28,58 @@ Example 2:
 // Solution: Recursion, DFS
 // Runtime: O(N)
 // Space: O(N)
-// Solution Java:
+
+// Swift DFS, then kth smallest node use `set.sorted().enumerated()` find K smallest.
+
+class Solution {
+    func findSecondMinimumValue(_ root: TreeNode?) -> Int {
+        guard let root = root else {
+            return -1
+        }
+        var set = Set<Int>()
+        if let left = root.left, let right = root.right {
+            if left.val == right.val { return -1 }
+            dfs(left, &set)
+            dfs(right, &set)
+            for (i, val) in set.sorted().enumerated() {
+                if i == 1 {
+                    return val
+                }
+            }
+        }
+        return -1
+    }
+    
+    func dfs(_ node: TreeNode, _ set: inout Set<Int>) {
+        if !set.contains(node.val) {
+            set.insert(node.val)
+        }
+        
+        if let left = node.left { dfs(left, &set) }
+        if let right = node.right { dfs(right, &set) }
+    }
+}
+
+// Swift Solution 2. Recursion find each left node, right node second minimum value,
+
+func findSecondMinimumValue(_ root: TreeNode?) -> Int {
+    guard let root = root else { return -1 }
+    guard let left = root.left, let right = root.right else { return -1 }
+    // if left val == node val, find left sec min, if left val larger than node val, left val as left min value
+    var leftVal = left.val == root.val ? findSecondMinimumValue(left) : left.val
+    var rightVal = right.val == root.val ? findSecondMinimumValue(right) : right.val
+    
+    if leftVal != -1 && rightVal != -1 {
+        return min(leftVal, rightVal)
+    } else if leftVal != -1 {
+        return leftVal
+    } else {
+        return rightVal
+    }
+}
+
+
+// Solution Java: Recursion
 public int findSecondMinimumValue(TreeNode root) {
     if (root == null) {
         return -1;
@@ -57,6 +108,7 @@ public int findSecondMinimumValue(TreeNode root) {
     }
 }
 
+// DFS Iteration
 class Solution {
     public void dfs(TreeNode root, Set<Integer> uniques) {
         if (root != null) {

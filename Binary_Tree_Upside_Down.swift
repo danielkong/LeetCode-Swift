@@ -1,5 +1,4 @@
-Binary_Tree_Upside_Down.swift
-
+// 156. Binary Tree Upside Down
 /**
 Given a binary tree where all the right nodes are either leaf nodes with a sibling (a left node that shares the same parent node) or empty, flip it upside down and turn it into a tree where the original right nodes turned into left leaf nodes. Return the new root.
 
@@ -19,6 +18,8 @@ return the root of the binary tree [4,5,2,#,#,3,1].
 confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
 */
 
+// Solution: iteration.
+                
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -48,19 +49,21 @@ class Solution {
 }
 
 // Iterative
-func upsideDownBinaryTree(_ root: TreeNode?) -> TreeNode? {
-	var parent: TreeNode?
-	var node: TreeNode? = root
-	var right: TreeNode?
-
-	while node != nil {
-		let left = node!.left
-		node!.left = right
-		right = node!.right
-		node!.right = parent
-		parent = node
-		node = left
-	}
-
-	return parent
+class Solution {
+    func upsideDownBinaryTree(_ root: TreeNode?) -> TreeNode? {
+        var parent: TreeNode?
+        var node: TreeNode? = root
+        var right: TreeNode?
+        
+        while node != nil {
+            let left = node!.left
+            node!.left = right
+            right = node!.right
+            node!.right = parent
+            parent = node
+            node = left
+        }
+        
+        return parent
+    }
 }

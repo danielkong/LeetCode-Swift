@@ -71,39 +71,27 @@ class Solution {
  */
 class Solution {
     func levelOrder(_ root: TreeNode?) -> [[Int]] {
+        guard let root = root else { return [] }
+        
+        // queue
+        var queue = [root]
+        var currentLevelArray = [Int]()
+        var nextLevelQueue = [TreeNode]()
         var res = [[Int]]()
 
-        guard let root = root else {
-            return res
-        }
-        var currLevelNodes: [TreeNode] = [root]
-        var currLevelArr = [Int]()
-        var nextLevelNodes: [TreeNode] = []
+        while !queue.isEmpty {
+            let item = queue.removeFirst()
+            if item.left != nil { nextLevelQueue.append(item.left!) }
+            if item.right != nil { nextLevelQueue.append(item.right!) }
 
-        while !currLevelNodes.isEmpty {
-            var firstNode = currLevelNodes.first
-            if let firstNode = firstNode {
-                currLevelArr.append(firstNode.val)
-                if firstNode.left != nil {
-                    nextLevelNodes.append(firstNode.left!)
-                }
-                if firstNode.right != nil {
-                    nextLevelNodes.append(firstNode.right!)
-                }
-                currLevelNodes.removeFirst()
-
-                if currLevelNodes.isEmpty && !nextLevelNodes.isEmpty {
-                    res.append(currLevelArr)
-                    currLevelArr.removeAll()
-                    currLevelNodes = nextLevelNodes
-                    nextLevelNodes.removeAll()
-                } else if currLevelNodes.isEmpty && nextLevelNodes.isEmpty {
-                    if currLevelArr.count > 0 {
-                        res.append(currLevelArr)
-                    }
-                }
+            currentLevelArray.append(item.val)
+            
+            if queue.isEmpty {
+                queue = nextLevelQueue 
+                nextLevelQueue = []
+                res.append(currentLevelArray)
+                currentLevelArray = [] // if hidden this line: Input: [3,9,20,null,null,15,7] Output: [[3],[3,9,20],[3,9,20,15,7]]
             }
-
         }
         return res
     }

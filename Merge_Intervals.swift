@@ -37,3 +37,49 @@ func merge(_ intervals: [Interval]) -> [Interval] {
 
     return res
 }
+
+/**
+ * Definition for an interval.
+ * public class Interval {
+ *   public var start: Int
+ *   public var end: Int
+ *   public init(_ start: Int, _ end: Int) {
+ *     self.start = start
+ *     self.end = end
+ *   }
+ * }
+ */
+class Solution {
+    func merge(_ intervals: [Interval]) -> [Interval] {
+        guard intervals.count > 1 else { return intervals }
+        let sortedIntervals = intervals.sorted{ $0.start < $1.start }
+        var starts = [Int]()
+        var ends = [Int]()
+        
+        for interval in sortedIntervals {
+            starts.append(interval.start)
+            ends.append(interval.end)
+        }
+        
+        var res = [Interval]()
+        var tempStart = starts[0]
+        var tempEnd = ends[0]
+        for i in 1..<sortedIntervals.count {
+            if starts[i] <= tempEnd {
+                // should merge
+                // update merged end time
+                tempEnd = max(ends[i], tempEnd)
+            } else {
+                // not overlap
+                res.append(Interval(tempStart, tempEnd))
+                tempStart = starts[i]
+                tempEnd = ends[i]
+            }
+            // last one update
+            if i == sortedIntervals.count-1 {
+                res.append(Interval(tempStart, tempEnd))
+            }
+        }
+        return res
+    }
+}

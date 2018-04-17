@@ -5,10 +5,26 @@ Permutations Print
 */
 /**
 https://leetcode.com/problems/permutations/#/description
-Given a collection of distinct numbers, return all possible permutations.
-*/
 
-// Solution: Runtime: O(n^2), Space O(n)
+ Given a collection of distinct integers, return all possible permutations.
+ 
+ Example:
+ 
+ Input: [1,2,3]
+ Output:
+ [
+ [1,2,3],
+ [1,3,2],
+ [2,1,3],
+ [2,3,1],
+ [3,1,2],
+ [3,2,1]
+ ]
+ */
+
+// Solution: Runtime: O(n!), Space O(n)
+// array contains also use O(N)
+// So this solution O(N * N!)
 class Solution {
     func permute(_ nums: [Int]) -> [[Int]] {
         guard nums.count != 0 else {
@@ -30,6 +46,33 @@ class Solution {
                 helper(nums, &item, &res)
                 item.removeLast()
             }
+        }
+    }
+}
+// Solution: Runtime: O(n!), Space O(n)
+//  since array contains func needs O(N), here we use set to find contains O(1)
+class Solution {
+    func permute(_ nums: [Int]) -> [[Int]] {
+        var res = [[Int]]()
+        var temp = [Int]()
+        helper(&res, &temp, nums)
+        return res
+    }
+    
+    func helper(_ res: inout [[Int]], _ temp: inout [Int], _ nums: [Int]) {
+        if temp.count == nums.count {
+            res.append(temp)
+            return
+        }
+        var set = Set<Int>()
+        for item in temp {
+            set.insert(item)
+        }
+        for i in 0..<nums.count {
+            if set.contains(nums[i]) { continue }
+            temp.append(nums[i])
+            helper(&res, &temp, nums)
+            temp.removeLast()
         }
     }
 }
