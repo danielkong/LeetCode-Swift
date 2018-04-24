@@ -29,6 +29,5 @@ class APIService: NSObject {
         } else {
             print("wrong url string")
         }
-
     }
 }

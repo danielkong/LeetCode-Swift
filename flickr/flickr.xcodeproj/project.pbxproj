@@ -12,6 +12,7 @@
 		45201E4D20621710008546E8 /* TMDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45201E4C20621710008546E8 /* TMDBClient.swift */; };
 		452B5541205B815000CF8B05 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452B5540205B815000CF8B05 /* PageCell.swift */; };
 		452B5543205B866400CF8B05 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452B5542205B866400CF8B05 /* Page.swift */; };
+		453A170E2089010F0024135C /* TouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A170D2089010F0024135C /* TouchViewController.swift */; };
 		454D3FA1205B0DAC00B8777B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D3FA0205B0DAC00B8777B /* TabBarController.swift */; };
 		454D3FA3205B0FDD00B8777B /* CustomizedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D3FA2205B0FDD00B8777B /* CustomizedCollectionViewController.swift */; };
 		454D3FA5205B1C6100B8777B /* CustomizedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D3FA4205B1C6100B8777B /* CustomizedCollectionViewCell.swift */; };
@@ -74,6 +75,7 @@
 		45201E4C20621710008546E8 /* TMDBClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBClient.swift; sourceTree = "<group>"; };
 		452B5540205B815000CF8B05 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		452B5542205B866400CF8B05 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		453A170D2089010F0024135C /* TouchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchViewController.swift; sourceTree = "<group>"; };
 		454D3FA0205B0DAC00B8777B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		454D3FA2205B0FDD00B8777B /* CustomizedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedCollectionViewController.swift; sourceTree = "<group>"; };
 		454D3FA4205B1C6100B8777B /* CustomizedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -144,6 +146,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		453A170C208900EF0024135C /* Touch */ = {
+			isa = PBXGroup;
+			children = (
+				453A170D2089010F0024135C /* TouchViewController.swift */,
+			);
+			path = Touch;
+			sourceTree = "<group>";
+		};
 		454D4CBD20718AC000F652EA /* DefaultCollectionViewController(Twitter) */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +283,7 @@
 		45E0A3B52058F22600435F51 /* flickr */ = {
 			isa = PBXGroup;
 			children = (
+				453A170C208900EF0024135C /* Touch */,
 				45F3D3A92075F718005FD62C /* SearchableCollectionViewController */,
 				45DA53C320749EE100FE17BA /* TableViewController(Flickr) */,
 				454D4CCA2071917300F652EA /* FlickrAPI+TableView */,
@@ -454,6 +465,7 @@
 			files = (
 				45DA53C22074151400FE17BA /* WebsiteRoot.swift in Sources */,
 				45201E4D20621710008546E8 /* TMDBClient.swift in Sources */,
+				453A170E2089010F0024135C /* TouchViewController.swift in Sources */,
 				45DA53C720749F9800FE17BA /* APIService.swift in Sources */,
 				45511B0E20720B1B009363B1 /* CollectionViewFooterCell.swift in Sources */,
 				45DA53BC2073257F00FE17BA /* Service.swift in Sources */,

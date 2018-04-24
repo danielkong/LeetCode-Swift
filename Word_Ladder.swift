@@ -21,6 +21,53 @@ You may assume no duplicates in the word list.
 You may assume beginWord and endWord are non-empty and are not the same.
 */
 
+/**
+ Idea:  1. BFS -- find shortest path
+        2. bi-direction BFS
+ Runtime:   O(N * word.len * 26)
+ Space:     O(N)
+ */
+
+func ladderLength(_ beginWord: String, _ endWord: String, _ wordList: [String]) -> Int {
+    guard wordList.contains(endWord) else { return 0 }
+    var beginSet = Set<String>(), endSet = Set<String>()
+    var res = 1
+    var visited = Set<String>()
+    
+    beginSet.insert(beginWord)
+    endSet.insert(endWord)
+    
+    while !beginSet.isEmpty && !endSet.isEmpty {
+        if beginSet.count > endSet.count {
+            (beginSet, endSet) = (endSet, beginSet)
+        }
+        
+        var tempSet = Set<String>()
+        for word in beginSet {
+            for (idx,ch) in Array(word).enumerated() {
+                var temp = Array(word)
+                for c in "abcdefghijklmnopqrstuvwxyz" { // for i in "a".utf16[0]…"z".utf16[0] { ... }
+                    temp[idx] = c
+                    let tempStr = String(temp)
+                    if endSet.contains(tempStr) {
+                        return res+1
+                    }
+                    
+                    if !visited.contains(tempStr) && wordList.contains(tempStr) {
+                        tempSet.insert(tempStr)
+                        visited.insert(tempStr)
+                    }
+                }
+            }
+        }
+        
+        beginSet = tempSet
+        res += 1
+    }
+    return 0
+}
+
+
 class Solution {
 // in java, public int ladderLength(String beginWord, String endWord, Set<String> wordList) {}
     func ladderLength(_ beginWord: String, _ endWord: String, _ wordList: [String]) -> Int {

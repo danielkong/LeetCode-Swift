@@ -38,7 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let defaultimagevc = DefaultImageTableViewController()
 //        let nav = UINavigationController.init(rootViewController: defaultimagevc)
 //        window?.rootViewController = nav
-        let vc = SearchableCustomCollectionViewController()
+        // 5. search view controller
+//        let vc = SearchableCustomCollectionViewController()
+        
+        // 6 touch view controller
+        let vc = TouchViewController()
         window?.rootViewController = vc
         return true
     }
