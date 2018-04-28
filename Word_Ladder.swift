@@ -22,9 +22,10 @@ You may assume beginWord and endWord are non-empty and are not the same.
 */
 
 /**
- Idea:  1. BFS -- find shortest path
+ Idea:  1. BFS -- find shortest path, usually use queue implement
         2. bi-direction BFS
- Runtime:   O(N * word.len * 26)
+ Space:     O(N)
+ Runtime:   O( N * word.length * (26^(N/2)) )
  Space:     O(N)
  */
 

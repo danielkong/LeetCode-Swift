@@ -28,6 +28,28 @@ func canConstruct(_ ransomNote: String, _ magazine: String) -> Bool {
 }
 
 // Solution 2: use 2 dictionaries or 1 dictionary
+// Use 1 dict
+func canConstruct(_ ransomNote: String, _ magazine: String) -> Bool {
+    var dict = [Character: Int]()
+    
+    for ch in Array(magazine) {
+        if dict[ch] == nil {
+            dict[ch] = 1
+        } else {
+            dict[ch]! += 1
+        }
+    }
+    
+    for r in Array(ransomNote) {
+        if dict[r] == nil || dict[r] == 0 {
+            return false
+        } else {
+            dict[r]! -= 1
+        }
+    }
+    return true
+}
+// Use 2 dict
 func canConstruct(_ ransomNote: String, _ magazine: String) -> Bool {
 	// hashtable key letter - value appear count
 	var dict = [Character: Int]()

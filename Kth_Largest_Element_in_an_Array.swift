@@ -8,7 +8,50 @@ Given [3,2,1,5,6,4] and k = 2, return 5.
 Note:
 You may assume k is always valid, 1 ≤ k ≤ array's length.
 */
-// Runtime: O(n log n) Space: O(n)
+/**
+ Idea:  1. Use Swift built-in function.
+            Runtime: O(NlogN)
+        2. Quick-select.
+            Runtime: O(N)
+            https://en.wikipedia.org/wiki/Quickselect
+ 
+ */
+
+// Runtime: O(N)
+func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
+    var nums = nums, k = nums.count - k
+    quicksort(&nums, 0, nums.count - 1, k)
+    return nums[k]
+}
+
+func quicksort(_ a: inout [Int], _ low: Int, _ high: Int, _ k: Int) {
+    if low < high {
+        let pivot = a[(low+high)/2]
+        let p = partition(&a, low, high, pivot)
+        print("\(low), \(high), \(p), \(k)")
+        if p >= k + 1 {
+            quicksort(&a, low, p-1, k)
+        }else if p < k + 1{
+            quicksort(&a, p, high, k)
+        }
+    }
+}
+
+func partition(_ a: inout [Int], _ low: Int, _ high: Int, _ pivot: Int) -> Int {
+    var low = low, high = high
+    while low <= high {
+        while a[low] < pivot { low += 1 }
+        while a[high] > pivot { high -= 1 }
+        if low <= high{
+            a.swapAt(low, high)
+            low += 1
+            high -= 1
+        }
+    }
+    return low
+}
+
+// Runtime: O(NlogN) Space: O(n)
 func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
     let test = nums.sorted()
     return test[nums.count-k]

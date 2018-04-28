@@ -44,17 +44,18 @@ func printLinkedList(_ node: LinkedList?) -> Void {
  */
 
  class Solution {
-     func reverseList(_ head: ListNode?) -> ListNode? {
-         var current = head
-         var p : ListNode?
-         while (current != nil) {
-             let temp : ListNode? = current
-             current = current!.next
-             temp?.next = p
-             p = temp
-         }
-         return p
-     }
+    func reverseList(_ head: ListNode?) -> ListNode? {
+        var prev: ListNode?
+        var curr = head
+        
+        while curr != nil {
+            var next = curr!.next
+            curr!.next = prev
+            prev = curr
+            curr = next
+        }
+        return prev
+    }
  }
 
 func reverseRecursion(_ head: LinkedList?) -> LinkedList? {
