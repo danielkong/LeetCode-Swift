@@ -16,67 +16,118 @@ If there are multiple such windows, you are guaranteed that there will always be
 // Solution: Swift. 
 class Solution {
     func minWindow(_ s: String, _ t: String) -> String {
-        // hash table - key: letter value: appear count
-        let tChars = Array(t.characters)
-        let tLen = t.characters.count
+        let sChars = Array(s)
+        let sLen = sChars.count
+        let tLen = t.count
         
-        let sLen = s.characters.count
-        let sChars = Array(s.characters)
-        
-        if sLen == 0 || tLen == 0 {
+        guard sLen >= tLen else {
             return ""
         }
         
-        var targetHash = Dictionary<Character, Int>()
-        for ch in tChars {
-            if targetHash[ch] != nil {
-                targetHash[ch]! += 1
-            } else {
-                targetHash[ch] = 1
+        var freqencyDict = calcCharFrec(t)
+        var startIndex = 0
+        var minLen = Int.max
+        var count = 0
+        var res = ""
+        
+        for (i, current) in sChars.enumerated() {
+            guard freqencyDict[current] != nil else {
+                continue
+            }
+            
+            // update freqency dictionary
+            freqencyDict[current]! -= 1
+            if freqencyDict[current]! >= 0 {
+                count += 1
+            }
+            
+            // update startIndex
+            while count == tLen {
+                let startChar = sChars[startIndex]
+                
+                guard freqencyDict[startChar] != nil else {
+                    startIndex += 1
+                    continue
+                }
+                
+                freqencyDict[startChar]! += 1
+                
+                // one ch appear more than # target word needs, skip it
+                if freqencyDict[startChar]! > 0 {
+                    // update res
+                    if i - startIndex + 1 < minLen {
+                        res = String(sChars[startIndex ... i])
+                        minLen = i - startIndex + 1
+                    }
+                    count -= 1
+                }
+                startIndex += 1
             }
         }
         
-        var left = 0
-        var found = 0
+        return res
+    }
+    
+    private func calcCharFrec(_ t: String) -> [Character: Int] {
+        var dict = [Character: Int]()
         
-        var begin = 0
-        var minLength = sLen + 1
+        for char in Array(t) {
+            dict[char] = dict[char] != nil ? dict[char]! + 1 : 1
+        }
         
-        for (right, sch) in sChars.enumerated() {
-            if targetHash[sch] != nil {
-                targetHash[sch]! -= 1
-                if targetHash[sch]! >= 0 {
-                    found += 1
-                }
-                while found == tLen {
-                    if right - left + 1 < minLength {
-                        minLength = right - left + 1
-                        begin = left
-                    }
+        return dict
+    }
+}
 
-                    if targetHash[sChars[left]] != nil {
-                        targetHash[sChars[left]]! += 1
-                        if targetHash[sChars[left]]! > 0 {
-                            found -= 1
-                        }
-                    }
-                    left += 1
+// Swift Fastest Solution
+
+class Solution {
+    func minWindow(_ s: String, _ t: String) -> String {
+        if (s.count < t.count){
+            return ""
+        }
+        let tt = Array(t.utf16).map{Int($0)}
+        let ss = Array(s.utf16).map{Int($0)}
+        var hash = [Int](repeating: 0, count: 128) // 128 unique characters
+        var counter = tt.count, start = 0, end = 0, minStart = 0, minLength = Int.max
+        
+        for c in tt{
+            hash[c] += 1
+        }
+        
+        while end < ss.count{
+            if (hash[ss[end]] > 0){
+                counter -= 1
+            }
+            hash[ss[end]] -= 1
+            end += 1
+            while counter == 0 {
+                if end - start < minLength{
+                    minStart = start
+                    minLength = end - start
                 }
+                
+                if hash[ss[start]] == 0{
+                    counter += 1
+                }
+                hash[ss[start]] += 1
+                start += 1
             }
         }
-
-        if minLength == sLen + 1 { return "" }
-        let startIdx = s.index(s.startIndex, offsetBy: begin)
-        let endIdx = s.index(s.startIndex, offsetBy: begin+minLength)
-        let range = startIdx..<endIdx
-        return s.substring(with: range)
+        
+        if minLength > ss.count{
+            return ""
+        }
+        let beginIndex = s.index(s.startIndex, offsetBy:minStart)
+        let endIndex = s.index(s.startIndex, offsetBy:minStart+minLength)
+        
+        return String(s[beginIndex..<endIndex])
     }
 }
 
 // Swift: other people
 /**
- * Question Link: https://leetcode.com/problems/minimum-window-substring/
- * Primary idea: Use dictionary and int to verify if contain all characters, and update 
+ * Primary idea: Use dictionary and int to verify if contain all characters, and update
  *               startIndex and miniWindow as well
  *
  * Time Complexity: O(n^2), Space Complexity: O(n)

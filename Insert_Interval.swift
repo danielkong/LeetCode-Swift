@@ -17,6 +17,33 @@ This is because the new interval [4,9] overlaps with [3,5],[6,7],[8,10].
 // Solution 2: Compare one by one.
 
     func insert(_ intervals: [Interval], _ newInterval: Interval) -> [Interval] {
+        var res = [Interval]()
+        
+        var temp = newInterval
+        for i in 0..<intervals.count {
+            let current = intervals[i]
+            if current.end < temp.start {
+                // newInterval after curr
+                res.append(current)
+                continue
+            } else if current.start > temp.end {
+                // newInterval before curr
+                res.append(temp)
+                res += intervals[i..<intervals.count]
+                
+                return res
+            } else {
+                // overlap needs merge interval
+                temp.start = min(temp.start, current.start)
+                temp.end = max(temp.end, current.end)
+            }
+        }
+        res.append(temp)
+        return res
+    }
+
+// 
+    func insert(_ intervals: [Interval], _ newInterval: Interval) -> [Interval] {
         guard intervals.count > 0 else {
             return [newInterval]
         }
