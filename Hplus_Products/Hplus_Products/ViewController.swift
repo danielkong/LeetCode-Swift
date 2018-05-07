@@ -27,7 +27,6 @@ class ViewController: UITableViewController {
         tableView.register(TableViewSubtitleCell.self, forCellReuseIdentifier: kCellId)
         tableView.backgroundColor = .white
         fetchData()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     func fetchData() {
@@ -75,6 +74,7 @@ class ViewController: UITableViewController {
 
         cell.textLabel?.text = products[indexPath.row].image_title
         cell.detailTextLabel?.text = products[indexPath.row].description
+        
         cell.imageView?.loadImage(products[indexPath.row].image)
         return cell
     }

@@ -18,7 +18,11 @@ Note: Do not use class member/global/static variables to store states. Your seri
 http://buttercola.blogspot.com/2015/10/leetcode-serialize-and-deserialize.html
 
 */
-
+/**
+    Idea:   Recursion(DFS), Iteration(BFS). 
+            Here use iteration BFS. Queue implement 
+    Runtime: O(N)
+*/
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -28,6 +32,107 @@ http://buttercola.blogspot.com/2015/10/leetcode-serialize-and-deserialize.html
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+// Solution Swift Recursion.
+/**
+    1
+   / \
+  2   3
+     / \
+    4   5
+                Recursion DFS                           Iteration BFS
+but it saves as "1,2,nil,nil,3,4,nil,nil,5,nil,nil", not "[1,2,3,null,null,4,5]"
+
+*/
+public class TreeNode {
+    let val: Int?
+    let left: TreeNode?
+    let right: TreeNode?
+    init TreeNode(_ val: Int) {
+        self.val = val
+    }
+}
+
+public class Codec {
+    struct Constant {
+        let null = "nil"
+    }
+    public func serialize(_ root: TreeNode) -> String {
+        var res = ""
+        buildString(root, &res)
+        return res
+    }
+
+    private func buildString(_ root: TreeNode?, _ res: inout String) {
+        guard let root = root else { 
+            res.append(Constant.null)
+            res.append(",")
+        }
+        res.append(root.val)
+        res.append(",")
+        buildString(root.left, &res)
+        buildString(root.right, &res)
+    }
+
+    public func deserialize(_ data: String) -> TreeNode {
+        let items = data.componentSeparator(by: ",")
+        return buildTree(items)
+    }
+
+    private func buildTree(_ items: [String]) -> TreeNode? {
+        let val = items.removeFirst()
+        if val == "nil" {
+            return nil
+        } else {
+            let node = TreeNode(Int(val))
+            node.left = buildTree(items)
+            node.right = buildTree(items)
+            return node
+        }
+    }
+
+}
+
+// Solution Java Recursion.
+public class Codec {
+
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        buildString(root, sb);
+        return sb.toString();
+    }
+
+    private void buildString(TreeNode node, StringBuilder sb) {
+        if (node == null) {
+            sb.append("X").append(",");
+        } else {
+            sb.append(node.val).append(",");
+            buildString(node.left, sb);
+            buildString(node.right, sb);
+        }
+    }
+    
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        Deque<String> nodes = new LinkedList<>();
+        nodes.addAll(Arrays.asList(data.split(",")));
+        return buildTree(nodes);
+    }
+    
+    private TreeNode buildTree(Deque<String> nodes) {
+        String val = nodes.remove();
+        if (val.equals("X")) { return null; }
+        else {
+            TreeNode node = new TreeNode(Integer.valueOf(val));
+            node.left = buildTree(nodes);
+            node.right = buildTree(nodes);
+            return node;
+        }
+    }
+}
+
+// Solution Java Iteraction.
 public class Codec {
 
     // Encodes a tree to a single string.

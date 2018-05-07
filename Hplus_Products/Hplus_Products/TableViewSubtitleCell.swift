@@ -10,24 +10,21 @@ import UIKit
 
 extension UIImageView {
     // Extensions must not contain stored properties
-    private var imageUrlString: String?
+//    private var imageUrlString: String?
 
     func loadImage(_ urlString: String) {
-        imageUrlString = urlString
+//        imageUrlString = urlString
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) { data, response, error in
-                print("fetch image")
 
                 if error != nil {
-                    print(error)
                     return
                 }
-                print("aloha")
                 if let data = data {
                     DispatchQueue.main.async {
-                        if self.imageUrlString == urlString {
+//                        if self.imageUrlString == urlString {
                             self.image = UIImage.init(data: data)
-                        }
+//                        }
                     }
                 }
             }.resume()

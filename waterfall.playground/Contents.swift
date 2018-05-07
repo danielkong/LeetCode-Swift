@@ -473,4 +473,77 @@ func reverseWords(_ str: inout [Character]) {
 //let maxxx = Int16.max // 11484849885
 //print(maxxx)
 
+public class TreeNode {
+    let val: Int
+    var left: TreeNode?
+    var right: TreeNode?
+    init (_ val: Int) {
+        self.val = val
+    }
+}
+
+struct Constant {
+    static let null = "nil"
+}
+public func serialize(_ root: TreeNode) -> String {
+    var res = ""
+    buildString(root, &res)
+    return res
+}
+
+private func buildString(_ root: TreeNode?, _ res: inout String) {
+    guard let root = root else {
+        res.append(Constant.null)
+        res.append(",")
+        return
+    }
+    res.append(String(root.val))
+    res.append(",")
+    buildString(root.left, &res)
+    buildString(root.right, &res)
+}
+
+public func deserialize(_ data: String) -> TreeNode? {
+//    let items = data.components(separatedBy: ",") // swift 3
+    var items: [String] = []
+    for item in data.split(separator: ",") {
+        items.append(String(item))
+    }
+    return buildTree(&items)
+}
+
+private func buildTree(_ items: inout [String]) -> TreeNode? {
+    var items = items
+    let val = items.removeFirst()
+    if val == "nil" {
+        return nil
+    } else {
+        let node = TreeNode(Int(val)!)
+        node.left = buildTree(&items)
+        print("val: \(val), items: \(items)")
+        node.right = buildTree(&items)
+        return node
+    }
+}
+
+let one = TreeNode(1)
+let two = TreeNode(2)
+let three = TreeNode(3)
+let four = TreeNode(4)
+let five = TreeNode(5)
+one.left = two
+one.right = three
+three.left = four
+three.right = five
+
+print(serialize(one))
+//
+let res = deserialize("1,2,nil,nil,3,4,nil,nil,5,nil,nil")
+print(res?.val)
+print(res?.left?.val)
+print(res?.right?.val)
+print(res?.left?.left?.val)
+print(res?.right?.left?.val)
+
+
 
