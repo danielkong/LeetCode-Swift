@@ -14,7 +14,13 @@ According to the definition of LCA on Wikipedia: “The lowest common ancestor i
 For example, the lowest common ancestor (LCA) of nodes 5 and 1 is 3. Another example is LCA of nodes 5 and 4 is 5, since a node can be a descendant of itself according to the LCA definition.
 */
 
-// Solution: Time:O(n), Space:(1). using single traversal of Binary Tree and without extra storage for path arrays.
+/**
+ Idea:  Recursion. Trying to find first common ancestor and return it. 
+        using single traversal of Binary Tree and without extra storage for path arrays.
+ Time:  O(n), 
+ Space: (1). 
+*/
+
 public func lowestCommonAncestor(_ root: TreeNode?, p: TreeNode, q: TreeNode) {
 	guard let root = root else {
 		return root
@@ -30,6 +36,7 @@ public func lowestCommonAncestor(_ root: TreeNode?, p: TreeNode, q: TreeNode) {
 }
 
 // Solution Java
+/**
 public class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) return root;
@@ -47,5 +54,5 @@ public class Solution {
         return root;
     }
 }
-
+*/
 

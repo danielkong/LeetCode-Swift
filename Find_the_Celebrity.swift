@@ -9,6 +9,12 @@ You are given a helper function bool knows(a, b) which tells you whether A knows
 Note: There will be exactly one celebrity if he/she is in the party. Return the celebrity's label if there is a celebrity in the party. If there is no celebrity, return -1.
 */
 
+/**
+ Idea:  For loop, update potential res(if res known by other, other probably be the res)
+        For loop, again since we have new res, to make sure previous people known res, and he does not know previous people
+ Runtime: O(N)
+ Space: O(1)
+ */
 func findCelebrity( n: Int) -> Int {
 	var candidate = 0
 	for i in 1..<n {
@@ -26,6 +32,7 @@ func findCelebrity( n: Int) -> Int {
 }
 
 // Solution: Java
+/**
 public class Solution extends Relation {
     public int findCelebrity(int n) {
         int candidate = 0;
@@ -39,3 +46,4 @@ public class Solution extends Relation {
         return candidate;
     }
 }
+ */
