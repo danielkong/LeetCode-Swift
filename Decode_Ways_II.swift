@@ -24,6 +24,43 @@
 	The input string will only contain the character '*' and digits '0' - '9'.
 */
 
+/**
+    Idea:   Similar to Decode ways.
+            Handle *
+            Handle not *
+ Runtime:   O(N)
+   Space:   O(1)
+     
+     p0[i] = number of ways we can decode on s[i:end]
+     p1[i] = number of ways we can decode on s[i:end], assuming s[i-1] and s[i] together forms a number headed with 1, i.e., 10~19
+     p2[i] = number of ways we can decode on s[i:end], assuming s[i-1] and s[i] together forms a number headed with 2, i.e., 20~26
+     Thus p0[0] is the final answer.
+ */
+func numDecodings(_ s: String) -> Int {
+    var sch = Array(s)
+    var p0 = 1, p1 = 0, p2 = 0, mod = 1000000007
+    for i in stride(from: s.count-1, through: 0, by: -1) {
+        var n0: Int
+        var n1: Int
+        var n2: Int
+        if sch[i] == "*" {
+            n0 = 9 * p0 + p1 + p2
+            n1 = 9 * p0
+            n2 = 6 * p0
+        } else{
+            let temp = Int(String(sch[i]))!
+            n0 = temp > 0 ? (p0 + (temp == 1 ? 1 : 0) * p1 + (temp == 2 ? 1 : 0) * p2) : 0
+            n1 = p0
+            n2 = (temp <= 6 ? 1 : 0) * p0
+        }
+        p0 = n0 % mod;
+        p1 = n1 % mod;
+        p2 = n2 % mod;
+    }
+    return p0
+}
+
+
 // Time: O(N), Space: O(1)
 // https://discuss.leetcode.com/topic/95301/python-straightforward-with-explanation
 

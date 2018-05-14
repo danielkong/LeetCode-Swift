@@ -16,4 +16,44 @@ The length of the array won't exceed 10,000.
 You may assume the sum of all the numbers is in the range of a signed 32-bit integer.
 
 */
-// Solution Swift: 
+/**
+ Idea:  1. Naive solution.
+            Two for loop, check accumulated sum % k == 0, for case k=0, use sum == k check
+ Runtime: O(N^2)
+ Space: O(1)
+        2. Enhanced solution
+            If a%k = m, b%k=m, then a-b%k=0, So, [23, 2, 4, ...] k = 6,
+ Runtime: O(N)
+ Space: O(N)
+ 
+ */
+
+// Solution Swift 1:
+
+func checkSubarraySum(_ nums: [Int], _ k: Int) -> Bool {
+    for i in 0..<(nums.count - 1) {
+        var sum = nums[i]
+        for j in (i + 1)..<nums.count {
+            sum += nums[j]
+            if k != 0 && sum % k == 0 || sum == 0 {
+                return true
+            }
+        }
+    }
+    return false
+}
+
+// Solution Swift 2: Using HashMap
+
+func checkSubarraySum(_ nums: [Int], _ k: Int) -> Bool {
+    for i in 0..<(nums.count - 1) {
+        var sum = nums[i]
+        for j in (i + 1)..<nums.count {
+            sum += nums[j]
+            if k != 0 && sum % k == 0 || sum == 0 {
+                return true
+            }
+        }
+    }
+    return false
+}

@@ -3,13 +3,15 @@
 Given n points on a 2D plane, find the maximum number of points that lie on the same straight line.
 */
 /**
-Primary Idea:
+ Idea:
+    1. Before handle general slope, think about 
     1. General slope
     2. Same point
     3. Two points x is same
     4. 
 
-Runtime: O(n^2), Space: O(n)
+Runtime: O(n^2)
+ Space: O(n)
 
 
 */
@@ -27,9 +29,9 @@ public func maxPoints(_ points: [Point]) -> Int {
     guard points.count > 2 else {
         return points.count
     }
-    var dict: [Double: Int] = Dictionary()
+    var dict = [Double: Int]()
     var maxNum = 0
-    for i in 0 ..<  points.count {
+    for i in 0 ..< points.count {
         dict = [:]
         dict[Double(Int.min)] = 1
         var dup = 0

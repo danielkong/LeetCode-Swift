@@ -19,32 +19,102 @@ Note: next() and hasNext() should run in average O(1) time and uses O(h) memory,
 https://en.wikipedia.org/wiki/Tree_traversal#In-order
 */
 
-// Solution 1: Java
 /**
+    Explain: Need to understand question first!!!
+            First time, it returns the smallest treeNode val
+            Second time, it returns second smallest treeNode val
+            Third time, it returns third smallest treeNode val
+            ...
+    Idea:   
+            First time return most left node.
+            node.right != nil then find most left node of this node.right.
+            If node.right == nil, find its parent node(using stack pop), meanwhile, put parent's node's right child push to stack.
+
+    Naive Solution: store all treenode with inorder traversal(runtime O(1), spaceO(N))
+*/
+
+/** Solution Swift: Stack 
+    Runtime: O(1)
+    Space: O(logN) (height of the tree)
+*/
 public class BSTIterator {
-    private Stack<TreeNode> stack = new Stack<TreeNode>();
-    
-    public BSTIterator(TreeNode root) {
-        pushAll(root);
+    var stack = [TreeNode]()
+
+    init(root: TreeNode) {
+        pushToStack(root)
     }
 
-    /** @return whether we have a next smallest number */
-    public boolean hasNext() {
-        return !stack.isEmpty();
+    public func hasNext() {
+        return !stack.isEmpty
     }
 
-    /** @return the next smallest number */
-    public int next() {
-        TreeNode tmpNode = stack.pop();
-        pushAll(tmpNode.right);
-        return tmpNode.val;
+    public func next() {
+        let temp = stack.removeLast()
+        if let right = temp.right {
+            pushToStack(right)
+        }
+        return temp.val
     }
-    
-    private void pushAll(TreeNode node) {
-        for (; node != null; stack.push(node), node = node.left);
+
+    private func pushToStack(_ node: TreeNode) {
+        var node = node
+        while node != nil {
+            stack.append(node)
+            node = node.left
+        }
     }
 }
- */
+
+
+
+
+
+/**
+ Java Solution: 
+    Runtime:    O(1)
+    Space:      O(1)
+    Based on https://en.wikipedia.org/wiki/Day%E2%80%93Stout%E2%80%93Warren_algorithm
+
+
+public class BSTIterator {
+
+private TreeNode current;
+
+public BSTIterator(TreeNode root) {
+    TreeNode fake = new TreeNode(0);
+    fake.right = root;
+    TreeNode tail = fake;
+    TreeNode rest = tail.right;
+    while (rest != null) {
+        if (rest.left == null) {
+            tail = rest;
+            rest = rest.right;
+        } else {
+            TreeNode tmp = rest.left;
+            rest.left = tmp.right;
+            tmp.right = rest;
+            rest = tmp;
+            tail.right = tmp;
+        }
+    }
+    this.current = fake.right;
+}
+
+/** @return whether we have a next smallest number */
+public boolean hasNext() {
+    return current != null;
+}
+
+/** @return the next smallest number */
+public int next() {
+    try {
+      return current.val;
+    } finally {
+      current = current.right;
+    }
+}
+*/
+
 
 // Solution 2: Swift - iterator with stack - inorder
 

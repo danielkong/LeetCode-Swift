@@ -87,3 +87,4 @@ class Solution {
         dfs(&rst, root!.right, level+1)
     }
 }
+
