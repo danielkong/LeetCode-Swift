@@ -13,7 +13,7 @@ Given k sorted lists of O(n) integers each, implement an iterator that will yiel
 由于是要sort order，肯定需要维护一个k size 的heap。
 */
 
-//
+
 // Solution 2: with ! mark
 /**
  * Definition for singly-linked list.
@@ -25,6 +25,13 @@ Given k sorted lists of O(n) integers each, implement an iterator that will yiel
  *         self.next = nil
  *     }
  * }
+ */
+
+ /**
+        Idea:   1. Navie. while lists.count > 1 { // merge first two, remove them, append new in lists } O(NM) // N nums of list, M max length of one List
+                2. Enhanced. while list.count > 1 { // i = 0, j = count-1 while i<j { mergeTwo } }
+                // Since while i < j makes merge half once time, reduce time from O(N) -> O(logN)
+        Runtime: O(M * logN)
  */
 class Solution {
     func mergeKLists(_ lists: [ListNode?]) -> ListNode? {

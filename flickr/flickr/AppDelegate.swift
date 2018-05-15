@@ -20,15 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         
-        // 1. Tab Bar Controller
+//         1. Tab Bar Controller
 //        let tabBarController = TabBarController()
 //        window?.rootViewController = tabBarController
         
         // 2. collection view controller
-//        let flowlayout = UICollectionViewFlowLayout()
-//        let vc = DefaultHeaderFooterCollectionViewController(collectionViewLayout: flowlayout)
-//        let nav = UINavigationController(rootViewController: vc)
-//        window?.rootViewController = UINavigationController(rootViewController: vc)
+        let flowlayout = UICollectionViewFlowLayout()
+        let vc = DefaultHeaderFooterCollectionViewController(collectionViewLayout: flowlayout)
+        let nav = UINavigationController(rootViewController: vc)
+        window?.rootViewController = UINavigationController(rootViewController: vc)
         
         // 3. table view controller
 //        let defaulttablevc = DefaultTableViewController()
@@ -42,8 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let vc = SearchableCustomCollectionViewController()
         
         // 6 touch view controller
-        let vc = TouchViewController()
-        window?.rootViewController = vc
+//        let vc = TouchViewController()
+//        window?.rootViewController = vc
         return true
     }
 

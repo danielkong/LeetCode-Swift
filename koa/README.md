@@ -26,5 +26,5 @@
 	4. Do the caching for image loading.
 ## Summary:
 	1. Use programmatically autolayout handle UI layer.
-	2. Use memory cache to save image data, and save favorite data into File System. Since this is for interview project in short time, I use File System to do the Storage for the interview and taking the advantage the data is small, and image is small. For larger data storage and long term project, I would prefer to use Core Data or SQLite to save the data since we are trying to avoid frequently read/write to IO.
+	2. Use memory cache to save image data, and save favorite data into File System. Since this is for interview project in short time, I use File System to do the Storage for the interview and taking the advantage the data is small, and image is small. What we could enhanced for this is when frequently save to file, we could do batch to reduce the IO operations. For larger data storage and long term project, I would prefer to use Core Data or SQLite to save the data since we are trying to avoid frequently read/write to IO.
 

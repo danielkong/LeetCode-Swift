@@ -4,15 +4,17 @@ Given n points on a 2D plane, find the maximum number of points that lie on the 
 */
 /**
  Idea:
-    1. Before handle general slope, think about 
+    Before handle general slope, think about 
     1. General slope
     2. Same point
     3. Two points x is same
-    4. 
+
+    res = 0
+    two for loop { dict.clearAll(), dups = 0, tempmax = 0 for i+1..<count{ dup+=1,slope, slop as Int.max, tempmax = max(tempmax,dict[slope]) } res=max(res, max+dups+1)} 
+
 
 Runtime: O(n^2)
  Space: O(n)
-
 
 */
 public class Point {
@@ -105,7 +107,7 @@ public class Solution {
                 }
                 max=Math.max(max, map.get(x).get(y));
             }
-            result=Math.max(result, max+overlap+1);
+            result=Math.max(result,  +overlap+1);
         }
         return result;
 

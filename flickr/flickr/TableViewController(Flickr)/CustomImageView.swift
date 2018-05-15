@@ -1,8 +1,8 @@
 //
 //  CustomImageView.swift
-//  flickr
+//  koa
 //
-//  Created by Daniel Kong on 4/4/18.
+//  Created by Daniel Kong on 5/12/18.
 //  Copyright © 2018 Daniel Kong. All rights reserved.
 //
 

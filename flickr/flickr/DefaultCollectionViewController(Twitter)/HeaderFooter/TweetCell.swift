@@ -125,8 +125,6 @@ class TweetCell: UICollectionViewCell {
         let buttonStackView = UIStackView(arrangedSubviews: [replyButtonContainerView, retweetButtonContainerView, likeButtonContainerView, directMessageButtonContainerView])
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
 
-//        let buttonStackView = UIStackView(arrangedSubviews: [replyButton, retweetButton, likeButton, directMessageButton])
-
         buttonStackView.axis = .horizontal
         buttonStackView.distribution = .fillEqually
 

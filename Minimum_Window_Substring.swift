@@ -13,6 +13,17 @@ If there is no such window in S that covers all characters in T, return the empt
 If there are multiple such windows, you are guaranteed that there will always be only one unique minimum window in S.
 */
 
+/**
+    Idea:   1. Navie solution two for loop.
+                    update tempRes during find matchedCount == t.count break to next for loop, since outer for loop always start from i.
+
+            2. Enhanced. Update start Idx while we find matchedCount == t.count
+                Selection Algorithm, Partition-based Selection 
+
+    Runtime: O(N)
+    Space: O(N)
+    Category: String, Two Pointer
+*/
 // Solution: Swift. 
 class Solution {
     func minWindow(_ s: String, _ t: String) -> String {
