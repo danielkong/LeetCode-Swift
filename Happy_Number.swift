@@ -11,7 +11,12 @@
 	62 + 82 = 100
 	12 + 02 + 02 = 1
 */
-// Solution: Runtime O(n) Space: O(n)
+/** Solution: 
+    Runtime O(n) Space: O(n)
+    Time complexity: O(log*n) or almost O(1)  
+    Space complexity: O(log*n)
+
+*/
 class Solution {
     func isHappy(_ n: Int) -> Bool {
         var num = n

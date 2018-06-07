@@ -22,7 +22,7 @@ class CustomImageView: UIImageView {
         if let storedImage = imageCache.object(forKey: str) as? UIImage {
             self.image = storedImage
         } else {
-            APIService.shared.fetchData(string, completion: { [weak self] data, errString in
+            APIService.shared.fetchData(string, completion: { data, errString in
                 if errString != nil {
                     return
                 }
@@ -30,8 +30,8 @@ class CustomImageView: UIImageView {
                     DispatchQueue.main.async {
                         let tempImage = UIImage.init(data: data)!
                         imageCache.setObject(tempImage, forKey: str)
-                        if self?.imageUrlString == string {
-                            self?.image = tempImage
+                        if self.imageUrlString == string {
+                            self.image = tempImage
                         }
                     }
                 }

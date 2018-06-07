@@ -32,7 +32,7 @@ Two MST both greedy algorithm
  * Time Complexity: O(mn), Space Complexity: O(1)
  *
  */
-// space O(mn)
+// space O(mn) with global variable 
 class Solution {
     var varGrid = [[Character]]()
     func numIslands(_ grid: [[Character]]) -> Int {
@@ -58,6 +58,44 @@ class Solution {
         dfs(varGrid, i, j-1)
     }
 }
+
+// space without global variable
+    func numIslands(_ grid: [[Character]]) -> Int {
+        guard grid.count > 0 else {
+            return 0
+        }
+
+        var grid = grid
+        let row = grid.count
+        let col = grid[0].count
+        var count = 0
+
+        for i in 0..<row {
+            for j in 0..<col {
+                if grid[i][j] == "1" {
+                    count += 1
+                    helper(&grid, i, j)
+                }
+            }
+        }
+        return count
+    }
+
+    func helper(_ grid: inout [[Character]], _ i: Int, _ j: Int) {
+        if i < 0 || i >= grid.count || j >= grid[0].count || j < 0 {
+            return
+        }
+
+        if i >= 0 && j >= 0 && i < grid.count && j < grid[0].count {
+            if grid[i][j] == Character("1") {
+                grid[i][j] = Character("2")
+                helper(&grid, i+1, j)
+                helper(&grid, i, j-1)
+                helper(&grid, i, j+1)
+                helper(&grid, i-1, j)
+            }
+        }
+    }
 
 // Space: O(1)
 class NumberofIslands {

@@ -10,18 +10,19 @@ Note: m and n will be at most 100.
 // Solution: Runtime O(mn), Space O(mn)
 class Solution {
     func uniquePaths(_ m: Int, _ n: Int) -> Int {
-        // var arr = [[Int]]() // does not work
-		var arr = Array(repeating: Array(repeating: 0, count: n), count: m)
-        for i in 0 ..< m {
-            for j in 0 ..< n {
-                if i == 0 || j == 0 {
-                    arr[i][j] = 1
-                } else {
-                    arr[i][j] = arr[i-1][j] + arr[i][j-1]
-                }
+        var dp = Array(repeating: Array(repeating: 0, count:m), count:n)
+        for i in 0..<m {
+            dp[0][i] = 1
+        }
+        for i in 0..<n {
+            dp[i][0] = 1
+        }
+        for i in 1..<n {
+            for j in 1..<m {
+                dp[i][j] = dp[i-1][j] + dp[i][j-1]
             }
         }
-        return arr[m-1][n-1]
+        return dp[n-1][m-1]
     }
 }
 
@@ -38,6 +39,7 @@ class Solution {
         return dp[m-1]
     }
 }
+
 // Formula Solution runtime and space 1
 // (m+n)! / (m! * n!) and so now we only calculate (m+1)(m+2)..(m+n) / n!
 

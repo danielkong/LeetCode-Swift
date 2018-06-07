@@ -38,3 +38,20 @@ let middleSixBits = firstBit ^ lastBit //等于 0b10000001
         }
         return res
     }
+
+class Solution {
+    func hammingDistance(_ x: Int, _ y: Int) -> Int {
+        guard x >= 0 && y >= 0 else {
+            return 0
+        }
+        
+        var differentBits = x ^ y
+        var count = 0
+        while differentBits > 0 {
+            count += 1
+            differentBits = (differentBits & (differentBits - 1))
+        }
+        
+        return count
+    }
+}

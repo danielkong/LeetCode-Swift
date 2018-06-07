@@ -13,6 +13,11 @@ A solution set is:
 ]
 */
 
+/**
+    Idea: Try every possible case.
+    Runtime: O(N^2 + NlgN) = O(N^2)
+    Space: O(N)
+*/
 // Solution: Swift
     func threeSum(_ nums: [Int]) -> [[Int]] {
         var res = [[Int]]()

@@ -85,3 +85,99 @@ public class Solution {
         return i;
     }
 }
+
+// m = 3, n = 3, positions = [[0,0], [0,1], [1,2], [2,1]]
+/**
+    Runtime: O(N) -- points as N
+    Space: O(M*N)
+*/
+func numIsland(_ m: Int, _ n: Int, _ positions: [[Int]]) -> [Int] {
+    var map = Array(repeating: Array(repeating: 0, count: n), count: m)
+    var res = [Int]()
+    for pos in positions {
+        updateMap(&map, pos, &res)
+    }
+    return res
+}
+
+func updateMap(_ map: inout [[Int]], _ pos: [Int], _ res: inout [Int]) {
+    // check surrounding map,  update res num
+    let x = pos[0], y = pos[1]
+    var tempNum = res.last ?? 0
+    if x-1 >= 0, x+1<=map[0].count, y-1 >= 0, y+1 <= map.count {
+        let up = map[x-1][y]
+        let down = map[x+1][y]
+        let left = map[x][y-1]
+        let right = map[x][y+1]
+        
+        let leftUp = map[x-1][y-1]
+        let leftDown = map[x+1][y-1]
+        let rightUp = map[x-1][y+1]
+        let rightDown = map[x+1][y+1]
+        
+        if up==0 && down==0 && left==0 && right==0 {
+            tempNum += 1
+        } else {
+            if up+down+left+right == 1 {
+                // do not need + island
+            } else if up+down+left+right == 2 {
+                // two cases, 1. 180 degree one, 2 90 degree one
+            } else if up+down+left+right == 3 {
+                // one case compare two direction 90 degree one
+            } else if up+down+left+right == 4 {
+                // one case check 4 direction 90 degree one
+            }
+        }
+    }
+    res.append(tempNum)
+}
+
+
+/**
+ * Question Link: https://leetcode.com/problems/number-of-islands-ii/
+ * Primary idea: Classic Union Find, check four directions and update count every time
+ * 
+ * Time Complexity: O(klogmn), Space Complexity: O(mn)
+ *
+ */
+
+class NumberIslandsII {
+  func numOfIslandsII(_ m: Int, _ n: Int, _ positions: [(Int, Int)]) -> [Int] {
+    var res = [Int](), count = 0, roots = Array(repeating: -1, count: m * n)
+    
+    for position in positions {
+      var pos = position.0 * n + position.1
+      roots[pos] = pos
+      count += 1
+      
+      for moveDir in [(0, 1), (0, -1), (1, 0), (-1, 0)] {
+        let i = position.0 + moveDir.0, j = position.1 + moveDir.1
+        let movePos = i * n + j
+        
+        guard i >= 0 && i < m && j >= 0 && j < n && roots[movePos] != -1 else {
+          continue
+        }
+        
+        let movePosRoot = findRoot(movePos, roots)
+        
+        if movePosRoot != pos {
+          count -= 1
+          roots[pos] = movePosRoot
+          pos = movePosRoot
+        }
+      }
+      
+      res.append(count)
+    }
+    
+    return res
+  }
+
+  fileprivate func findRoot(_ node: Int, _ roots: [Int]) -> Int {
+    var node = node
+    while node != roots[node] {
+      node = roots[node]
+    }
+    return node
+  }
+}
