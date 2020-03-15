@@ -57,3 +57,32 @@ func checkSubarraySum(_ nums: [Int], _ k: Int) -> Bool {
     }
     return false
 }
+
+// Using hashMap
+// Runtime: O(N)
+// Space time complexity: O(k)
+
+func checkSubarraySum(_ nums: [Int], _ k: Int) -> Bool {
+    let n = nums.count
+    guard n > 1 else {
+        return false
+    }
+    var dict = [Int:Int]()
+    dict[0] = -1
+    var sum = 0
+    for i in 0..<n {
+        sum += nums[i]
+        if k != 0 {
+            sum %= k
+        }
+        
+        if dict[sum] != nil {
+            if (i-dict[sum]!) >= 2 {
+                return true
+            }
+        } else {
+            dict[sum] = i
+        }
+    }
+    return false
+}
