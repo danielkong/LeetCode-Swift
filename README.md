@@ -22,8 +22,8 @@
 ## Tree
 | Number | Question   | Time  | Space | Difficulty |
 | ------ |:----------:| -----:|----:|---------|
-| 270 | [Closest BST Value](./Closest%20BST%20Value.swift)| O(N) | O(1)    | Medium |
-| 98 | [Validate BST](./Validate%20BST.swift)| O(N) | O(1)    | Medium |
+| 270 | [Closest BST Value](./ClosestBinarySearchTreeValue.swift)| O(N) | O(1)    | Medium |
+| 98 | [Validate BST](./Validate%20Binary%20Search%20Tree.swift)| O(N) | O(1)    | Medium |
 
 ## Stack
 
