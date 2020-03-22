@@ -15,10 +15,97 @@
      The integer n is in the range [0, 100].
  */
 /**
- Idea:
- Runtime: O(N)
- Space: O(26)
+ Solution 1: Updating map every task execution, greedy fill task one by one.
+Time O(time)
+Space O(1)  Constant size array map is used.
+
+ Solution 2: Better and faster. Max count task needs (maps[25]-1)*(n+1) to finish, 
+            if has same max count tasks, need to add those task number as well (25 - i), 
+            then compare those with tasks.count
+Time complexity : O(n). We iterate over taskstasks array only once. (O(n)).Sorting taskstasks array of length n takes O\big(26log(26)\big)= O(1) time. After this, only one iteration over 26 elements of mapmap is done(O(1).
+Space complexity : O(1). mapmap array of constant size(26) is used.
+
+
+
+ Meanwhile, also could use priority queue, use Max-Heap(queue) to pick the order or tasks.
+
+Solution 3: Priority Queue -- max heap
+Time complexity : O(n). Number of iterations will be equal to resultant time timetime.
+Space complexity : O(1). queuequeue and temptemp size will not exceed O(26).
  */
+// Solution 1
+func leastInterval(_ tasks: [Character], _ n: Int) -> Int {
+  var map = Array(repeating: 0, count:26)
+  tasks.forEach { map[Int($0.asciiValue! - Character("A").asciiValue!)] += 1 }
+
+  map.sort()
+  var time = 0
+  while map[25] > 0 {
+      var i = 0
+      while i <= n {
+          if map[25] == 0 {
+              break
+          }
+          if i < 26 && map[25-i] > 0 {
+              map[25-i] -= 1
+          }
+          time += 1
+          i += 1
+      }
+      map.sort()
+  }
+  return time
+}
+
+// solution 2
+func leastInterval(_ tasks: [Character], _ n: Int) -> Int {
+    var map = Array(repeating: 0, count:26)
+    tasks.forEach { map[Int($0.asciiValue! - Character("A").asciiValue!)] += 1 }
+
+    map.sort()
+    var i = 25
+    while i >= 0 && map[i] == map[25] {
+      i -= 1
+    }
+    return max(tasks.count, (map[25] - 1) * (n + 1) + 25 - i)
+}
+
+// Solution 3 priority queue
+public class Solution {
+    public int leastInterval(char[] tasks, int n) {
+        int[] map = new int[26];
+        for (char c: tasks)
+            map[c - 'A']++;
+        PriorityQueue < Integer > queue = new PriorityQueue < > (26, Collections.reverseOrder());
+        for (int f: map) {
+            if (f > 0)
+                queue.add(f);
+        }
+        int time = 0;
+        while (!queue.isEmpty()) {
+            int i = 0;
+            List < Integer > temp = new ArrayList < > ();
+            while (i <= n) {
+                if (!queue.isEmpty()) {
+                    if (queue.peek() > 1)
+                        temp.add(queue.poll() - 1);
+                    else
+                        queue.poll();
+                }
+                time++;
+                if (queue.isEmpty() && temp.size() == 0)
+                    break;
+                i++;
+            }
+            for (int l: temp)
+                queue.add(l);
+        }
+        return time;
+    }
+}
+
+
+// initial solution
 
 func leastInterval(_ tasks: [Character], _ n: Int) -> Int {
     // var dict = [Character: Int]()
