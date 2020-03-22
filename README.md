@@ -13,12 +13,15 @@
 ## Array
 | Number | Question   | Time  | Space | Difficulty |
 | ------ |:----------:| -----:|----:|---------|
-| 33 | [Search in rotated sorted array](./SearchInRotatedSortedArray.swift)| O(n) | O(n)    | Medium |
-
+| 33 | [Search in rotated sorted array](./SearchInRotatedSortedArray.swift)| O(logN) | O(1)    | Medium |
+| 523 | [Continuous Subarray Sum](./ContinuousSubarraySum.swift)| O(N) | O(1)    | Medium |
+| 636 | [Exclusive time of functions](./ExclusiveTimeofFunctions.swift)| O(N) | O(1)    | Medium |
 
 ## String
 
 ## Tree
+| 270 | [Closest BST Value](./Closest%20BST%20Value.swift)| O(N) | O(1)    | Medium |
+| 98 | [Validate BST](./Validate%20BST.swift)| O(N) | O(1)    | Medium |
 
 ## Stack
 
