@@ -1,14 +1,37 @@
-# iOS
+# iOS Leetcode
+## Data Structures
+* [Array](#array)
+* [String](#string)
+* [Stack](#stack)
+* [Queue](#queue)
+* [Tree](#tree)
+* [Dynamic programming](#dynamic-programming)
+* [Depth-first search](#depth-first-search)
+* [Breadth-first search](#breadth-first-search)
+* [Graph](#graph)
 
-Coding in obj-C &amp; swift
+## Array
+| Number | Question   | Time  | Space | Difficulty |
+| ------ |:----------:| -----:|----:|---------|
+| 33 | [Search in rotated sorted array](./Search in rotated sorted array.swift)| O(n) | O(n)    | Medium |
 
-__left__
-This is a [link](https://github.com)
 
-- and this is
-- a list
-    + sub list
-    + sub list2
+## String
 
-:tada: 
-:firework:
+## Tree
+
+## Stack
+
+## Queue
+
+## depth-first-search
+
+## Breadth-First-Search
+
+## Dynamic Programming
+
+## Graph
+
+
+
+
