@@ -13,7 +13,7 @@
 ## Array
 | Number | Question   | Time  | Space | Difficulty |
 | ------ |:----------:| -----:|----:|---------|
-| 33 | [Search in rotated sorted array](/Search in Rotated Sorted Array.swift)| O(n) | O(n)    | Medium |
+| 33 | [Search in rotated sorted array](./SearchInRotatedSortedArray.swift)| O(n) | O(n)    | Medium |
 
 
 ## String
