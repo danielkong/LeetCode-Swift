@@ -20,8 +20,7 @@ Output: 4
 */
 /**
     Solution: DFS, go through each level of the tree and update result.
-        Time Complexity: O(D) -- depth of the tree
-    
+        Time Complexity: O(D) -- depth of the trees
 */
     func closestValue(_ root: TreeNode?, _ target: Double) -> Int {
         // if target == -1500000000.0 { return 1400000000 }
