@@ -13,7 +13,7 @@
 ## Array
 | Number | Question   | Time  | Space | Difficulty |
 | ------ |:----------:| -----:|----:|---------|
-| 33 | [Search in rotated sorted array](./Search in rotated sorted array.swift)| O(n) | O(n)    | Medium |
+| 33 | [Search in rotated sorted array](./Search in Rotated Sorted Array.swift)| O(n) | O(n)    | Medium |
 
 
 ## String
@@ -24,7 +24,7 @@
 
 ## Queue
 
-## depth-first-search
+## Depth-First-Search
 
 ## Breadth-First-Search
 
