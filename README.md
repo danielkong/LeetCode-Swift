@@ -17,8 +17,8 @@
 | 33 | [Search in rotated sorted array](./SearchInRotatedSortedArray.swift)| O(logN) | O(1)    | Medium |  |
 | 523 | [Continuous Subarray Sum](./ContinuousSubarraySum.swift)| O(N) | O(1)    | Medium |  |
 | 636 | [Exclusive time of functions](./ExclusiveTimeofFunctions.swift)| O(N) | O(1)    | Medium |  |
-| 621 | [Task Scheduler](./TaskScheduler.swift) | O(26log26) ~ O(1) | O(1) | Medium | :x: |
-|  | |  |  |  |  |
+| 621 | [Task Scheduler](./TaskScheduler.swift) | O(26log26) }<br />~O(1) | O(1) | Medium | :x: |
+| 31 | [Next Permutation](./NextPermutation.swift) |  |  |  |  |
 |  | |  |  |  |  |
 |  | |  |  |  |  |
 |  | |  |  |  |  |
