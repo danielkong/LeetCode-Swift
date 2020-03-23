@@ -1,4 +1,4 @@
-// Next_Permutation
+// 31. Next_Permutation
 /**
 Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
 
@@ -22,6 +22,45 @@ example:
 再将second＝9以及以后的序列重新排序，让其从小到大排序，使得整体最小，即reverse一下（因为此时肯定是递减序列）
 得到最终的结果：6，3，7，1，4，8，9
 */
+
+/** 
+    Best Solution: 1. From last digit, if prev digit larger than curr digit, then swap. 
+                (correction: find smallest larger than curr digit number, swap)
+
+                Note: must use `temp-curr >= val`, otherwise, it will fail on [2,3,1,3,3] since after swapping 3,1,3, then reverse does not right.
+    runtime: O(n)
+    space: O(1)
+*/
+    func nextPermutation(_ nums: inout [Int]) {
+        // from last digit, if prev digit larger than curr digit, then swap.
+        // if no find, reverse whole.
+        let n = nums.count
+        var currIndex = n - 2
+        
+        while currIndex >= 0 {
+            let curr = nums[currIndex], prev = nums[currIndex+1]
+            if prev > curr {
+                // find smallest larger current digit from currentIndex+1 to end of digit
+                var temp = prev, tempIndex = currIndex+1
+                for i in currIndex+1..<n {
+                    let val = nums[i]-curr
+                    if temp-curr >= val && val > 0 {
+                        temp = nums[i]
+                        tempIndex = i
+                    }
+                }
+                
+                (nums[currIndex], nums[tempIndex]) = (nums[tempIndex],nums[currIndex])
+                nums[currIndex+1...n-1].reverse()
+                return
+            }
+            currIndex -= 1
+        }
+        
+        // no find, reverse whole array
+        nums.reverse()
+    }
+
 // runtime O(n^2), space O(n)[worst case], following is enhanced solution
 func nextPermutation(_ nums: inout [Int]) {
     guard nums.count > 1 else {
