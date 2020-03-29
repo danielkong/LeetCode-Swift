@@ -7,6 +7,72 @@ Given [1,3],[2,6],[8,10],[15,18],
 return [1,6],[8,10],[15,18].
 */
 
+/**
+    Solution 1: Sort by start value.
+                If res empty means  
+    Solution 2: Sort by end value.
+*/
+
+    func merge(_ intervals: [[Int]]) -> [[Int]] {
+        
+        guard intervals.count > 0 else {
+            return []
+        }
+        
+        // sort by start value
+        var sorted = intervals
+        sorted.sort { $0[0] < $1[0] }
+        var merged: [[Int]] = []
+        
+        var last: [Int] = []
+        for interval in sorted {
+            if merged.isEmpty || interval[0] > last[1] {
+                last = interval
+                merged.append(last)
+                continue
+            } else if interval[1] > last[1] {
+                // merge
+                last[1] = interval[1]
+                merged.removeLast()
+                merged.append(last)
+            }
+        }
+        
+        return merged
+    }
+
+    // sorted by end value.
+    
+    func merge(_ intervals: [[Int]]) -> [[Int]] {
+        guard intervals.count > 1 else { return intervals }
+        let sortedIntervals = intervals.sorted(){ $0[1] < $1[1] }
+        var res: [[Int]] = [sortedIntervals[0]]
+        var i = 0
+        while i < sortedIntervals.count-1 {
+            if sortedIntervals[i][1] < sortedIntervals[i+1][0] {
+                // create new to res
+                print(sortedIntervals[i+1])
+                res.append(sortedIntervals[i+1])
+            } else {
+                // grap res.last, not only grap last,
+                var temp = res.removeLast()
+                while sortedIntervals[i+1][0] < temp[0] && res.count > 0 {
+                    if let prev = res.last, sortedIntervals[i+1][0] <= prev[1] {
+                        temp = res.removeLast()
+                    } else {
+                        break
+                    }
+                }
+                print(sortedIntervals[i])
+                res.append([min(temp[0], sortedIntervals[i+1][0]), max(temp[1], sortedIntervals[i+1][1])])
+
+            }
+            i += 1
+        }
+        return res
+    }
+
+
 func merge(_ intervals: [Interval]) -> [Interval] {
     guard intervals.count > 0 else {
         return []

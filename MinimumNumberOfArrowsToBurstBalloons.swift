@@ -15,6 +15,13 @@ Output:
 Explanation:
 One way is to shoot one arrow for example at x = 6 (bursting the balloons [2,8] and [1,6]) and another arrow at  x = 11 (bursting the other two balloons).
 */
+/**
+    Solution: sorted by end points, then could for loop. 
+            Two cases needs handle, curr item start smaller than prev end, means both with 1 arrow, 
+            otherwise, need another arrow, then update prev arrow end.
+    Runtime: O(nlogN) -- sort
+    Space: O(N)
+*/
 
 // Solution 1: sorted by start point ascend [1,8], [2,6], need consider three cases, one non-intersection, intersection and one cover next one. not best solution
 
@@ -40,18 +47,16 @@ One way is to shoot one arrow for example at x = 6 (bursting the balloons [2,8] 
 // Best Solution 2: sorted by end point ascend [2,6], [1,8] Only consider one case to increase count (next one start point larger than current end point)
     // Time O(nlog(n)) <sort>, Space: O(n)<swift>, O(1)<Java>
     func findMinArrowShots(_ points: [[Int]]) -> Int {
-        guard points.count > 0 else {
-            return 0
-        }
-        var arr = points.sorted(){ ($0[1]) < ($1[1]) }
-        
-        var res = 1
-        var tempend = arr[0][1]
-        for item in arr {
-            if item[0] > tempend {
-                res += 1
-                tempend = item[1]
+        guard points.count > 0 else { return 0 }
+        var sortedPoints = points.sorted{ $0[1] < $1[1] }
+        var arrowPos = sortedPoints[0][1]
+        var count = 1 
+        for i in 1..<sortedPoints.count {
+            if sortedPoints[i][0] <= arrowPos {
+                continue
             }
+            count += 1
+            arrowPos = sortedPoints[i][1]
         }
-        return res
+        return count
     }

@@ -5,6 +5,7 @@
 * [Tree](#tree)
 * [Stack](#stack)
 * [Queue](#queue)
+* [Heap](#Heap)
 * [Priority Queue](#Priority-Queue)
 * [Dynamic programming](#dynamic-programming)
 * [Depth-first search](#depth-first-search)
@@ -30,8 +31,8 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 | 636 | [Exclusive time of functions](./ExclusiveTimeofFunctions.swift)| O(N) | O(1)    | Medium |  |
 | 621 | [Task Scheduler](./TaskScheduler.swift) | O(26log26)<br />~O(1) | O(1) | Medium | :x: |
 | 31 | [Next Permutation](./NextPermutation.swift) | O(N) | O(1) | Medium | :white_check_mark: |
-| 1094 | [Car Pooling](./CarPooling.swift) |  |  |  |  |
-|  | |  |  |  |  |
+| 1094   |              [Car Pooling](./CarPooling.swift)               |              O(NlogN) |  O(N) |   Medium   | :x: |
+| 56 | [Merge Interval](./MergeIntervals.swift) | O(NlogN) | O(N) | Medium | :white_check_mark: |
 |  | |  |  |  |  |
 |  | |  |  |  |  |
 
@@ -44,7 +45,7 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 ## Tree
 
 | Number | Question   | Time  | Space | Difficulty | Done |
-| ------ |:----------:| -----:|----:|---------| ------ |
+| ------ |:----------:| -----:|----:|:-------:| ------ |
 | 270 | [Closest BST Value](./ClosestBinarySearchTreeValue.swift)| O(N) | O(1)    | Medium |  |
 | 98 | [Validate BST](./ValidateBinarySearchTree.swift)| O(N) | O(1)    | Medium |  |
 | 199 | [Binary Tree Right Side View](./BinaryTreeRightSideView.swift)| O(N) | O(1)    | Medium |  |
@@ -63,6 +64,20 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 | Number |                Question                 |                    Time | Space | Difficulty | Done |
 | ------ | :-------------------------------------: | ----------------------: | ----: | :--------: | ---- |
 | 621    | [Task Scheduler](./TaskScheduler.swift) | O(26log26)<br /> ~ O(1) |  O(1) |   Medium   | :x:  |
+
+
+
+## Heap
+
+| Number |                  Question                  |     Time | Space | Difficulty | Done               |
+| ------ | :----------------------------------------: | -------: | ----: | :--------: | ------------------ |
+| 56     |  [Merge Interval](./MergeIntervals.swift)  | O(NlogN) |  O(N) |   Medium   | :white_check_mark: |
+| 253    | [Meeting Rooms II](./MeetingRoomsII.swift) | O(NlogN) |  O(N) |   Medium   | :x:                |
+|        |                                            |          |       |            |                    |
+|        |                                            |          |       |            |                    |
+|        |                                            |          |       |            |                    |
+
+
 
 ## Priority-Queue
 
@@ -87,19 +102,26 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 
 ## Greedy
 
-| Number | Question                                |                    Time | Space | Difficulty | Done |
-| ------ | --------------------------------------- | ----------------------: | ----: | ---------- | ---- |
-| 621    | [Task Scheduler](./TaskScheduler.swift) | O(26log26)<br /> ~ O(1) |  O(1) | Medium     | :x:  |
-| 1094   | [Car Pooling](./CarPooling.swift)       |                         |       |            |      |
-|        |                                         |                         |       |            |      |
-|        |                                         |                         |       |            |      |
-|        |                                         |                         |       |            |      |
+| Number | Question                                                     |                    Time | Space | Difficulty | Done               |
+| ------ | ------------------------------------------------------------ | ----------------------: | ----: | ---------- | ------------------ |
+| 621    | [Task Scheduler](./TaskScheduler.swift)                      | O(26log26)<br /> ~ O(1) |  O(1) | Medium     | :x:                |
+| 1094   | [Car Pooling](./CarPooling.swift)                            |                O(NlogN) |  O(N) | Medium     | :x:                |
+| 253    | [Meeting Rooms II](./MeetingRoomsII.swift)                   |                O(NlogN) |  O(N) | Medium     | :x:                |
+| 252    | Meeting Rooms                                                |                         |       |            |                    |
+| 56     | [Merge Interval](./MergeIntervals.swift)                     |                O(NlogN) |  O(N) | Medium     | :white_check_mark: |
+| 435    | Non-overlapping Intervals                                    |                         |       |            |                    |
+| 452    | [Minimum Number of Arrows to Burst Balloons](./MinimumNumberOfArrowsToBurstBalloons.swift) |                O(NlogN) |  O(N) | Medium     | :white_check_mark: |
+|        |                                                              |                         |       |            |                    |
 
 ## Sorting
 
-| Number | Question                                       | Time | Space | Difficulty | Done               |
-| ------ | ---------------------------------------------- | ---- | ----- | ---------- | ------------------ |
-| 88     | [Merge Sorted Array](./MergeSortedArray.swift) | O(N) | O(1)  | Easy       | :white_check_mark: |
+| Number | Question                                       | Time     | Space | Difficulty | Done               |
+| ------ | ---------------------------------------------- | -------- | ----- | ---------- | ------------------ |
+| 88     | [Merge Sorted Array](./MergeSortedArray.swift) | O(N)     | O(1)  | Easy       | :white_check_mark: |
+| 56     | [Merge Interval](./MergeIntervals.swift)       | O(NlogN) | O(N)  | Medium     | :white_check_mark: |
+| 253    | [Meeting Rooms II](./MeetingRooms.swift)       | O(NlogN) | O(N)  | Medium     | :x:                |
+|        |                                                |          |       |            |                    |
+|        |                                                |          |       |            |                    |
 
 ## Dynamic Programming
 
