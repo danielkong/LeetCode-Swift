@@ -10,6 +10,20 @@ Example 1:
 00000
 Answer: 1
 
+*/
+/**
+Solution 1: DFS -- For loop N * M, Find 1, and mark all connected 1 as 0, then find next 1.
+            Runtime: O(MN)
+            Space: O(MN)
+Solution 2: BFS -- Find 1, then BFS, all neighbors if equals 1 put into queue, 
+                    then mark it 0/visited, then add its neighbor who also equals to 1
+            Runtime: O(MN)
+            Space: O(min(M,N))
+Solution 3: Union-Find -- Graph
+            Runtime: O(MN)
+            Space: O(MN)
+
+
 Discussion:
 DFS and BFS:
 https://www.ics.uci.edu/~eppstein/161/960215.html

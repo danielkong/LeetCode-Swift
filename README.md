@@ -90,9 +90,11 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 
 ## Depth-First-Search
 
-| Number | Question | Time | Space | Difficulty | Done |
-| ------ | :------: | ---: | ----: | ---------- | ---- |
-|        |          |      |       |            |      |
+| Number |                   Question                   |  Time | Space | Difficulty | Done               |
+| ------ | :------------------------------------------: | ----: | ----: | ---------- | ------------------ |
+| 502    | [Number of Islands](./NumberOfIslands.swift) | O(MN) | O(MN) | Medium     | :x:                |
+| 100    |        [Same Tree](./SameTree.swift)         |  O(N) |  O(1) | Easy       | :white_check_mark: |
+| 394    |    [Decode String](./DecodeString.swift)     |       |       |            |                    |
 
 ## Breadth-First-Search
 
@@ -134,6 +136,44 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 | Number | Question   | Time  | Space | Difficulty | Algor |
 | ------ |:----------:| -----:|----:|---------| ------ |
 | 270 | [Accounts Merge](./AccountsMerge.swift)| O(AlogA) | O(A)    | Medium | Union-Find |
+| 305 | [Number of Island II](./NumberOfIslandII.swift) |  |  | Hard | Union-Find |
+|  | |  |  |  |  |
+|  | |  |  |  |  |
+|  | |  |  |  |  |
+
+## Bit Manipulation 
+
+Now let's discuss \mathcal{O}(1)O(1) space solution by using three [bitwise operators](https://wiki.python.org/moin/BitwiseOperators)
+
+∼x	bitwise NOT
+
+*x*&y bitwise AND
+
+*x*⊕y  bitwise XOR
+
+| Number |                  Question                  | Time | Space | Difficulty | Done               |
+| ------ | :----------------------------------------: | ---: | ----: | ---------- | ------------------ |
+| 136    |   [Single Number](./SingleNumber.swift)    | O(N) |  O(1) | Easy       | :white_check_mark: |
+| 137    | [Single Number II](./SingleNumberII.swift) | O(N) |  O(1) | Medium     | :white_check_mark: |
+| 260    | [Single Number III](./SingleNumber.swift)  |      |       |            |                    |
+|        |                                            |      |       |            |                    |
+|        |                                            |      |       |            |                    |
+
+## Set
+
+`contains`
+
+`insert`
+
+`remove`
+
+`isSubset(of:) `
+
+`intersection()`
+
+| Number |               Question                | Time | Space | Difficulty | Done               |
+| ------ | :-----------------------------------: | ---: | ----: | ---------- | ------------------ |
+| 136    | [Single Number](./SingleNumber.swift) | O(N) |  O(1) | Easy       | :white_check_mark: |
 
 
 
