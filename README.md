@@ -16,9 +16,9 @@
 
 Swift native func performance:
 
-void `sort()` Time complexity:  O(**n** log **n**), where **n** is the length of the collection.
+- void `sort()` Time complexity:  O(**n** log **n**), where **n** is the length of the collection.
 
-[Element] `sorted()` Time complexity: O(**n** log **n**), where **n** is the length of the sequence.
+- [Element] `sorted()` Time complexity: O(**n** log **n**), where **n** is the length of the sequence.
 
 void `reverse()` Time complexity: O(**n**), where **n** is the number of elements.
 
@@ -33,10 +33,15 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 | 31 | [Next Permutation](./NextPermutation.swift) | O(N) | O(1) | Medium | :white_check_mark: |
 | 1094   |              [Car Pooling](./CarPooling.swift)               |              O(NlogN) |  O(N) |   Medium   | :x: |
 | 56 | [Merge Interval](./MergeIntervals.swift) | O(NlogN) | O(N) | Medium | :white_check_mark: |
-|  | |  |  |  |  |
-|  | |  |  |  |  |
+| 53 | [Maximum Subarray](./MaximumSubarray.swift) | O(N) | O(1) | Medium | :white_check_mark: |
+| 283 | [Move Zero](./MoveZero.swift) | O(N) | O(1) | Easy | :white_check_mark: |
 
 ## String
+
+- Loop chars. `Array(string)`
+- Loop char with index. `for (index, char)in string.enumerated() { ... }`
+- Find first char in string. `string.prefix(1)`
+- 
 
 | Number | Question | Time | Space | Difficulty | Done |
 | ------ | -------- | ---- | ----- | ---------- | ---- |
@@ -55,9 +60,11 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 
 ## Stack
 
-| Number | Question | Time | Space | Difficulty | Done |
-| ------ | -------- | ---- | ----- | ---------- | ---- |
-|        |          |      |       |            |      |
+| Number | Question                              | Time | Space | Difficulty | Done |
+| ------ | ------------------------------------- | ---- | ----- | ---------- | ---- |
+| 394    | [Decode String](./DecodeString.swift) | O(N) | O(N)  | Medium     | :x:  |
+|        |                                       |      |       |            |      |
+|        |                                       |      |       |            |      |
 
 ## Queue
 
@@ -90,11 +97,15 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 
 ## Depth-First-Search
 
-| Number |                   Question                   |  Time | Space | Difficulty | Done               |
-| ------ | :------------------------------------------: | ----: | ----: | ---------- | ------------------ |
-| 502    | [Number of Islands](./NumberOfIslands.swift) | O(MN) | O(MN) | Medium     | :x:                |
-| 100    |        [Same Tree](./SameTree.swift)         |  O(N) |  O(1) | Easy       | :white_check_mark: |
-| 394    |    [Decode String](./DecodeString.swift)     |       |       |            |                    |
+| Number |                   Question                    |  Time | Space | Difficulty | Done               |
+| ------ | :-------------------------------------------: | ----: | ----: | ---------- | ------------------ |
+| 502    | [Number of Islands](./NumberOfIslands.swift)  | O(MN) | O(MN) | Medium     | :x:                |
+| 100    |         [Same Tree](./SameTree.swift)         |  O(N) |  O(1) | Easy       | :white_check_mark: |
+| 394    |     [Decode String](./DecodeString.swift)     |  O(N) |  O(N) | Medium     | :x:                |
+| 695    | [Max Area of Island](./MaxAreaOfIsland.swift) | O(MN) | O(MN) | Medium     | :white_check_mark: |
+| 721    |    [Accounts Merge](./AccountsMerge.swift)    |       |       |            |                    |
+|        |                                               |       |       |            |                    |
+|        |                                               |       |       |            |                    |
 
 ## Breadth-First-Search
 
@@ -113,6 +124,12 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 | 56     | [Merge Interval](./MergeIntervals.swift)                     |                O(NlogN) |  O(N) | Medium     | :white_check_mark: |
 | 435    | Non-overlapping Intervals                                    |                         |       |            |                    |
 | 452    | [Minimum Number of Arrows to Burst Balloons](./MinimumNumberOfArrowsToBurstBalloons.swift) |                O(NlogN) |  O(N) | Medium     | :white_check_mark: |
+| 53     | [Maximum Subarray](./MaximumSubarray.swift)                  |                    O(N) |  O(1) | Medium     | :white_check_mark: |
+|        |                                                              |                         |       |            |                    |
+|        |                                                              |                         |       |            |                    |
+|        |                                                              |                         |       |            |                    |
+|        |                                                              |                         |       |            |                    |
+|        |                                                              |                         |       |            |                    |
 |        |                                                              |                         |       |            |                    |
 
 ## Sorting
