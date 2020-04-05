@@ -11,16 +11,16 @@ Design an algorithm to find the maximum profit. You may complete as many transac
 class Solution {
 //  time O(n), space O(1)
     func maxProfit(_ prices: [Int]) -> Int {
-        guard prices.count > 1 else {
-            return 0
-        }
-        var res = 0
+        // count all ascend order sequence
+        guard prices.count > 1 else { return 0 }
+        var prev = prices[0]
+        var profit = 0
         for i in 1 ..< prices.count {
-            let profit = prices[i] - prices[i-1] 
-            if profit > 0 {
-                res += profit
+            if prices[i] > prev {
+                profit += (prices[i]-prev)
             }
+            prev = prices[i]
         }
-        return res
+        return profit
     }
 } 
