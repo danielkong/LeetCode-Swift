@@ -106,8 +106,8 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 | 721    |           [Accounts Merge](./AccountsMerge.swift)            |        |       |            |                    |
 | 785    |        [Is Graph Bipartite](./IsGraphBipartite.swift)        | O(N+m) |  O(N) |            |                    |
 | 1123   | [Common Ancestor Of Deepest Leaves](./CommonAncestorOfDeepestLeaves.swift) |   O(N) |  O(N) | Medium     | :white_check_mark: |
-|        |                                                              |        |       |            |                    |
-|        |                                                              |        |       |            |                    |
+| 1236   |              [Web Crawler](./WebCrawler.swift)               |   O(N) |  O(N) | Medium     | :white_check_mark: |
+| 968    |       [Binary Tree Cameras](./BinaryTreeCameras.swift)       |   O(N) |  O(N) | Hard       | :x:                |
 
 ## Breadth-First-Search
 
