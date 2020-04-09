@@ -39,13 +39,19 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 ## String
 
 - Loop chars. `Array(string)`
-- Loop char with index. `for (index, char)in string.enumerated() { ... }`
-- Find first char in string. `string.prefix(1)`
-- 
 
-| Number | Question | Time | Space | Difficulty | Done |
-| ------ | -------- | ---- | ----- | ---------- | ---- |
-|        |          |      |       |            |      |
+- Loop char with index. `for (index, char)in string.enumerated() { ... }`
+
+- Find first char in string. `string.prefix(1)`
+
+  
+
+| Number | Question                                                   | Time      | Space | Difficulty | Done               | Category                                 |
+| ------ | ---------------------------------------------------------- | --------- | ----- | ---------- | ------------------ | ---------------------------------------- |
+| 49     | [Group Anagrams](./GroupAnagrams.swift)                    | O(NKlogK) | O(NK) | Medium     | :white_check_mark: | Hash Table                               |
+| 249    | [Group Shifted Strings](./GroupShiftedStrings.swift)       |           |       | Medium     |                    | Hash Table                               |
+| 844    | [Backspace String Compare](./BackspaceStringCompare.swift) | O(N)      | O(1)  | Easy       | :white_check_mark: | Array space(N)<br />Two pointer space(1) |
+|        |                                                            |           |       |            |                    |                                          |
 
 ## Tree
 

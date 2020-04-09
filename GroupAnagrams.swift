@@ -13,8 +13,7 @@ Return:
 Note: All inputs will be in lower-case.
 */
 /**
- * Question Link: https://leetcode.com/problems/anagrams/
- * Primary idea: Iterate the string array and categories strings with the same sorted one
+ * Solution: Iterate the string array and categories strings with the same sorted one
  *
  * Time Complexity: O(nmlogm + nlogn), n stands for number of words, m stands for the length of a word
  *                  Space Complexity: O(n)
