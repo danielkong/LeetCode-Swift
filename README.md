@@ -3,6 +3,7 @@
 * [Array](#array)
 * [String](#string)
 * [Tree](#tree)
+* [Linked List](#Linked List)
 * [Stack](#stack)
 * [Queue](#queue)
 * [Heap](#Heap)
@@ -35,6 +36,16 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 | 56 | [Merge Interval](./MergeIntervals.swift) | O(NlogN) | O(N) | Medium | :white_check_mark: |
 | 53 | [Maximum Subarray](./MaximumSubarray.swift) | O(N) | O(1) | Medium | :white_check_mark: |
 | 283 | [Move Zero](./MoveZero.swift) | O(N) | O(1) | Easy | :white_check_mark: |
+|  | [Counting Elements](CountingElements.swift) | O(N) | O(1) | Easy | :white_check_mark: |
+| 1046 | [Last Stone Weight](./LastStoneWeight.swift) | O(N^2) | O(N) | Easy | :white_check_mark: |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
 
 ## String
 
@@ -53,6 +64,8 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 | 844    | [Backspace String Compare](./BackspaceStringCompare.swift) | O(N)      | O(1)  | Easy       | :white_check_mark: | Array space(N)<br />Two pointer space(1) |
 |        |                                                            |           |       |            |                    |                                          |
 
+
+
 ## Tree
 
 | Number | Question   | Time  | Space | Difficulty | Done |
@@ -63,6 +76,17 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 |  | |  |  |  |  |
 |  | |  |  |  |  |
 
+
+
+## Linked List
+
+
+
+| Number | Question                                                   | Time | Space | Difficulty | Done               |
+| ------ | ---------------------------------------------------------- | ---- | ----- | ---------- | ------------------ |
+| 876    | [Middle Of The Linked List](./MiddleOfTheLinkedList.swift) | O(N) | O(1)  | Easy       | :white_check_mark: |
+|        |                                                            |      |       |            |                    |
+|        |                                                            |      |       |            |                    |
 
 ## Stack
 
@@ -82,13 +106,13 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 
 ## Heap
 
-| Number |                  Question                  |     Time | Space | Difficulty | Done               |
-| ------ | :----------------------------------------: | -------: | ----: | :--------: | ------------------ |
-| 56     |  [Merge Interval](./MergeIntervals.swift)  | O(NlogN) |  O(N) |   Medium   | :white_check_mark: |
-| 253    | [Meeting Rooms II](./MeetingRoomsII.swift) | O(NlogN) |  O(N) |   Medium   | :x:                |
-|        |                                            |          |       |            |                    |
-|        |                                            |          |       |            |                    |
-|        |                                            |          |       |            |                    |
+| Number |                   Question                   |     Time | Space | Difficulty | Done               |
+| ------ | :------------------------------------------: | -------: | ----: | :--------: | ------------------ |
+| 56     |   [Merge Interval](./MergeIntervals.swift)   | O(NlogN) |  O(N) |   Medium   | :white_check_mark: |
+| 253    |  [Meeting Rooms II](./MeetingRoomsII.swift)  | O(NlogN) |  O(N) |   Medium   | :x:                |
+| 1046   | [Last Stone Weight](./LastStoneWeight.swift) |   O(N^2) |  O(N) |    Easy    | :white_check_mark: |
+|        |                                              |          |       |            |                    |
+|        |                                              |          |       |            |                    |
 
 
 
@@ -133,7 +157,7 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 | 435    | Non-overlapping Intervals                                    |                         |       |            |                    |
 | 452    | [Minimum Number of Arrows to Burst Balloons](./MinimumNumberOfArrowsToBurstBalloons.swift) |                O(NlogN) |  O(N) | Medium     | :white_check_mark: |
 | 53     | [Maximum Subarray](./MaximumSubarray.swift)                  |                    O(N) |  O(1) | Medium     | :white_check_mark: |
-|        | [Best Time to Buy and Sell Stock](./BestTimeToBuyAndSellStockII.swift) |                         |       |            |                    |
+| 122    | [Best Time to Buy and Sell Stock](./BestTimeToBuyAndSellStockII.swift) |                    O(N) |  O(1) | Easy       | :white_check_mark: |
 |        |                                                              |                         |       |            |                    |
 |        |                                                              |                         |       |            |                    |
 |        |                                                              |                         |       |            |                    |
