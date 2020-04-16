@@ -138,6 +138,11 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 | 1123   | [Common Ancestor Of Deepest Leaves](./CommonAncestorOfDeepestLeaves.swift) |   O(N) |  O(N) | Medium     | :white_check_mark: |
 | 1236   |              [Web Crawler](./WebCrawler.swift)               |   O(N) |  O(N) | Medium     | :white_check_mark: |
 | 968    |       [Binary Tree Cameras](./BinaryTreeCameras.swift)       |   O(N) |  O(N) | Hard       | :x:                |
+| 494    |               [Target Sum](./TargetSum.swift)                |   O(N) |  O(N) | Medium     | :white_check_mark: |
+|        |                                                              |        |       |            |                    |
+|        |                                                              |        |       |            |                    |
+|        |                                                              |        |       |            |                    |
+|        |                                                              |        |       |            |                    |
 
 ## Breadth-First-Search
 
@@ -176,9 +181,9 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 
 ## Dynamic Programming
 
-| Number | Question | Time | Space | Difficulty | Done |
-| ------ | -------- | ---- | ----- | ---------- | ---- |
-|        |          |      |       |            |      |
+| Number | Question                        | Time | Space | Difficulty | Done |
+| ------ | ------------------------------- | ---- | ----- | ---------- | ---- |
+| 494    | [Target Sum](./TargetSum.swift) | O(N) | O(N)  | Medium     | :x:  |
 
 ## Graph
 
