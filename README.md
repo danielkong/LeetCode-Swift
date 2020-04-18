@@ -21,9 +21,15 @@ Swift native func performance:
 
 - [Element] `sorted()` Time complexity: O(**n** log **n**), where **n** is the length of the sequence.
 
-void `reverse()` Time complexity: O(**n**), where **n** is the number of elements.
+- void `reverse()` Time complexity: O(**n**), where **n** is the number of elements.
 
-[Element] `reversed()` Time complexity: O(1).
+- [Element] `reversed()` Time complexity: O(1).
+
+- `stride(from: 3, to: 0, by: -1)` count down from 3 to 1.
+
+- `stride(from: 3, through: 0, by: -1)` count down from 3 to 0.
+
+  
 
 | Number | Question   | Time  | Space | Difficulty | Done |
 | ------ |:----------:| -----:|----:|:-------:| :----: |
@@ -38,7 +44,7 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 | 283 | [Move Zero](./MoveZero.swift) | O(N) | O(1) | Easy | :white_check_mark: |
 |  | [Counting Elements](CountingElements.swift) | O(N) | O(1) | Easy | :white_check_mark: |
 | 1046 | [Last Stone Weight](./LastStoneWeight.swift) | O(N^2) | O(N) | Easy | :white_check_mark: |
-|  |  |  |  |  |  |
+| 238 | [Product of Array Except Self]() | O(N) | O(N) | Medium | :white_check_mark: |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
@@ -62,7 +68,7 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 | 49     | [Group Anagrams](./GroupAnagrams.swift)                    | O(NKlogK) | O(NK) | Medium     | :white_check_mark: | Hash Table                               |
 | 249    | [Group Shifted Strings](./GroupShiftedStrings.swift)       |           |       | Medium     |                    | Hash Table                               |
 | 844    | [Backspace String Compare](./BackspaceStringCompare.swift) | O(N)      | O(1)  | Easy       | :white_check_mark: | Array space(N)<br />Two pointer space(1) |
-|        |                                                            |           |       |            |                    |                                          |
+| 678    | [Valid Parenthesis String](./ValidParenthesisString.swift) |           |       | Medium     |                    |                                          |
 
 
 
@@ -146,9 +152,9 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 
 ## Breadth-First-Search
 
-| Number | Question | Time | Space | Difficulty | Done |
-| ------ | -------- | ---- | ----- | ---------- | ---- |
-|        |          |      |       |            |      |
+| Number | Question                                   | Time  | Space                 | Difficulty | Done |
+| ------ | ------------------------------------------ | ----- | --------------------- | ---------- | ---- |
+| 64     | [Minimum Path Sum](./MinimumPathSum.swift) | O(MN) | O(M) <br />Best: O(1) | Medium     | :x:  |
 
 ## Greedy
 
@@ -163,7 +169,7 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 | 452    | [Minimum Number of Arrows to Burst Balloons](./MinimumNumberOfArrowsToBurstBalloons.swift) |                O(NlogN) |  O(N) | Medium     | :white_check_mark: |
 | 53     | [Maximum Subarray](./MaximumSubarray.swift)                  |                    O(N) |  O(1) | Medium     | :white_check_mark: |
 | 122    | [Best Time to Buy and Sell Stock](./BestTimeToBuyAndSellStockII.swift) |                    O(N) |  O(1) | Easy       | :white_check_mark: |
-|        |                                                              |                         |       |            |                    |
+| 678    | [Valid Parenthesis String](./ValidParenthesisString.swift)   |                    O(N) |  O(1) | Medium     | :white_check_mark: |
 |        |                                                              |                         |       |            |                    |
 |        |                                                              |                         |       |            |                    |
 |        |                                                              |                         |       |            |                    |
@@ -181,9 +187,14 @@ void `reverse()` Time complexity: O(**n**), where **n** is the number of element
 
 ## Dynamic Programming
 
-| Number | Question                        | Time | Space | Difficulty | Done |
-| ------ | ------------------------------- | ---- | ----- | ---------- | ---- |
-| 494    | [Target Sum](./TargetSum.swift) | O(N) | O(N)  | Medium     | :x:  |
+| Number | Question                                   | Time  | Space                 | Difficulty | Done |
+| ------ | ------------------------------------------ | ----- | --------------------- | ---------- | ---- |
+| 494    | [Target Sum](./TargetSum.swift)            | O(N)  | O(N)                  | Medium     | :x:  |
+| 64     | [Minimum Path Sum](./MinimumPathSum.swift) | O(MN) | O(M) <br />Best: O(1) | Medium     | :x:  |
+|        |                                            |       |                       |            |      |
+|        |                                            |       |                       |            |      |
+|        |                                            |       |                       |            |      |
+|        |                                            |       |                       |            |      |
 
 ## Graph
 
