@@ -63,12 +63,17 @@ Swift native func performance:
 
   
 
-| Number |                          Question                          | Time      | Space | Difficulty | Done               | Category                                 |
-| :----: | :--------------------------------------------------------: | --------- | ----- | ---------- | ------------------ | ---------------------------------------- |
-|   49   |          [Group Anagrams](./GroupAnagrams.swift)           | O(NKlogK) | O(NK) | Medium     | :white_check_mark: | Hash Table                               |
-|  249   |    [Group Shifted Strings](./GroupShiftedStrings.swift)    |           |       | Medium     |                    | Hash Table                               |
-|  844   | [Backspace String Compare](./BackspaceStringCompare.swift) | O(N)      | O(1)  | Easy       | :white_check_mark: | Array space(N)<br />Two pointer space(1) |
-|  678   | [Valid Parenthesis String](./ValidParenthesisString.swift) |           |       | Medium     |                    |                                          |
+| Number |                          Question                          | Time      | Space | Difficulty | Done               |
+| :----: | :--------------------------------------------------------: | --------- | ----- | ---------- | ------------------ |
+|   49   |          [Group Anagrams](./GroupAnagrams.swift)           | O(NKlogK) | O(NK) | Medium     | :white_check_mark: |
+|  249   |    [Group Shifted Strings](./GroupShiftedStrings.swift)    |           |       | Medium     |                    |
+|  844   | [Backspace String Compare](./BackspaceStringCompare.swift) | O(N)      | O(1)  | Easy       | :white_check_mark: |
+|  678   | [Valid Parenthesis String](./ValidParenthesisString.swift) |           |       | Medium     |                    |
+|        |    [Perform String Shifts](./PerformStringShifts.swift)    | O(N)      | O(1)  | Easy       | :white_check_mark: |
+|        |                                                            |           |       |            |                    |
+|        |                                                            |           |       |            |                    |
+|        |                                                            |           |       |            |                    |
+|        |                                                            |           |       |            |                    |
 
 
 
