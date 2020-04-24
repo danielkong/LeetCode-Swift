@@ -45,7 +45,7 @@ Swift native func performance:
 |  | [Counting Elements](CountingElements.swift) | O(N) | O(1) | Easy | :white_check_mark: |
 | 1046 | [Last Stone Weight](./LastStoneWeight.swift) | O(N^2) | O(N) | Easy | :white_check_mark: |
 | 238 | [Product of Array Except Self](,/ProductOfArrayExceptSelf.swift) | O(N) | O(N) | Medium | :white_check_mark: |
-|  |  |  |  |  |  |
+| 1374 | [Left Most Column With One](/.leftMostColumnWithOne.swift) | O(NlogN) | O(1) | Medium | :white_check_mark: |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
@@ -63,12 +63,12 @@ Swift native func performance:
 
   
 
-| Number | Question                                                   | Time      | Space | Difficulty | Done               | Category                                 |
-| ------ | ---------------------------------------------------------- | --------- | ----- | ---------- | ------------------ | ---------------------------------------- |
-| 49     | [Group Anagrams](./GroupAnagrams.swift)                    | O(NKlogK) | O(NK) | Medium     | :white_check_mark: | Hash Table                               |
-| 249    | [Group Shifted Strings](./GroupShiftedStrings.swift)       |           |       | Medium     |                    | Hash Table                               |
-| 844    | [Backspace String Compare](./BackspaceStringCompare.swift) | O(N)      | O(1)  | Easy       | :white_check_mark: | Array space(N)<br />Two pointer space(1) |
-| 678    | [Valid Parenthesis String](./ValidParenthesisString.swift) |           |       | Medium     |                    |                                          |
+| Number |                          Question                          | Time      | Space | Difficulty | Done               | Category                                 |
+| :----: | :--------------------------------------------------------: | --------- | ----- | ---------- | ------------------ | ---------------------------------------- |
+|   49   |          [Group Anagrams](./GroupAnagrams.swift)           | O(NKlogK) | O(NK) | Medium     | :white_check_mark: | Hash Table                               |
+|  249   |    [Group Shifted Strings](./GroupShiftedStrings.swift)    |           |       | Medium     |                    | Hash Table                               |
+|  844   | [Backspace String Compare](./BackspaceStringCompare.swift) | O(N)      | O(1)  | Easy       | :white_check_mark: | Array space(N)<br />Two pointer space(1) |
+|  678   | [Valid Parenthesis String](./ValidParenthesisString.swift) |           |       | Medium     |                    |                                          |
 
 
 
@@ -79,7 +79,7 @@ Swift native func performance:
 | 270 | [Closest BST Value](./ClosestBinarySearchTreeValue.swift)| O(N) | O(1)    | Medium |  |
 | 98 | [Validate BST](./ValidateBinarySearchTree.swift)| O(N) | O(1)    | Medium |  |
 | 199 | [Binary Tree Right Side View](./BinaryTreeRightSideView.swift)| O(N) | O(1)    | Medium |  |
-|  | |  |  |  |  |
+| 1008 | [Construct Binary Search Tree from Preorder Traversal](./ConstructBinarySearchTreeFromPreorderTraversal.swift) | O(N) | O(N) | Medium | :white_check_mark: |
 |  | |  |  |  |  |
 
 
@@ -88,16 +88,16 @@ Swift native func performance:
 
 
 
-| Number | Question                                                   | Time | Space | Difficulty | Done               |
-| ------ | ---------------------------------------------------------- | ---- | ----- | ---------- | ------------------ |
+| Number |                          Question                          | Time | Space | Difficulty | Done               |
+| ------ | :--------------------------------------------------------: | ---- | ----- | ---------- | ------------------ |
 | 876    | [Middle Of The Linked List](./MiddleOfTheLinkedList.swift) | O(N) | O(1)  | Easy       | :white_check_mark: |
 |        |                                                            |      |       |            |                    |
 |        |                                                            |      |       |            |                    |
 
 ## Stack
 
-| Number | Question                              | Time | Space | Difficulty | Done |
-| ------ | ------------------------------------- | ---- | ----- | ---------- | ---- |
+| Number |               Question                | Time | Space | Difficulty | Done |
+| ------ | :-----------------------------------: | ---- | ----- | ---------- | ---- |
 | 394    | [Decode String](./DecodeString.swift) | O(N) | O(N)  | Medium     | :x:  |
 |        |                                       |      |       |            |      |
 |        |                                       |      |       |            |      |
@@ -158,18 +158,18 @@ Swift native func performance:
 
 ## Greedy
 
-| Number | Question                                                     |                    Time | Space | Difficulty | Done               |
-| ------ | ------------------------------------------------------------ | ----------------------: | ----: | ---------- | ------------------ |
-| 621    | [Task Scheduler](./TaskScheduler.swift)                      | O(26log26)<br /> ~ O(1) |  O(1) | Medium     | :x:                |
-| 1094   | [Car Pooling](./CarPooling.swift)                            |                O(NlogN) |  O(N) | Medium     | :x:                |
-| 253    | [Meeting Rooms II](./MeetingRoomsII.swift)                   |                O(NlogN) |  O(N) | Medium     | :x:                |
-| 252    | Meeting Rooms                                                |                         |       |            |                    |
-| 56     | [Merge Interval](./MergeIntervals.swift)                     |                O(NlogN) |  O(N) | Medium     | :white_check_mark: |
-| 435    | Non-overlapping Intervals                                    |                         |       |            |                    |
+| Number |                           Question                           |                    Time | Space | Difficulty | Done               |
+| ------ | :----------------------------------------------------------: | ----------------------: | ----: | ---------- | ------------------ |
+| 621    |           [Task Scheduler](./TaskScheduler.swift)            | O(26log26)<br /> ~ O(1) |  O(1) | Medium     | :x:                |
+| 1094   |              [Car Pooling](./CarPooling.swift)               |                O(NlogN) |  O(N) | Medium     | :x:                |
+| 253    |          [Meeting Rooms II](./MeetingRoomsII.swift)          |                O(NlogN) |  O(N) | Medium     | :x:                |
+| 252    |                        Meeting Rooms                         |                         |       |            |                    |
+| 56     |           [Merge Interval](./MergeIntervals.swift)           |                O(NlogN) |  O(N) | Medium     | :white_check_mark: |
+| 435    |                  Non-overlapping Intervals                   |                         |       |            |                    |
 | 452    | [Minimum Number of Arrows to Burst Balloons](./MinimumNumberOfArrowsToBurstBalloons.swift) |                O(NlogN) |  O(N) | Medium     | :white_check_mark: |
-| 53     | [Maximum Subarray](./MaximumSubarray.swift)                  |                    O(N) |  O(1) | Medium     | :white_check_mark: |
+| 53     |         [Maximum Subarray](./MaximumSubarray.swift)          |                    O(N) |  O(1) | Medium     | :white_check_mark: |
 | 122    | [Best Time to Buy and Sell Stock](./BestTimeToBuyAndSellStockII.swift) |                    O(N) |  O(1) | Easy       | :white_check_mark: |
-| 678    | [Valid Parenthesis String](./ValidParenthesisString.swift)   |                    O(N) |  O(1) | Medium     | :white_check_mark: |
+| 678    |  [Valid Parenthesis String](./ValidParenthesisString.swift)  |                    O(N) |  O(1) | Medium     | :white_check_mark: |
 |        |                                                              |                         |       |            |                    |
 |        |                                                              |                         |       |            |                    |
 |        |                                                              |                         |       |            |                    |
@@ -187,9 +187,9 @@ Swift native func performance:
 
 ## Dynamic Programming
 
-| Number | Question                                   | Time  | Space                 | Difficulty | Done |
-| ------ | ------------------------------------------ | ----- | --------------------- | ---------- | ---- |
-| 494    | [Target Sum](./TargetSum.swift)            | O(N)  | O(N)                  | Medium     | :x:  |
+| Number |                  Question                  | Time  | Space                 | Difficulty | Done |
+| ------ | :----------------------------------------: | ----- | --------------------- | ---------- | ---- |
+| 494    |      [Target Sum](./TargetSum.swift)       | O(N)  | O(N)                  | Medium     | :x:  |
 | 64     | [Minimum Path Sum](./MinimumPathSum.swift) | O(MN) | O(M) <br />Best: O(1) | Medium     | :x:  |
 |        |                                            |       |                       |            |      |
 |        |                                            |       |                       |            |      |
