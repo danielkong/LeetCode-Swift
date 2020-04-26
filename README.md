@@ -2,9 +2,9 @@
 ## Data Structures
 * [Array](#array)
 * [String](#string)
-* [Hash Map](#Hash Map)
+* [Hash Map](#hashmap)
 * [Tree](#tree)
-* [Linked List](#Linked List)
+* [Linked List](#LinkedList)
 * [Stack](#stack)
 * [Queue](#queue)
 * [Heap](#Heap)
