@@ -37,7 +37,7 @@
         var map = [Int:Int]()
         map[0] = 1
         var count = 0
-        var runningSum  = 0
+        var runningSum = 0
         for i in 0..<nums.count {
             runningSum += nums[i]
             if (map[runningSum - k] != nil) {
