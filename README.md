@@ -2,7 +2,7 @@
 ## Data Structures
 * [Array](#array)
 * [String](#string)
-* [Hash Map](#hash Map)
+* [Hash Map](#Hash Map)
 * [Tree](#tree)
 * [Linked List](#Linked List)
 * [Stack](#stack)
@@ -210,6 +210,7 @@ Swift native func performance:
 | 494    |               [Target Sum](./TargetSum.swift)                | O(N)  | O(N)                  | Medium     | :x:  |
 | 64     |          [Minimum Path Sum](./MinimumPathSum.swift)          | O(MN) | O(M) <br />Best: O(1) | Medium     | :x:  |
 | 1143   | [Longest Common Subsequence](./LongestCommonSubsequence.swift) | O(MN) | O(MN)                 | Meidum     | :x:  |
+| 583    |    [Delete Operation for two strings<br />Edit Distance]     |       |                       | Medium     |      |
 |        |                                                              |       |                       |            |      |
 |        |                                                              |       |                       |            |      |
 |        |                                                              |       |                       |            |      |
