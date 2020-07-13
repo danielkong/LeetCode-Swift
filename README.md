@@ -73,7 +73,7 @@ Swift native func performance:
 |  678   | [Valid Parenthesis String](./ValidParenthesisString.swift) |           |       | Medium     |                    |
 |        |    [Perform String Shifts](./PerformStringShifts.swift)    | O(N)      | O(1)  | Easy       | :white_check_mark: |
 |  1143  |                 Longest Common Subsequence                 |           |       | Medium     |                    |
-|        |                                                            |           |       |            |                    |
+|   67   |               [Add Binary](Add_Binary.swift)               | O(N)      | O(!)  | Easy       | :white_check_mark: |
 |        |                                                            |           |       |            |                    |
 |        |                                                            |           |       |            |                    |
 
@@ -99,6 +99,9 @@ Swift native func performance:
 | 199 | [Binary Tree Right Side View](./BinaryTreeRightSideView.swift)| O(N) | O(1)    | Medium |  |
 | 1008 | [Construct Binary Search Tree from Preorder Traversal](./ConstructBinarySearchTreeFromPreorderTraversal.swift) | O(N) | O(N) | Medium | :white_check_mark: |
 | 543 | [Diameter of Binary Tree.swift](DiameterofBinaryTree.swift)  | O(N) | O(N) | Easy | :white_check_mark: |
+| 938 | [Range Sum of BST](Range_Sum_of_BST.swift) | O(N) | O(N) | Easy | :white_check_mark: |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
 
 
 

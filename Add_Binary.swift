@@ -70,52 +70,58 @@ func addBinary(_ a: String, _ b: String) -> String {
     }
 
 // Solution 2:
+// Solution: Like add two numbers
 class Solution {
     func addBinary(_ a: String, _ b: String) -> String {
-        let ach = Array(a.characters.reversed())
-        let alen = ach.count
-        let bch = Array(b.characters.reversed())
-        let blen = bch.count
-        
-        // make a length < b length
-        if alen > blen { return addBinary(b, a) }
-        
         var temp = 0
-        var res = 0
+        var res = ""
+        var a1 = Array(a)
+        var b1 = Array(b)
         
-        var resultArr : [Int] = []
-        for i in 0 ..< blen {
-            if i <= alen-1 {
-                res = Int(String(ach[i]))! + Int(String(bch[i]))! + temp
-            } else {
-                res = Int(String(bch[i]))! + temp
-            }
-            let test: (Int, Int) = parseRes(res)
-            resultArr.append(test.1)
-            temp = test.0
+        while !a1.isEmpty && !b1.isEmpty {
+            let temp1 = a1.removeLast()
+            let temp2 = b1.removeLast()
+            let digit = temp + Int(String(temp1))! + Int(String(temp2))!
+            let resDigit = binaryCalculate(digit)
+            temp = resDigit.0
+            res.append(String(resDigit.1))
         }
         
-        if temp == 1 {
-            resultArr.append(1)
+        // case a1 not nil, or b1 not nil
+        if a1.count > 0 {
+            restCal(a1, &temp, &res)
         }
-        
-        let stringArray = resultArr.reversed().map{ String($0) }
-        
-        return stringArray.joined()
+        if b1.count > 0 {
+            restCal(b1, &temp, &res)
+        }
+        if temp > 0 {
+            res.append("1")
+        }
+        return String(res.reversed())
     }
     
-    private func parseRes(_ res: Int) -> (Int, Int) {
-        switch res {
-        case 3:
-            return (1, 1)
-        case 2:
-            return (1, 0)
-        case 1:
-            return (0, 1)
-        case 0:
-            return (0, 0)
-        default:
-            return (0, 0)
+    func binaryCalculate(_ sum: Int) -> (Int, Int) {
+        switch sum {
+            case 3:
+            return (1,1)
+            case 2: 
+            return (1,0)
+            case 1:
+            return (0,1)
+            case 0: 
+            return (0,0)
+            default:
+            return (0,0)
+        }
+    }
+    
+    func restCal(_ arr: [Character], _ temp: inout Int, _ res: inout String) {
+        var arr = arr
+        while !arr.isEmpty {
+            let temp1 = Int(String(arr.removeLast()))
+            let resDigit = binaryCalculate(temp1! + temp)
+            temp = resDigit.0
+            res.append(String(resDigit.1)) 
         }
     }
 }
