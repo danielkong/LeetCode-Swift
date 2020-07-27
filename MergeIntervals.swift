@@ -14,31 +14,25 @@ return [1,6],[8,10],[15,18].
 */
 
     func merge(_ intervals: [[Int]]) -> [[Int]] {
+        guard intervals.count > 1 else { return intervals }
+        var res = [[Int]]()        
+        let sortedIntervals = intervals.sorted() { $0[0] < $1[0] }
+        res.append(sortedIntervals[0])
         
-        guard intervals.count > 0 else {
-            return []
-        }
-        
-        // sort by start value
-        var sorted = intervals
-        sorted.sort { $0[0] < $1[0] }
-        var merged: [[Int]] = []
-        
-        var last: [Int] = []
-        for interval in sorted {
-            if merged.isEmpty || interval[0] > last[1] {
-                last = interval
-                merged.append(last)
-                continue
-            } else if interval[1] > last[1] {
-                // merge
-                last[1] = interval[1]
-                merged.removeLast()
-                merged.append(last)
+        for i in 1..<sortedIntervals.count {
+            var prev = res.last
+            var curr = sortedIntervals[i]
+            if (prev![1] < curr[0]) {
+                res.append(curr)
+            } else {
+                // could merge, also have two cases
+                guard prev![1] < curr[1] else { continue }
+                prev![1] = curr[1]
+                res.removeLast()
+                res.append(prev!)
             }
         }
-        
-        return merged
+        return res
     }
 
     // sorted by end value.
