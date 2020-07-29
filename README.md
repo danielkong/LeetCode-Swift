@@ -25,11 +25,15 @@ Swift native func performance:
 
 - void `reverse()` Time complexity: O(**n**), where **n** is the number of elements.
 
-- [Element] `reversed()` Time complexity: O(1).
+- [Element] `reversed()` Time complexity: O(**1**).
 
 - `stride(from: 3, to: 0, by: -1)` count down from 3 to 1.
 
 - `stride(from: 3, through: 0, by: -1)` count down from 3 to 0.
+
+- `arr.swapAt(i,j)` swap two element in an array. Equal to `(arr[i],arr[j])=(arr[j],arr[i]) ` Time complexity: O(**1**).
+
+- 
 
   
 
@@ -49,8 +53,8 @@ Swift native func performance:
 | 238 | [Product of Array Except Self](,/ProductOfArrayExceptSelf.swift) | O(N) | O(N) | Medium | :white_check_mark: |
 | 1374 | [Left Most Column With One](/.leftMostColumnWithOne.swift) | O(NlogN) | O(1) | Medium | :white_check_mark: |
 | 525 | [Contiguous Array](./ContiguousArray.swift) | O(N) | O(N) | Medium |        :x:         |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
+| 1359 | [Count All Valid Pickup and Delivery Options](.Count All Valid Pickup and Delivery Options.swift) | O(N) | O(1) | Easy | :white_check_mark: |
+| / | [Array Can Be Sorted in One Swap](./Array Can Be Sorted in One Swap.swift) | O(N) | O(N) | Easy | :white_check_mark: |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
@@ -117,11 +121,11 @@ Swift native func performance:
 
 ## Stack
 
-| Number |               Question                | Time | Space | Difficulty | Done |
-| ------ | :-----------------------------------: | ---- | ----- | ---------- | ---- |
-| 394    | [Decode String](./DecodeString.swift) | O(N) | O(N)  | Medium     | :x:  |
-|        |                                       |      |       |            |      |
-|        |                                       |      |       |            |      |
+| Number |                           Question                           | Time | Space | Difficulty | Done |
+| ------ | :----------------------------------------------------------: | ---- | ----- | ---------- | ---- |
+| 394    |            [Decode String](./DecodeString.swift)             | O(N) | O(N)  | Medium     | :x:  |
+| 227    |      [Basic Calculator II](.Basic Calculator II.swift)       | O(N) | O(N)  | Medium     |      |
+| 958    | ([Check Completeness of a Binary Tree.swift](./Check Completeness of a Binary Tree.swift) | O(N) | O(N)  | Medium     |      |
 
 ## Queue
 
@@ -154,22 +158,22 @@ Swift native func performance:
 
 ## Depth-First-Search
 
-| Number |                           Question                           |   Time | Space | Difficulty | Done               |
-| ------ | :----------------------------------------------------------: | -----: | ----: | ---------- | ------------------ |
-| 502    |         [Number of Islands](./NumberOfIslands.swift)         |  O(MN) | O(MN) | Medium     | :x:                |
-| 100    |                [Same Tree](./SameTree.swift)                 |   O(N) |  O(1) | Easy       | :white_check_mark: |
-| 394    |            [Decode String](./DecodeString.swift)             |   O(N) |  O(N) | Medium     | :x:                |
-| 695    |        [Max Area of Island](./MaxAreaOfIsland.swift)         |  O(MN) | O(MN) | Medium     | :white_check_mark: |
-| 721    |           [Accounts Merge](./AccountsMerge.swift)            |        |       |            |                    |
-| 785    |        [Is Graph Bipartite](./IsGraphBipartite.swift)        | O(N+m) |  O(N) |            |                    |
-| 1123   | [Common Ancestor Of Deepest Leaves](./CommonAncestorOfDeepestLeaves.swift) |   O(N) |  O(N) | Medium     | :white_check_mark: |
-| 1236   |              [Web Crawler](./WebCrawler.swift)               |   O(N) |  O(N) | Medium     | :white_check_mark: |
-| 968    |       [Binary Tree Cameras](./BinaryTreeCameras.swift)       |   O(N) |  O(N) | Hard       | :x:                |
-| 494    |               [Target Sum](./TargetSum.swift)                |   O(N) |  O(N) | Medium     | :white_check_mark: |
-| 543    | [Diameter of Binary Tree.swift](DiameterofBinaryTree.swift)  |   O(N) |  O(N) | Easy       | :white_check_mark: |
-|        |                                                              |        |       |            |                    |
-|        |                                                              |        |       |            |                    |
-|        |                                                              |        |       |            |                    |
+| Number |                           Question                           |   Time |  Space | Difficulty | Done               |
+| ------ | :----------------------------------------------------------: | -----: | -----: | ---------- | ------------------ |
+| 502    |         [Number of Islands](./NumberOfIslands.swift)         |  O(MN) |  O(MN) | Medium     | :x:                |
+| 100    |                [Same Tree](./SameTree.swift)                 |   O(N) |   O(1) | Easy       | :white_check_mark: |
+| 394    |            [Decode String](./DecodeString.swift)             |   O(N) |   O(N) | Medium     | :x:                |
+| 695    |        [Max Area of Island](./MaxAreaOfIsland.swift)         |  O(MN) |  O(MN) | Medium     | :white_check_mark: |
+| 721    |           [Accounts Merge](./AccountsMerge.swift)            |        |        |            |                    |
+| 785    |        [Is Graph Bipartite](./IsGraphBipartite.swift)        | O(N+m) |   O(N) |            |                    |
+| 1123   | [Common Ancestor Of Deepest Leaves](./CommonAncestorOfDeepestLeaves.swift) |   O(N) |   O(N) | Medium     | :white_check_mark: |
+| 1236   |              [Web Crawler](./WebCrawler.swift)               |   O(N) |   O(N) | Medium     | :white_check_mark: |
+| 968    |       [Binary Tree Cameras](./BinaryTreeCameras.swift)       |   O(N) |   O(N) | Hard       | :x:                |
+| 494    |               [Target Sum](./TargetSum.swift)                |   O(N) |   O(N) | Medium     | :white_check_mark: |
+| 543    | [Diameter of Binary Tree.swift](./DiameterofBinaryTree.swift) |   O(N) |   O(N) | Easy       | :white_check_mark: |
+| 1254   |  [Number of Closed Island](./Number of Closed Island.swift)  | O(N^2) | O(N^2) | Medium     | :white_check_mark: |
+|        |                                                              |        |        |            |                    |
+|        |                                                              |        |        |            |                    |
 
 ## Breadth-First-Search
 
@@ -208,15 +212,15 @@ Swift native func performance:
 
 ## Dynamic Programming
 
-| Number |                           Question                           | Time  | Space                 | Difficulty | Done |
-| ------ | :----------------------------------------------------------: | ----- | --------------------- | ---------- | ---- |
-| 494    |               [Target Sum](./TargetSum.swift)                | O(N)  | O(N)                  | Medium     | :x:  |
-| 64     |          [Minimum Path Sum](./MinimumPathSum.swift)          | O(MN) | O(M) <br />Best: O(1) | Medium     | :x:  |
-| 1143   | [Longest Common Subsequence](./LongestCommonSubsequence.swift) | O(MN) | O(MN)                 | Meidum     | :x:  |
-| 583    |    [Delete Operation for two strings<br />Edit Distance]     |       |                       | Medium     |      |
-|        |                                                              |       |                       |            |      |
-|        |                                                              |       |                       |            |      |
-|        |                                                              |       |                       |            |      |
+| Number |                           Question                           | Time   | Space                 | Difficulty | Done |
+| ------ | :----------------------------------------------------------: | ------ | --------------------- | ---------- | ---- |
+| 494    |               [Target Sum](./TargetSum.swift)                | O(N)   | O(N)                  | Medium     | :x:  |
+| 64     |          [Minimum Path Sum](./MinimumPathSum.swift)          | O(MN)  | O(M) <br />Best: O(1) | Medium     | :x:  |
+| 1143   | [Longest Common Subsequence](./LongestCommonSubsequence.swift) | O(MN)  | O(MN)                 | Meidum     | :x:  |
+| 583    |    [Delete Operation for two strings<br />Edit Distance]     |        |                       | Medium     |      |
+| 1027   | [Longest Arithmetic Sequence](.Longest Arithmetic Sequence.swift) | O(N*N) | O(N*N)                | Medium     |      |
+|        |                                                              |        |                       |            |      |
+|        |                                                              |        |                       |            |      |
 
 ## Graph
 
