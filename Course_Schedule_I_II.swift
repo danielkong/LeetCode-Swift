@@ -138,45 +138,43 @@ http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=143467
 
 UPDATE: 统一回答地里的问题：这个题就是拓扑排序，leetcode course schedule II
 */
-// Solution: 1. BFS. large input time limited E
-// 			 2. Topological sort in DAG ???
+// Solution:  1. DFS + Topological sort in DAG 
+// 			  2. BFS. large input time limited E
 
-class Solution {
-    func findOrder(_ numCourses: Int, _ prerequisites: [[Int]]) -> [Int] {
-        var arrCounter = Array(repeating: 0, count: numCourses)
 
-        for temp in prerequisites {
-            arrCounter[temp[0]] += 1
-        }
-
-        var queue = [Int]()
-
-        for i in 0 ..< numCourses {
-            if arrCounter[i] == 0 {
-                queue.append(i)
-            }
-        }
-
-        var res = [Int]()
-
-        while !queue.isEmpty {
-            let c = queue.removeLast()
-            res.append(c)
-            for temp in prerequisites {
-                if temp[1] == c {
-                    arrCounter[temp[0]] -= 1
-                    if arrCounter[temp[0]] == 0 {
-                        queue.append(temp[0])
-                        numNoPre += 1
-                    }
-                }
-            }
-        }
-
-        if res.count != numCourses {
-            return []
-        } else {
-            return res
+func findOrder(_ numCourses: Int, _ prerequisites: [[Int]]) -> [Int] {
+    var inDegreesArr = Array(repeating: 0, count: numCourses)
+    var dict = [Int: [Int]]()
+      
+    // [1,0] [2,0] [3,1] [3,2]
+    // build map course depends on which course
+    // 0-> 1,2  1->3, 2->3   inDegreesArr: 0, 1, 1, 2
+    for pair in prerequisites {
+        inDegreesArr[pair[0]] += 1
+        dict[pair[1], default: []].append(pair[0])
+    }
+      
+    // find non required course
+    var nonRequiredCouseQueue = [Int]()
+    for courseNumber in 0..<numCourses {
+        if inDegreesArr[courseNumber] == 0 {
+            nonRequiredCouseQueue.append(courseNumber)
         }
     }
+    // nonRequiredCouseQueue: 0
+      
+    // topological sort, find the cyclic graph 0->1/2->3 [1,0] [2,0] [3,1] [3,2]
+    var topologicallySortedCourses = [Int]()
+    while !nonRequiredCouseQueue.isEmpty { // 0 -> 1,2 ->
+        let prereqCourse = nonRequiredCouseQueue.removeFirst() // 0
+        topologicallySortedCourses.append(prereqCourse) // + 0
+          
+        for course in dict[prereqCourse] ?? [] {
+            inDegreesArr[course] -= 1  // inDegreesArr: 0, 0, 0, 2
+            if inDegreesArr[course] == 0 {
+                nonRequiredCouseQueue.append(course) // 0, 1, 2
+            }
+        }
+    }
+    return (topologicallySortedCourses.count == numCourses) ? topologicallySortedCourses : []
 }
