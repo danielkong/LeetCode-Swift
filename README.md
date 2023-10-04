@@ -124,8 +124,8 @@ Swift native func performance:
 | Number |                           Question                           | Time | Space | Difficulty | Done |
 | ------ | :----------------------------------------------------------: | ---- | ----- | ---------- | ---- |
 | 394    |            [Decode String](./DecodeString.swift)             | O(N) | O(N)  | Medium     | :x:  |
-| 227    |      [Basic Calculator II](./Basic Calculator II.swift)       | O(N) | O(N)  | Medium     |      |
-| 958    | ([Check Completeness of a Binary Tree.swift](./Check Completeness of a Binary Tree.swift) | O(N) | O(N)  | Medium     |      |
+| 227    |      [Basic Calculator II](./BasicCalculatorII.swift)       | O(N) | O(N)  | Medium     |      |
+| 958    | ([Check Completeness of a Binary Tree.swift](./CheckCompletenessofaBinaryTree.swift) | O(N) | O(N)  | Medium     |      |
 
 ## Queue
 
